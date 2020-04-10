@@ -1,0 +1,428 @@
+\section{fv\-\_\-grid\-\_\-tools\-\_\-mod Module Reference}
+\label{classfv__grid__tools__mod}\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+
+
+Collaboration diagram for fv\-\_\-grid\-\_\-tools\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classfv__grid__tools__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__grid__tools__mod_ad44c07c95a2f28e62399da37867817a4}{init\-\_\-grid} (Atm, grid\-\_\-name, grid\-\_\-file, npx, npy, npz, ndims, nregions, ng)
+\begin{DoxyCompactList}\small\item\em The subroutine 'init\-\_\-grid' reads the grid from the input file and sets up grid descriptors. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classfv__grid__tools__mod_a3b343a8e46f50390dadd2b6fddabf244}{spherical\-\_\-to\-\_\-cartesian} (lon, lat, r, x, y, z)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=r\-\_\-grid), parameter, \\*
+public \hyperlink{classfv__grid__tools__mod_a8b3bcc75f621d290a7cfa0b736983e3f}{todeg} = 180.\-0d0/pi
+\begin{DoxyCompactList}\small\item\em convert to degrees \end{DoxyCompactList}\item 
+real(kind=r\-\_\-grid), parameter, \\*
+public \hyperlink{classfv__grid__tools__mod_acb906ec796b589b9fb688bbbe1bee3c8}{missing} = 1.d25
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classfv__grid__tools__mod_a0cd79c60df097353dc6306eafbf5c4b5}{read\-\_\-grid} (Atm, grid\-\_\-file, ndims, nregions, ng)
+\begin{DoxyCompactList}\small\item\em The subroutine 'read\-\_\-grid' reads the grid from the mosaic grid file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classfv__grid__tools__mod_a53b69d107e7bd2468e963e91ac7af946}{get\-\_\-symmetry} (data\-\_\-in, data\-\_\-out, ishift, jshift, npes\-\_\-x, npes\-\_\-y, domain, tile, npx\-\_\-g, bd)
+\item 
+subroutine \hyperlink{classfv__grid__tools__mod_ac67120f726ca8489dbe875f87c29543f}{cartesian\-\_\-to\-\_\-spherical} (x, y, z, lon, lat, r)
+\item 
+subroutine \hyperlink{classfv__grid__tools__mod_adbf51ca68c05a220a30c0872b301607e}{rot\-\_\-3d} (axis, x1in, y1in, z1in, angle, x2out, y2out, z2out, degrees, convert)
+\begin{DoxyCompactList}\small\item\em The subroutine 'rot\-\_\-3d' rotates points on a sphere in xyz coordinates. \end{DoxyCompactList}\item 
+real(kind=R\-\_\-\-G\-R\-I\-D) function \hyperlink{classfv__grid__tools__mod_a6acc2cdd48faa66fba3722b877ab8bb8}{get\-\_\-area\-\_\-tri} (ndims, p\-\_\-1, p\-\_\-2, p\-\_\-3)
+\begin{DoxyCompactList}\small\item\em brief The function 'get\-\_\-area\-\_\-tri' gets the surface area of a cell defined as a triangle on the sphere. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classfv__grid__tools__mod_afc50b41fc30c3e0f7990440cc6a8b896}{grid\-\_\-area} (nx, ny, ndims, nregions, nested, gridstruct, domain, bd, regional)
+\begin{DoxyCompactList}\small\item\em The subroutine 'grid\-\_\-area' gets the surface area on a grid in lat/lon or xyz coordinates. \end{DoxyCompactList}\item 
+real(kind=R\-\_\-\-G\-R\-I\-D) function \hyperlink{classfv__grid__tools__mod_a2c7315c9bca27cf1f44788c92969d803}{get\-\_\-angle} (ndims, p1, p2, p3, rad)
+\begin{DoxyCompactList}\small\item\em The function 'get\-\_\-angle' gets the angle between 3 points on a sphere in lat/lon or xyz coordinates. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classfv__grid__tools__mod_af7a3501736417ecd39ca2f011e36304b}{mirror\-\_\-grid} (grid\-\_\-global, ng, npx, npy, ndims, nregions)
+\begin{DoxyCompactList}\small\item\em The subroutine 'mirror\-\_\-grid' mirrors the grid across the 0-\/longitude line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=r\-\_\-grid), parameter \hyperlink{classfv__grid__tools__mod_a832e50f3831e3af6951de1a9ed21fe33}{radius} = cnst\-\_\-radius
+\item 
+real(kind=r\-\_\-grid), parameter \hyperlink{classfv__grid__tools__mod_a532808a493ee0706dd78a3383537ad9a}{torad} = pi/180.\-0d0
+\begin{DoxyCompactList}\small\item\em convert to radians \end{DoxyCompactList}\item 
+real(kind=r\-\_\-grid) \hyperlink{classfv__grid__tools__mod_a0f01babe8d2ff57cd92783b91dc4cccd}{csfac}
+\item 
+logical, parameter \hyperlink{classfv__grid__tools__mod_a05413bb63130f63c7356403130c339bd}{debug\-\_\-message\-\_\-size} = .false.
+\item 
+logical \hyperlink{classfv__grid__tools__mod_ab05dbcee57bb7bce7cb38d1b50f8aa69}{write\-\_\-grid\-\_\-char\-\_\-file} = .false.
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!cartesian\-\_\-to\-\_\-spherical@{cartesian\-\_\-to\-\_\-spherical}}
+\index{cartesian\-\_\-to\-\_\-spherical@{cartesian\-\_\-to\-\_\-spherical}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{cartesian\-\_\-to\-\_\-spherical}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-grid\-\_\-tools\-\_\-mod\-::cartesian\-\_\-to\-\_\-spherical (
+\begin{DoxyParamCaption}
+\item[{real(kind=r\-\_\-grid), intent(in)}]{x, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{y, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{z, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{lon, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{lat, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_ac67120f726ca8489dbe875f87c29543f}
+
+
+Definition at line 1922 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+Referenced by rot\-\_\-3d().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!get\-\_\-angle@{get\-\_\-angle}}
+\index{get\-\_\-angle@{get\-\_\-angle}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{get\-\_\-angle}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=R\-\_\-\-G\-R\-I\-D) function fv\-\_\-grid\-\_\-tools\-\_\-mod\-::get\-\_\-angle (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{ndims, }
+\item[{real(kind=r\-\_\-grid), dimension(ndims), intent(in)}]{p1, }
+\item[{real(kind=r\-\_\-grid), dimension(ndims), intent(in)}]{p2, }
+\item[{real(kind=r\-\_\-grid), dimension(ndims), intent(in)}]{p3, }
+\item[{integer, intent(in), optional}]{rad}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_a2c7315c9bca27cf1f44788c92969d803}
+
+
+The function 'get\-\_\-angle' gets the angle between 3 points on a sphere in lat/lon or xyz coordinates. 
+
+Determined by the 'ndims' argument\-: 2=lat/lon, 3=xyz The angle is returned in degrees.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ndims} & 2=lat/lon, 3=xyz \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2261 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::spherical\-\_\-angle(), and spherical\-\_\-to\-\_\-cartesian().
+
+
+
+Referenced by get\-\_\-area\-\_\-tri(), and init\-\_\-grid().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!get\-\_\-area\-\_\-tri@{get\-\_\-area\-\_\-tri}}
+\index{get\-\_\-area\-\_\-tri@{get\-\_\-area\-\_\-tri}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{get\-\_\-area\-\_\-tri}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=R\-\_\-\-G\-R\-I\-D) function fv\-\_\-grid\-\_\-tools\-\_\-mod\-::get\-\_\-area\-\_\-tri (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{ndims, }
+\item[{real(kind=r\-\_\-grid), dimension(ndims), intent(in)}]{p\-\_\-1, }
+\item[{real(kind=r\-\_\-grid), dimension(ndims), intent(in)}]{p\-\_\-2, }
+\item[{real(kind=r\-\_\-grid), dimension(ndims), intent(in)}]{p\-\_\-3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_a6acc2cdd48faa66fba3722b877ab8bb8}
+
+
+brief The function 'get\-\_\-area\-\_\-tri' gets the surface area of a cell defined as a triangle on the sphere. 
+
+The area is computed as the spherical excess \mbox{[}area units are based on the units of radius\mbox{]}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ndims} & 2=lat/lon, 3=xyz \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2018 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+References get\-\_\-angle(), and fv\-\_\-grid\-\_\-utils\-\_\-mod\-::spherical\-\_\-angle().
+
+
+
+Referenced by grid\-\_\-area().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!get\-\_\-symmetry@{get\-\_\-symmetry}}
+\index{get\-\_\-symmetry@{get\-\_\-symmetry}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{get\-\_\-symmetry}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-grid\-\_\-tools\-\_\-mod\-::get\-\_\-symmetry (
+\begin{DoxyParamCaption}
+\item[{real(kind=r\-\_\-grid), dimension(bd\%is\-:bd\%ie+ishift, bd\%js\-:bd\%je+jshift ), intent(in)}]{data\-\_\-in, }
+\item[{real(kind=r\-\_\-grid), dimension(bd\%is\-:bd\%ie+jshift, bd\%js\-:bd\%je+ishift ), intent(out)}]{data\-\_\-out, }
+\item[{integer, intent(in)}]{ishift, }
+\item[{integer, intent(in)}]{jshift, }
+\item[{integer, intent(in)}]{npes\-\_\-x, }
+\item[{integer, intent(in)}]{npes\-\_\-y, }
+\item[{type(domain2d)}]{domain, }
+\item[{integer}]{tile, }
+\item[{integer}]{npx\-\_\-g, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_a53b69d107e7bd2468e963e91ac7af946}
+
+
+Definition at line 306 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+References fv\-\_\-regional\-\_\-mod\-::check().
+
+
+
+Referenced by init\-\_\-grid().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!grid\-\_\-area@{grid\-\_\-area}}
+\index{grid\-\_\-area@{grid\-\_\-area}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{grid\-\_\-area}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-grid\-\_\-tools\-\_\-mod\-::grid\-\_\-area (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{nx, }
+\item[{integer, intent(in)}]{ny, }
+\item[{integer, intent(in)}]{ndims, }
+\item[{integer, intent(in)}]{nregions, }
+\item[{logical, intent(in)}]{nested, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in), target}]{gridstruct, }
+\item[{type(domain2d), intent(inout)}]{domain, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{logical, intent(in)}]{regional}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_afc50b41fc30c3e0f7990440cc6a8b896}
+
+
+The subroutine 'grid\-\_\-area' gets the surface area on a grid in lat/lon or xyz coordinates. 
+
+Determined by 'ndims' argument\-: 2=lat/lon, 3=xyz) The area is returned in m$^\wedge$2 on a unit sphere. 
+
+Definition at line 2045 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::get\-\_\-area(), and get\-\_\-area\-\_\-tri().
+
+
+
+Referenced by init\-\_\-grid().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!init\-\_\-grid@{init\-\_\-grid}}
+\index{init\-\_\-grid@{init\-\_\-grid}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{init\-\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-grid\-\_\-tools\-\_\-mod\-::init\-\_\-grid (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), intent(inout), target}]{Atm, }
+\item[{character(len=80), intent(in)}]{grid\-\_\-name, }
+\item[{character(len=120), intent(in)}]{grid\-\_\-file, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{integer, intent(in)}]{ndims, }
+\item[{integer, intent(in)}]{nregions, }
+\item[{integer, intent(in)}]{ng}
+\end{DoxyParamCaption}
+)}\label{classfv__grid__tools__mod_ad44c07c95a2f28e62399da37867817a4}
+
+
+The subroutine 'init\-\_\-grid' reads the grid from the input file and sets up grid descriptors. 
+
+
+
+Definition at line 529 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::cell\-\_\-center2(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::direct\-\_\-transform(), get\-\_\-angle(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::get\-\_\-area(), get\-\_\-symmetry(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::gnomonic\-\_\-grids(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::great\-\_\-circle\-\_\-dist(), grid\-\_\-area(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::mid\-\_\-pt\-\_\-sphere(), mirror\-\_\-grid(), read\-\_\-grid(), setup\-\_\-aligned\-\_\-nest(), setup\-\_\-cartesian(), sorted\-\_\-index\-\_\-mod\-::sorted\-\_\-inta(), and sorted\-\_\-index\-\_\-mod\-::sorted\-\_\-intb().
+
+
+
+Referenced by fv\-\_\-control\-\_\-mod\-::fv\-\_\-init().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!mirror\-\_\-grid@{mirror\-\_\-grid}}
+\index{mirror\-\_\-grid@{mirror\-\_\-grid}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{mirror\-\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-grid\-\_\-tools\-\_\-mod\-::mirror\-\_\-grid (
+\begin{DoxyParamCaption}
+\item[{real(kind=r\-\_\-grid), dimension(1-\/ng\-:npx  +ng,1-\/ng\-:npy  +ng,ndims,1\-:nregions), intent(inout)}]{grid\-\_\-global, }
+\item[{integer, intent(in)}]{ng, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{ndims, }
+\item[{integer, intent(in)}]{nregions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_af7a3501736417ecd39ca2f011e36304b}
+
+
+The subroutine 'mirror\-\_\-grid' mirrors the grid across the 0-\/longitude line. 
+
+
+
+Definition at line 2289 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+References rot\-\_\-3d().
+
+
+
+Referenced by init\-\_\-grid().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!read\-\_\-grid@{read\-\_\-grid}}
+\index{read\-\_\-grid@{read\-\_\-grid}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{read\-\_\-grid}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-grid\-\_\-tools\-\_\-mod\-::read\-\_\-grid (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), intent(inout), target}]{Atm, }
+\item[{character(len=$\ast$), intent(in)}]{grid\-\_\-file, }
+\item[{integer, intent(in)}]{ndims, }
+\item[{integer, intent(in)}]{nregions, }
+\item[{integer, intent(in)}]{ng}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_a0cd79c60df097353dc6306eafbf5c4b5}
+
+
+The subroutine 'read\-\_\-grid' reads the grid from the mosaic grid file. 
+
+
+
+Definition at line 174 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+Referenced by init\-\_\-grid().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!rot\-\_\-3d@{rot\-\_\-3d}}
+\index{rot\-\_\-3d@{rot\-\_\-3d}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{rot\-\_\-3d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-grid\-\_\-tools\-\_\-mod\-::rot\-\_\-3d (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{axis, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{x1in, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{y1in, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{z1in, }
+\item[{real(kind=r\-\_\-grid), intent(inout)}]{angle, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{x2out, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{y2out, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{z2out, }
+\item[{integer, intent(in), optional}]{degrees, }
+\item[{integer, intent(in), optional}]{convert}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_adbf51ca68c05a220a30c0872b301607e}
+
+
+The subroutine 'rot\-\_\-3d' rotates points on a sphere in xyz coordinates. 
+
+Converts angle from degrees to radians if necessary
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em axis} & axis of rotation 1=x, 2=y, 3=z\\
+\hline
+\mbox{\tt in,out}  & {\em angle} & angle to rotate in radians\\
+\hline
+\mbox{\tt in}  & {\em degrees} & if present convert angle from degrees to radians\\
+\hline
+\mbox{\tt in}  & {\em convert} & if present convert input point from spherical to cartesian, rotate, and convert back \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1955 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+References cartesian\-\_\-to\-\_\-spherical(), and spherical\-\_\-to\-\_\-cartesian().
+
+
+
+Referenced by mirror\-\_\-grid().
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!spherical\-\_\-to\-\_\-cartesian@{spherical\-\_\-to\-\_\-cartesian}}
+\index{spherical\-\_\-to\-\_\-cartesian@{spherical\-\_\-to\-\_\-cartesian}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{spherical\-\_\-to\-\_\-cartesian}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-grid\-\_\-tools\-\_\-mod\-::spherical\-\_\-to\-\_\-cartesian (
+\begin{DoxyParamCaption}
+\item[{real(kind=r\-\_\-grid), intent(in)}]{lon, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{lat, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{r, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{x, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{y, }
+\item[{real(kind=r\-\_\-grid), intent(out)}]{z}
+\end{DoxyParamCaption}
+)}\label{classfv__grid__tools__mod_a3b343a8e46f50390dadd2b6fddabf244}
+
+
+Definition at line 1940 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+Referenced by get\-\_\-angle(), test\-\_\-cases\-\_\-mod\-::get\-\_\-unit\-\_\-vector(), and rot\-\_\-3d().
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!csfac@{csfac}}
+\index{csfac@{csfac}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{csfac}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid) fv\-\_\-grid\-\_\-tools\-\_\-mod\-::csfac\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_a0f01babe8d2ff57cd92783b91dc4cccd}
+
+
+Definition at line 163 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!debug\-\_\-message\-\_\-size@{debug\-\_\-message\-\_\-size}}
+\index{debug\-\_\-message\-\_\-size@{debug\-\_\-message\-\_\-size}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{debug\-\_\-message\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}logical, parameter fv\-\_\-grid\-\_\-tools\-\_\-mod\-::debug\-\_\-message\-\_\-size = .false.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_a05413bb63130f63c7356403130c339bd}
+
+
+Definition at line 165 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!missing@{missing}}
+\index{missing@{missing}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{missing}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), parameter, public fv\-\_\-grid\-\_\-tools\-\_\-mod\-::missing = 1.d25}\label{classfv__grid__tools__mod_acb906ec796b589b9fb688bbbe1bee3c8}
+
+
+Definition at line 161 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!radius@{radius}}
+\index{radius@{radius}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{radius}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), parameter fv\-\_\-grid\-\_\-tools\-\_\-mod\-::radius = cnst\-\_\-radius\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_a832e50f3831e3af6951de1a9ed21fe33}
+
+
+Definition at line 157 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!todeg@{todeg}}
+\index{todeg@{todeg}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{todeg}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), parameter, public fv\-\_\-grid\-\_\-tools\-\_\-mod\-::todeg = 180.\-0d0/pi}\label{classfv__grid__tools__mod_a8b3bcc75f621d290a7cfa0b736983e3f}
+
+
+convert to degrees 
+
+
+
+Definition at line 159 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!torad@{torad}}
+\index{torad@{torad}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{torad}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), parameter fv\-\_\-grid\-\_\-tools\-\_\-mod\-::torad = pi/180.\-0d0\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_a532808a493ee0706dd78a3383537ad9a}
+
+
+convert to radians 
+
+
+
+Definition at line 160 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+\index{fv\-\_\-grid\-\_\-tools\-\_\-mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}!write\-\_\-grid\-\_\-char\-\_\-file@{write\-\_\-grid\-\_\-char\-\_\-file}}
+\index{write\-\_\-grid\-\_\-char\-\_\-file@{write\-\_\-grid\-\_\-char\-\_\-file}!fv_grid_tools_mod@{fv\-\_\-grid\-\_\-tools\-\_\-mod}}
+\subsubsection[{write\-\_\-grid\-\_\-char\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-grid\-\_\-tools\-\_\-mod\-::write\-\_\-grid\-\_\-char\-\_\-file = .false.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__grid__tools__mod_ab05dbcee57bb7bce7cb38d1b50f8aa69}
+
+
+Definition at line 166 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/tools/\hyperlink{fv__grid__tools_8F90}{fv\-\_\-grid\-\_\-tools.\-F90}\end{DoxyCompactItemize}

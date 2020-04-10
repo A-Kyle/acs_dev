@@ -1,0 +1,313 @@
+\section{multi\-\_\-gases\-\_\-mod Module Reference}
+\label{classmulti__gases__mod}\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}}
+
+
+The module 'multi\-\_\-gases' peforms multi constitutents computations.  
+
+
+
+
+Collaboration diagram for multi\-\_\-gases\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classmulti__gases__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmulti__gases__mod_afbd34020a75694f0ac19e85dbb8eda6f}{multi\-\_\-gases\-\_\-init} (ngas, nwat)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_a91649465dfa64dee4a0aa4db33496b34}{virq} (q)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_a8af118271aa8e7a233066a10924e0d05}{virq\-\_\-nodq} (q)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_ab6332eff515faa91fd8560fff744f704}{virq\-\_\-max} (q, qmin)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_a74a40323e9be4271dffedfbb671c938c}{virq\-\_\-qpz} (q, qpz)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_ab87c41f9b4f50367c76dc2e2eb4f1463}{virqd} (q)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_a6b697df6baca53e2991067cbccd96633}{vicpqd} (q)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_a99afa1ce63a683c4e24eaf27071fde67}{vicpqd\-\_\-qpz} (q, qpz)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_a5e1943c9700f309e8ae9f475588f3b4c}{vicvqd} (q)
+\item 
+pure real function, public \hyperlink{classmulti__gases__mod_acb1e93aa8c8cb0d6bd5eff19d2a79885}{vicvqd\-\_\-qpz} (q, qpz)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer, public \hyperlink{classmulti__gases__mod_ada7f0ffe52c60fbe7f6cafd04490c4d8}{num\-\_\-gas}
+\item 
+integer, public \hyperlink{classmulti__gases__mod_a15e4b81a202b85b77802dce9c489b1a9}{ind\-\_\-gas}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classmulti__gases__mod_acdbd2cbc0014ad073f6daadeffc5cfce}{ri}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classmulti__gases__mod_a85983a7159ef293fa1c2d65647a66400}{cpi}
+\item 
+real, dimension(\-:), \\*
+allocatable, public \hyperlink{classmulti__gases__mod_a39e5146fa83f5edbe8479cd345968d9c}{vir}
+\item 
+real, dimension(\-:), \\*
+allocatable, public \hyperlink{classmulti__gases__mod_a3e01739eaf6bc27d9db8770ec4c9cd69}{vicp}
+\item 
+real, dimension(\-:), \\*
+allocatable, public \hyperlink{classmulti__gases__mod_a4a8d9ed9352b8bfd8daa59b36ab2430f}{vicv}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer, private \hyperlink{classmulti__gases__mod_a927f93aad16256efbf50824dc3897194}{num\-\_\-wat}
+\item 
+integer, private \hyperlink{classmulti__gases__mod_ac1567ae48756e1ad1df7f99d1a86592a}{sphum}
+\item 
+integer, private \hyperlink{classmulti__gases__mod_a0e5f32ab60bce2b41eda0ae1e1f47bee}{sphump1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'multi\-\_\-gases' peforms multi constitutents computations. 
+
+\begin{DoxyAuthor}{Author}
+H.-\/\-M. H. Juang, N\-O\-A\-A/\-N\-W\-S/\-N\-C\-E\-P/\-E\-M\-C 
+\end{DoxyAuthor}
+
+
+Definition at line 25 of file multi\-\_\-gases.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!multi\-\_\-gases\-\_\-init@{multi\-\_\-gases\-\_\-init}}
+\index{multi\-\_\-gases\-\_\-init@{multi\-\_\-gases\-\_\-init}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{multi\-\_\-gases\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public multi\-\_\-gases\-\_\-mod\-::multi\-\_\-gases\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{ngas, }
+\item[{integer, intent(in)}]{nwat}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_afbd34020a75694f0ac19e85dbb8eda6f}
+
+
+Definition at line 69 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by fv\-\_\-control\-\_\-mod\-::run\-\_\-setup().
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!vicpqd@{vicpqd}}
+\index{vicpqd@{vicpqd}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{vicpqd}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::vicpqd (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_a6b697df6baca53e2991067cbccd96633}
+
+
+Definition at line 238 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by fv\-\_\-nwp\-\_\-nudge\-\_\-mod\-::breed\-\_\-slp\-\_\-inline(), fv\-\_\-diagnostics\-\_\-mod\-::eqv\-\_\-pot(), fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics(), fv\-\_\-sg\-\_\-mod\-::fv\-\_\-subgrid\-\_\-z(), fv\-\_\-update\-\_\-phys\-\_\-mod\-::fv\-\_\-update\-\_\-phys(), fv\-\_\-mapz\-\_\-mod\-::lagrangian\-\_\-to\-\_\-eulerian(), fv\-\_\-mapz\-\_\-mod\-::moist\-\_\-cp(), nh\-\_\-utils\-\_\-mod\-::nest\-\_\-halo\-\_\-nh(), init\-\_\-hydro\-\_\-mod\-::p\-\_\-var(), fv\-\_\-nwp\-\_\-nudge\-\_\-mod\-::ps\-\_\-nudging(), external\-\_\-ic\-\_\-mod\-::remap\-\_\-xyz(), and fv\-\_\-diagnostics\-\_\-mod\-::rh\-\_\-calc().
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!vicpqd\-\_\-qpz@{vicpqd\-\_\-qpz}}
+\index{vicpqd\-\_\-qpz@{vicpqd\-\_\-qpz}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{vicpqd\-\_\-qpz}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::vicpqd\-\_\-qpz (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q, }
+\item[{real, intent(in)}]{qpz}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_a99afa1ce63a683c4e24eaf27071fde67}
+
+
+Definition at line 258 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by fv\-\_\-cmp\-\_\-mod\-::fv\-\_\-sat\-\_\-adj(), and fv\-\_\-sg\-\_\-mod\-::neg\-\_\-adj3().
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!vicvqd@{vicvqd}}
+\index{vicvqd@{vicvqd}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{vicvqd}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::vicvqd (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_a5e1943c9700f309e8ae9f475588f3b4c}
+
+
+Definition at line 279 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by fv\-\_\-mapz\-\_\-mod\-::compute\-\_\-total\-\_\-energy(), dyn\-\_\-core\-\_\-mod\-::dyn\-\_\-core(), fv\-\_\-sg\-\_\-mod\-::fv\-\_\-subgrid\-\_\-z(), fv\-\_\-mapz\-\_\-mod\-::lagrangian\-\_\-to\-\_\-eulerian(), fv\-\_\-mapz\-\_\-mod\-::moist\-\_\-cv(), nh\-\_\-utils\-\_\-mod\-::nest\-\_\-halo\-\_\-nh(), and fv\-\_\-diagnostics\-\_\-mod\-::nh\-\_\-total\-\_\-energy().
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!vicvqd\-\_\-qpz@{vicvqd\-\_\-qpz}}
+\index{vicvqd\-\_\-qpz@{vicvqd\-\_\-qpz}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{vicvqd\-\_\-qpz}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::vicvqd\-\_\-qpz (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q, }
+\item[{real, intent(in)}]{qpz}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_acb1e93aa8c8cb0d6bd5eff19d2a79885}
+
+
+Definition at line 299 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by fv\-\_\-cmp\-\_\-mod\-::fv\-\_\-sat\-\_\-adj(), and fv\-\_\-sg\-\_\-mod\-::neg\-\_\-adj3().
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!virq@{virq}}
+\index{virq@{virq}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{virq}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::virq (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_a91649465dfa64dee4a0aa4db33496b34}
+
+
+Definition at line 135 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by atmosphere\-\_\-mod\-::adiabatic\-\_\-init(), atmosphere\-\_\-mod\-::atmosphere\-\_\-get\-\_\-bottom\-\_\-layer(), fv\-\_\-diagnostics\-\_\-mod\-::bunkers\-\_\-vector(), fv\-\_\-diagnostics\-\_\-mod\-::dbzcalc(), fv\-\_\-diagnostics\-\_\-mod\-::eqv\-\_\-pot(), fv\-\_\-restart\-\_\-mod\-::fill\-\_\-nested\-\_\-grid\-\_\-data(), fv\-\_\-diagnostics\-\_\-mod\-::fv\-\_\-diag(), fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics(), fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::fv\-\_\-nggps\-\_\-diag(), fv\-\_\-nwp\-\_\-nudge\-\_\-mod\-::fv\-\_\-nwp\-\_\-nudge(), fv\-\_\-sg\-\_\-mod\-::fv\-\_\-subgrid\-\_\-z(), atmosphere\-\_\-mod\-::get\-\_\-bottom\-\_\-mass(), fv\-\_\-diagnostics\-\_\-mod\-::get\-\_\-height\-\_\-field(), fv\-\_\-diagnostics\-\_\-mod\-::helicity\-\_\-relative(), fv\-\_\-diagnostics\-\_\-mod\-::helicity\-\_\-relative\-\_\-caps(), fv\-\_\-mapz\-\_\-mod\-::lagrangian\-\_\-to\-\_\-eulerian(), fv\-\_\-sg\-\_\-mod\-::neg\-\_\-adj3(), init\-\_\-hydro\-\_\-mod\-::p\-\_\-var(), fv\-\_\-sg\-\_\-mod\-::qsmith(), external\-\_\-ic\-\_\-mod\-::remap\-\_\-scalar(), external\-\_\-ic\-\_\-mod\-::remap\-\_\-scalar\-\_\-ec(), external\-\_\-ic\-\_\-mod\-::remap\-\_\-scalar\-\_\-nggps(), external\-\_\-ic\-\_\-mod\-::remap\-\_\-xyz(), fv\-\_\-mapz\-\_\-mod\-::rst\-\_\-remap(), and fv\-\_\-diagnostics\-\_\-mod\-::updraft\-\_\-helicity().
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!virq\-\_\-max@{virq\-\_\-max}}
+\index{virq\-\_\-max@{virq\-\_\-max}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{virq\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::virq\-\_\-max (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q, }
+\item[{real, intent(in)}]{qmin}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_ab6332eff515faa91fd8560fff744f704}
+
+
+Definition at line 174 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmos\-\_\-phys\-\_\-driver\-\_\-statein().
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!virq\-\_\-nodq@{virq\-\_\-nodq}}
+\index{virq\-\_\-nodq@{virq\-\_\-nodq}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{virq\-\_\-nodq}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::virq\-\_\-nodq (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_a8af118271aa8e7a233066a10924e0d05}
+
+
+Definition at line 155 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!virq\-\_\-qpz@{virq\-\_\-qpz}}
+\index{virq\-\_\-qpz@{virq\-\_\-qpz}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{virq\-\_\-qpz}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::virq\-\_\-qpz (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q, }
+\item[{real, intent(in)}]{qpz}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_a74a40323e9be4271dffedfbb671c938c}
+
+
+Definition at line 196 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by fv\-\_\-cmp\-\_\-mod\-::fv\-\_\-sat\-\_\-adj(), and fv\-\_\-sg\-\_\-mod\-::fv\-\_\-subgrid\-\_\-z().
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!virqd@{virqd}}
+\index{virqd@{virqd}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{virqd}]{\setlength{\rightskip}{0pt plus 5cm}pure real function, public multi\-\_\-gases\-\_\-mod\-::virqd (
+\begin{DoxyParamCaption}
+\item[{real, dimension({\bf num\-\_\-gas}), intent(in)}]{q}
+\end{DoxyParamCaption}
+)}\label{classmulti__gases__mod_ab87c41f9b4f50367c76dc2e2eb4f1463}
+
+
+Definition at line 218 of file multi\-\_\-gases.\-F90.
+
+
+
+Referenced by fv\-\_\-nwp\-\_\-nudge\-\_\-mod\-::breed\-\_\-slp\-\_\-inline(), dyn\-\_\-core\-\_\-mod\-::dyn\-\_\-core(), fv\-\_\-diagnostics\-\_\-mod\-::eqv\-\_\-pot(), fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics(), fv\-\_\-sg\-\_\-mod\-::fv\-\_\-subgrid\-\_\-z(), fv\-\_\-update\-\_\-phys\-\_\-mod\-::fv\-\_\-update\-\_\-phys(), fv\-\_\-mapz\-\_\-mod\-::lagrangian\-\_\-to\-\_\-eulerian(), init\-\_\-hydro\-\_\-mod\-::p\-\_\-var(), fv\-\_\-nwp\-\_\-nudge\-\_\-mod\-::ps\-\_\-nudging(), external\-\_\-ic\-\_\-mod\-::remap\-\_\-xyz(), and fv\-\_\-diagnostics\-\_\-mod\-::rh\-\_\-calc().
+
+
+
+\subsection{Member Data Documentation}
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!cpi@{cpi}}
+\index{cpi@{cpi}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{cpi}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable multi\-\_\-gases\-\_\-mod\-::cpi}\label{classmulti__gases__mod_a85983a7159ef293fa1c2d65647a66400}
+
+
+Definition at line 49 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!ind\-\_\-gas@{ind\-\_\-gas}}
+\index{ind\-\_\-gas@{ind\-\_\-gas}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{ind\-\_\-gas}]{\setlength{\rightskip}{0pt plus 5cm}integer, public multi\-\_\-gases\-\_\-mod\-::ind\-\_\-gas}\label{classmulti__gases__mod_a15e4b81a202b85b77802dce9c489b1a9}
+
+
+Definition at line 45 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!num\-\_\-gas@{num\-\_\-gas}}
+\index{num\-\_\-gas@{num\-\_\-gas}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{num\-\_\-gas}]{\setlength{\rightskip}{0pt plus 5cm}integer, public multi\-\_\-gases\-\_\-mod\-::num\-\_\-gas}\label{classmulti__gases__mod_ada7f0ffe52c60fbe7f6cafd04490c4d8}
+
+
+Definition at line 44 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!num\-\_\-wat@{num\-\_\-wat}}
+\index{num\-\_\-wat@{num\-\_\-wat}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{num\-\_\-wat}]{\setlength{\rightskip}{0pt plus 5cm}integer, private multi\-\_\-gases\-\_\-mod\-::num\-\_\-wat\hspace{0.3cm}{\ttfamily [private]}}\label{classmulti__gases__mod_a927f93aad16256efbf50824dc3897194}
+
+
+Definition at line 46 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!ri@{ri}}
+\index{ri@{ri}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{ri}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable multi\-\_\-gases\-\_\-mod\-::ri}\label{classmulti__gases__mod_acdbd2cbc0014ad073f6daadeffc5cfce}
+
+
+Definition at line 48 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!sphum@{sphum}}
+\index{sphum@{sphum}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{sphum}]{\setlength{\rightskip}{0pt plus 5cm}integer, private multi\-\_\-gases\-\_\-mod\-::sphum\hspace{0.3cm}{\ttfamily [private]}}\label{classmulti__gases__mod_ac1567ae48756e1ad1df7f99d1a86592a}
+
+
+Definition at line 47 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!sphump1@{sphump1}}
+\index{sphump1@{sphump1}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{sphump1}]{\setlength{\rightskip}{0pt plus 5cm}integer, private multi\-\_\-gases\-\_\-mod\-::sphump1\hspace{0.3cm}{\ttfamily [private]}}\label{classmulti__gases__mod_a0e5f32ab60bce2b41eda0ae1e1f47bee}
+
+
+Definition at line 47 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!vicp@{vicp}}
+\index{vicp@{vicp}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{vicp}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable, public multi\-\_\-gases\-\_\-mod\-::vicp}\label{classmulti__gases__mod_a3e01739eaf6bc27d9db8770ec4c9cd69}
+
+
+Definition at line 51 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!vicv@{vicv}}
+\index{vicv@{vicv}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{vicv}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable, public multi\-\_\-gases\-\_\-mod\-::vicv}\label{classmulti__gases__mod_a4a8d9ed9352b8bfd8daa59b36ab2430f}
+
+
+Definition at line 52 of file multi\-\_\-gases.\-F90.
+
+\index{multi\-\_\-gases\-\_\-mod@{multi\-\_\-gases\-\_\-mod}!vir@{vir}}
+\index{vir@{vir}!multi_gases_mod@{multi\-\_\-gases\-\_\-mod}}
+\subsubsection[{vir}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable, public multi\-\_\-gases\-\_\-mod\-::vir}\label{classmulti__gases__mod_a39e5146fa83f5edbe8479cd345968d9c}
+
+
+Definition at line 50 of file multi\-\_\-gases.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{multi__gases_8F90}{multi\-\_\-gases.\-F90}\end{DoxyCompactItemize}

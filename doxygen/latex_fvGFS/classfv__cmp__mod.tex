@@ -1,0 +1,547 @@
+\section{fv\-\_\-cmp\-\_\-mod Module Reference}
+\label{classfv__cmp__mod}\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}}
+
+
+The module 'fv\-\_\-cmp' implements the fast procesesses in the G\-F\-D\-L microphysics $>$  
+
+
+
+
+Collaboration diagram for fv\-\_\-cmp\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classfv__cmp__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__cmp__mod_a4316f04a563345186c026003ed5ebe96}{fv\-\_\-sat\-\_\-adj} (mdt, zvir, is, ie, js, je, ng, hydrostatic, consv\-\_\-te, te0,
+\begin{DoxyCompactList}\small\item\em The subroutine 'fv\-\_\-sat\-\_\-adj' performs the fast processes in the G\-F\-D\-L microphysics. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classfv__cmp__mod_a5ce7347205d43a859b0316a584642f4d}{qs\-\_\-init} (kmp)
+\begin{DoxyCompactList}\small\item\em The subroutine 'qs\-\_\-init' initializes lookup tables for the saturation mixing ratio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+real function \hyperlink{classfv__cmp__mod_a9168ab47a84d56e7dfc5529472be0c71}{wqs1} (ta, den)
+\begin{DoxyCompactList}\small\item\em the function 'wqs1' computes the saturated specific humidity for table ii \end{DoxyCompactList}\item 
+real function \hyperlink{classfv__cmp__mod_a328511270fbc27b0b736bab8ac486967}{iqs1} (ta, den)
+\begin{DoxyCompactList}\small\item\em the function 'wqs1' computes the saturated specific humidity for table iii \end{DoxyCompactList}\item 
+real function \hyperlink{classfv__cmp__mod_a21a51056703b3ebc85fb3d3e3e3f23aa}{wqs2} (ta, den, dqdt)
+\begin{DoxyCompactList}\small\item\em The function 'wqs2'computes the gradient of saturated specific humidity for table ii. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classfv__cmp__mod_ac016ceb177d822853885183c1f4c724f}{wqs2\-\_\-vect} (is, ie, ta, den, wqsat, dqdt)
+\begin{DoxyCompactList}\small\item\em The function wqs2\-\_\-vect computes the gradient of saturated specific humidity for table ii. It is the same as \char`\"{}wqs2\char`\"{}, but written as vector function. \end{DoxyCompactList}\item 
+real function \hyperlink{classfv__cmp__mod_aca9c0d54335dbc33cc56cb74006fed26}{iqs2} (ta, den, dqdt)
+\begin{DoxyCompactList}\small\item\em The function 'iqs2' computes the gradient of saturated specific humidity for table iii. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classfv__cmp__mod_a7d7f969ce1e9d84aae4a911ead816e96}{qs\-\_\-table} (n)
+\item 
+subroutine \hyperlink{classfv__cmp__mod_a416061516bcffc2cab55e9a801b6d1c2}{qs\-\_\-tablew} (n)
+\item 
+subroutine \hyperlink{classfv__cmp__mod_a27624ed32cc760d05eb6faa1f748970e}{qs\-\_\-table2} (n)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real, parameter \hyperlink{classfv__cmp__mod_a7380eb8077e00279e9bb042e5a69f39b}{cp\-\_\-vap} = 4.\-0 $\ast$ rvgas
+\begin{DoxyCompactList}\small\item\em 1846.\-0, heat capacity of water vapor at constant pressure \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_a6b7e31c99aaa43c3c88e5f148a0ada8c}{cv\-\_\-air} = cp\-\_\-air -\/ rdgas
+\begin{DoxyCompactList}\small\item\em 717.\-55, heat capacity of dry air at constant volume \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_a1aff52f3ef1654b16d21ca8deade4099}{cv\-\_\-vap} = 3.\-0 $\ast$ rvgas
+\begin{DoxyCompactList}\small\item\em 1384.\-5, heat capacity of water vapor at constant volume \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_a2e2c6145d3f4ea50036930131b202ca4}{c\-\_\-ice} = 1972.\-0
+\begin{DoxyCompactList}\small\item\em gfdl\-: heat capacity of ice at -\/ 15 deg c \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_ae3486a6a9602d9d6d55f4935aa0ffb0b}{c\-\_\-liq} = 4185.\-5
+\begin{DoxyCompactList}\small\item\em gfdl\-: heat capacity of liquid at 15 deg c \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_abc256ef2779554c3fcc3d90607dbe03d}{dc\-\_\-vap} = \hyperlink{classfv__cmp__mod_a7380eb8077e00279e9bb042e5a69f39b}{cp\-\_\-vap} -\/ \hyperlink{classfv__cmp__mod_ae3486a6a9602d9d6d55f4935aa0ffb0b}{c\-\_\-liq}
+\item 
+real, parameter \hyperlink{classfv__cmp__mod_afe0a80520aff4b3aa44554dcbc54ccda}{dc\-\_\-ice} = \hyperlink{classfv__cmp__mod_ae3486a6a9602d9d6d55f4935aa0ffb0b}{c\-\_\-liq} -\/ \hyperlink{classfv__cmp__mod_a2e2c6145d3f4ea50036930131b202ca4}{c\-\_\-ice}
+\begin{DoxyCompactList}\small\item\em 2213.\-5, isobaric heating / colling \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_a7ad671e67cd91ec927c0392e32bf5d7e}{tice} = 273.\-16
+\begin{DoxyCompactList}\small\item\em freezing temperature \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_a4fe62a9a87a3aa5466fa0afe5ceb070a}{t\-\_\-wfr} = \hyperlink{classfv__cmp__mod_a7ad671e67cd91ec927c0392e32bf5d7e}{tice} -\/ 40.
+\begin{DoxyCompactList}\small\item\em homogeneous freezing temperature \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_ac555be1714d90016ac1b76bd0274fe4d}{lv0} = hlv -\/ \hyperlink{classfv__cmp__mod_abc256ef2779554c3fcc3d90607dbe03d}{dc\-\_\-vap} $\ast$ \hyperlink{classfv__cmp__mod_a7ad671e67cd91ec927c0392e32bf5d7e}{tice}
+\begin{DoxyCompactList}\small\item\em 3.\-13905782e6, evaporation latent heat coefficient at 0 deg k \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_aaec2280440ca71e72b152db42e5c4504}{li00} = hlf -\/ \hyperlink{classfv__cmp__mod_afe0a80520aff4b3aa44554dcbc54ccda}{dc\-\_\-ice} $\ast$ \hyperlink{classfv__cmp__mod_a7ad671e67cd91ec927c0392e32bf5d7e}{tice}
+\item 
+real(kind=r\-\_\-grid), parameter \hyperlink{classfv__cmp__mod_a92f0cf9784defdd98bcf50329e7f6e8b}{e00} = 611.\-21
+\begin{DoxyCompactList}\small\item\em ifs\-: saturation vapor pressure at 0 deg c \end{DoxyCompactList}\item 
+real(kind=r\-\_\-grid), parameter \hyperlink{classfv__cmp__mod_adb9c6f0494c4e168f9730598a667d15a}{d2ice} = \hyperlink{classfv__cmp__mod_abc256ef2779554c3fcc3d90607dbe03d}{dc\-\_\-vap} + \hyperlink{classfv__cmp__mod_afe0a80520aff4b3aa44554dcbc54ccda}{dc\-\_\-ice}
+\item 
+real(kind=r\-\_\-grid), parameter \hyperlink{classfv__cmp__mod_a9248700d4484999739228f7448428746}{li2} = \hyperlink{classfv__cmp__mod_ac555be1714d90016ac1b76bd0274fe4d}{lv0} + \hyperlink{classfv__cmp__mod_aaec2280440ca71e72b152db42e5c4504}{li00}
+\begin{DoxyCompactList}\small\item\em 2.\-86799816e6, sublimation latent heat coefficient at 0 deg k \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__cmp__mod_aad5bf68c9e846169feaa2355a29ec7ae}{lat2} = (hlv + hlf) $\ast$$\ast$ 2
+\begin{DoxyCompactList}\small\item\em used in bigg mechanism \end{DoxyCompactList}\item 
+real \hyperlink{classfv__cmp__mod_ac3f9f88a1d49ff1e327bbb8005f9228a}{d0\-\_\-vap}
+\begin{DoxyCompactList}\small\item\em the same as dc\-\_\-vap, except that cp\-\_\-vap can be cp\-\_\-vap or cv\-\_\-vap \end{DoxyCompactList}\item 
+real \hyperlink{classfv__cmp__mod_a7bcead849f7cab25637af6d3b1db833a}{lv00}
+\begin{DoxyCompactList}\small\item\em the same as lv0, except that cp\-\_\-vap can be cp\-\_\-vap or cv\-\_\-vap \end{DoxyCompactList}\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__cmp__mod_a7a34f8d4c0eefd0e66de45d280bb0ba4}{table}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__cmp__mod_a16427443f0f4cc4376e7a7af841cc03d}{table2}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__cmp__mod_a308d1b16faf8b0f7c53fb4ace71f326e}{tablew}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__cmp__mod_a39a88a1e472449c87b0c18c5be0682a2}{des2}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__cmp__mod_ae014434a6d863ca10c5961edfd866425}{desw}
+\item 
+logical \hyperlink{classfv__cmp__mod_af9c43700533ec209e98ed9aaea7220ad}{mp\-\_\-initialized} = .false.
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'fv\-\_\-cmp' implements the fast procesesses in the G\-F\-D\-L microphysics $>$ 
+
+\begin{DoxyAuthor}{Author}
+Shian-\/\-Jiann Lin, Linjiong Zhou 
+\end{DoxyAuthor}
+
+
+Definition at line 29 of file fv\-\_\-cmp.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!fv\-\_\-sat\-\_\-adj@{fv\-\_\-sat\-\_\-adj}}
+\index{fv\-\_\-sat\-\_\-adj@{fv\-\_\-sat\-\_\-adj}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{fv\-\_\-sat\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-cmp\-\_\-mod\-::fv\-\_\-sat\-\_\-adj (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{mdt, }
+\item[{real, intent(in)}]{zvir, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{ng, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{logical, intent(in)}]{consv\-\_\-te, }
+\item[{real, dimension (is -\/ ng\-:ie + ng, js -\/ ng\-:je + ng), intent(out)}]{te0}
+\end{DoxyParamCaption}
+)}\label{classfv__cmp__mod_a4316f04a563345186c026003ed5ebe96}
+
+
+The subroutine 'fv\-\_\-sat\-\_\-adj' performs the fast processes in the G\-F\-D\-L microphysics. 
+
+This is designed for single-\/moment 6-\/class cloud microphysics schemes. It handles the heat release due to in situ phase changes. 
+
+Definition at line 122 of file fv\-\_\-cmp.\-F90.
+
+
+
+References iqs1(), iqs2(), multi\-\_\-gases\-\_\-mod\-::vicpqd\-\_\-qpz(), multi\-\_\-gases\-\_\-mod\-::vicvqd\-\_\-qpz(), multi\-\_\-gases\-\_\-mod\-::virq\-\_\-qpz(), wqs1(), and wqs2\-\_\-vect().
+
+
+
+Referenced by fv\-\_\-mapz\-\_\-mod\-::lagrangian\-\_\-to\-\_\-eulerian().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!iqs1@{iqs1}}
+\index{iqs1@{iqs1}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{iqs1}]{\setlength{\rightskip}{0pt plus 5cm}real function fv\-\_\-cmp\-\_\-mod\-::iqs1 (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{ta, }
+\item[{real, intent(in)}]{den}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a328511270fbc27b0b736bab8ac486967}
+
+
+the function 'wqs1' computes the saturated specific humidity for table iii 
+
+
+
+Definition at line 902 of file fv\-\_\-cmp.\-F90.
+
+
+
+Referenced by fv\-\_\-sat\-\_\-adj().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!iqs2@{iqs2}}
+\index{iqs2@{iqs2}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{iqs2}]{\setlength{\rightskip}{0pt plus 5cm}real function fv\-\_\-cmp\-\_\-mod\-::iqs2 (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{ta, }
+\item[{real, intent(in)}]{den, }
+\item[{real, intent(out)}]{dqdt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_aca9c0d54335dbc33cc56cb74006fed26}
+
+
+The function 'iqs2' computes the gradient of saturated specific humidity for table iii. 
+
+
+
+Definition at line 996 of file fv\-\_\-cmp.\-F90.
+
+
+
+Referenced by fv\-\_\-sat\-\_\-adj().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!qs\-\_\-init@{qs\-\_\-init}}
+\index{qs\-\_\-init@{qs\-\_\-init}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{qs\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-cmp\-\_\-mod\-::qs\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{kmp}
+\end{DoxyParamCaption}
+)}\label{classfv__cmp__mod_a5ce7347205d43a859b0316a584642f4d}
+
+
+The subroutine 'qs\-\_\-init' initializes lookup tables for the saturation mixing ratio. 
+
+
+
+Definition at line 1028 of file fv\-\_\-cmp.\-F90.
+
+
+
+References qs\-\_\-table(), qs\-\_\-table2(), and qs\-\_\-tablew().
+
+
+
+Referenced by fv\-\_\-mapz\-\_\-mod\-::lagrangian\-\_\-to\-\_\-eulerian().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!qs\-\_\-table@{qs\-\_\-table}}
+\index{qs\-\_\-table@{qs\-\_\-table}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{qs\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-cmp\-\_\-mod\-::qs\-\_\-table (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a7d7f969ce1e9d84aae4a911ead816e96}
+
+
+Definition at line 1070 of file fv\-\_\-cmp.\-F90.
+
+
+
+Referenced by qs\-\_\-init(), and fv\-\_\-sg\-\_\-mod\-::qsmith\-\_\-init().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!qs\-\_\-table2@{qs\-\_\-table2}}
+\index{qs\-\_\-table2@{qs\-\_\-table2}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{qs\-\_\-table2}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-cmp\-\_\-mod\-::qs\-\_\-table2 (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a27624ed32cc760d05eb6faa1f748970e}
+
+
+Definition at line 1164 of file fv\-\_\-cmp.\-F90.
+
+
+
+Referenced by qs\-\_\-init().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!qs\-\_\-tablew@{qs\-\_\-tablew}}
+\index{qs\-\_\-tablew@{qs\-\_\-tablew}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{qs\-\_\-tablew}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-cmp\-\_\-mod\-::qs\-\_\-tablew (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a416061516bcffc2cab55e9a801b6d1c2}
+
+
+Definition at line 1132 of file fv\-\_\-cmp.\-F90.
+
+
+
+Referenced by qs\-\_\-init().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!wqs1@{wqs1}}
+\index{wqs1@{wqs1}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{wqs1}]{\setlength{\rightskip}{0pt plus 5cm}real function fv\-\_\-cmp\-\_\-mod\-::wqs1 (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{ta, }
+\item[{real, intent(in)}]{den}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a9168ab47a84d56e7dfc5529472be0c71}
+
+
+the function 'wqs1' computes the saturated specific humidity for table ii 
+
+
+
+Definition at line 876 of file fv\-\_\-cmp.\-F90.
+
+
+
+Referenced by fv\-\_\-sat\-\_\-adj().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!wqs2@{wqs2}}
+\index{wqs2@{wqs2}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{wqs2}]{\setlength{\rightskip}{0pt plus 5cm}real function fv\-\_\-cmp\-\_\-mod\-::wqs2 (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{ta, }
+\item[{real, intent(in)}]{den, }
+\item[{real, intent(out)}]{dqdt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a21a51056703b3ebc85fb3d3e3e3f23aa}
+
+
+The function 'wqs2'computes the gradient of saturated specific humidity for table ii. 
+
+
+
+Definition at line 928 of file fv\-\_\-cmp.\-F90.
+
+
+
+Referenced by fv\-\_\-sg\-\_\-mod\-::fv\-\_\-subgrid\-\_\-z().
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!wqs2\-\_\-vect@{wqs2\-\_\-vect}}
+\index{wqs2\-\_\-vect@{wqs2\-\_\-vect}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{wqs2\-\_\-vect}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-cmp\-\_\-mod\-::wqs2\-\_\-vect (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{real, dimension (is\-:ie), intent(in)}]{ta, }
+\item[{real, dimension (is\-:ie), intent(in)}]{den, }
+\item[{real, dimension (is\-:ie), intent(out)}]{wqsat, }
+\item[{real, dimension (is\-:ie), intent(out)}]{dqdt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_ac016ceb177d822853885183c1f4c724f}
+
+
+The function wqs2\-\_\-vect computes the gradient of saturated specific humidity for table ii. It is the same as \char`\"{}wqs2\char`\"{}, but written as vector function. 
+
+
+
+Definition at line 960 of file fv\-\_\-cmp.\-F90.
+
+
+
+Referenced by fv\-\_\-sat\-\_\-adj().
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!c\-\_\-ice@{c\-\_\-ice}}
+\index{c\-\_\-ice@{c\-\_\-ice}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{c\-\_\-ice}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::c\-\_\-ice = 1972.\-0\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a2e2c6145d3f4ea50036930131b202ca4}
+
+
+gfdl\-: heat capacity of ice at -\/ 15 deg c 
+
+
+
+Definition at line 90 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!c\-\_\-liq@{c\-\_\-liq}}
+\index{c\-\_\-liq@{c\-\_\-liq}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{c\-\_\-liq}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::c\-\_\-liq = 4185.\-5\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_ae3486a6a9602d9d6d55f4935aa0ffb0b}
+
+
+gfdl\-: heat capacity of liquid at 15 deg c 
+
+
+
+Definition at line 91 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!cp\-\_\-vap@{cp\-\_\-vap}}
+\index{cp\-\_\-vap@{cp\-\_\-vap}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{cp\-\_\-vap}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::cp\-\_\-vap = 4.\-0 $\ast$ rvgas\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a7380eb8077e00279e9bb042e5a69f39b}
+
+
+1846.\-0, heat capacity of water vapor at constant pressure 
+
+
+
+Definition at line 75 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!cv\-\_\-air@{cv\-\_\-air}}
+\index{cv\-\_\-air@{cv\-\_\-air}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{cv\-\_\-air}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::cv\-\_\-air = cp\-\_\-air -\/ rdgas\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a6b7e31c99aaa43c3c88e5f148a0ada8c}
+
+
+717.\-55, heat capacity of dry air at constant volume 
+
+
+
+Definition at line 76 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!cv\-\_\-vap@{cv\-\_\-vap}}
+\index{cv\-\_\-vap@{cv\-\_\-vap}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{cv\-\_\-vap}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::cv\-\_\-vap = 3.\-0 $\ast$ rvgas\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a1aff52f3ef1654b16d21ca8deade4099}
+
+
+1384.\-5, heat capacity of water vapor at constant volume 
+
+
+
+Definition at line 77 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!d0\-\_\-vap@{d0\-\_\-vap}}
+\index{d0\-\_\-vap@{d0\-\_\-vap}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{d0\-\_\-vap}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-cmp\-\_\-mod\-::d0\-\_\-vap\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_ac3f9f88a1d49ff1e327bbb8005f9228a}
+
+
+the same as dc\-\_\-vap, except that cp\-\_\-vap can be cp\-\_\-vap or cv\-\_\-vap 
+
+
+
+Definition at line 110 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!d2ice@{d2ice}}
+\index{d2ice@{d2ice}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{d2ice}]{\setlength{\rightskip}{0pt plus 5cm}real (kind = r\-\_\-grid), parameter fv\-\_\-cmp\-\_\-mod\-::d2ice = {\bf dc\-\_\-vap} + {\bf dc\-\_\-ice}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_adb9c6f0494c4e168f9730598a667d15a}
+
+\begin{DoxyItemize}
+\item 126, isobaric heating / cooling 
+\end{DoxyItemize}
+
+Definition at line 105 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!dc\-\_\-ice@{dc\-\_\-ice}}
+\index{dc\-\_\-ice@{dc\-\_\-ice}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{dc\-\_\-ice}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::dc\-\_\-ice = {\bf c\-\_\-liq} -\/ {\bf c\-\_\-ice}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_afe0a80520aff4b3aa44554dcbc54ccda}
+
+
+2213.\-5, isobaric heating / colling 
+
+
+
+Definition at line 94 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!dc\-\_\-vap@{dc\-\_\-vap}}
+\index{dc\-\_\-vap@{dc\-\_\-vap}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{dc\-\_\-vap}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::dc\-\_\-vap = {\bf cp\-\_\-vap} -\/ {\bf c\-\_\-liq}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_abc256ef2779554c3fcc3d90607dbe03d}
+
+\begin{DoxyItemize}
+\item 2339.\-5, isobaric heating / cooling 
+\end{DoxyItemize}
+
+Definition at line 93 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!des2@{des2}}
+\index{des2@{des2}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{des2}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension (\-:), allocatable fv\-\_\-cmp\-\_\-mod\-::des2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a39a88a1e472449c87b0c18c5be0682a2}
+
+
+Definition at line 113 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!desw@{desw}}
+\index{desw@{desw}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{desw}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension (\-:), allocatable fv\-\_\-cmp\-\_\-mod\-::desw\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_ae014434a6d863ca10c5961edfd866425}
+
+
+Definition at line 113 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!e00@{e00}}
+\index{e00@{e00}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{e00}]{\setlength{\rightskip}{0pt plus 5cm}real (kind = r\-\_\-grid), parameter fv\-\_\-cmp\-\_\-mod\-::e00 = 611.\-21\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a92f0cf9784defdd98bcf50329e7f6e8b}
+
+
+ifs\-: saturation vapor pressure at 0 deg c 
+
+
+
+Definition at line 103 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!lat2@{lat2}}
+\index{lat2@{lat2}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{lat2}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::lat2 = (hlv + hlf) $\ast$$\ast$ 2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_aad5bf68c9e846169feaa2355a29ec7ae}
+
+
+used in bigg mechanism 
+
+
+
+Definition at line 108 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!li00@{li00}}
+\index{li00@{li00}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{li00}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::li00 = hlf -\/ {\bf dc\-\_\-ice} $\ast$ {\bf tice}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_aaec2280440ca71e72b152db42e5c4504}
+
+\begin{DoxyItemize}
+\item 2.\-7105966e5, fusion latent heat coefficient at 0 deg k 
+\end{DoxyItemize}
+
+Definition at line 100 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!li2@{li2}}
+\index{li2@{li2}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{li2}]{\setlength{\rightskip}{0pt plus 5cm}real (kind = r\-\_\-grid), parameter fv\-\_\-cmp\-\_\-mod\-::li2 = {\bf lv0} + {\bf li00}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a9248700d4484999739228f7448428746}
+
+
+2.\-86799816e6, sublimation latent heat coefficient at 0 deg k 
+
+
+
+Definition at line 106 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!lv0@{lv0}}
+\index{lv0@{lv0}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{lv0}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::lv0 = hlv -\/ {\bf dc\-\_\-vap} $\ast$ {\bf tice}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_ac555be1714d90016ac1b76bd0274fe4d}
+
+
+3.\-13905782e6, evaporation latent heat coefficient at 0 deg k 
+
+
+
+Definition at line 99 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!lv00@{lv00}}
+\index{lv00@{lv00}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{lv00}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-cmp\-\_\-mod\-::lv00\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a7bcead849f7cab25637af6d3b1db833a}
+
+
+the same as lv0, except that cp\-\_\-vap can be cp\-\_\-vap or cv\-\_\-vap 
+
+
+
+Definition at line 111 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!mp\-\_\-initialized@{mp\-\_\-initialized}}
+\index{mp\-\_\-initialized@{mp\-\_\-initialized}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{mp\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-cmp\-\_\-mod\-::mp\-\_\-initialized = .false.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_af9c43700533ec209e98ed9aaea7220ad}
+
+
+Definition at line 115 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!t\-\_\-wfr@{t\-\_\-wfr}}
+\index{t\-\_\-wfr@{t\-\_\-wfr}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{t\-\_\-wfr}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::t\-\_\-wfr = {\bf tice} -\/ 40.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a4fe62a9a87a3aa5466fa0afe5ceb070a}
+
+
+homogeneous freezing temperature 
+
+
+
+Definition at line 97 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!table@{table}}
+\index{table@{table}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{table}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension (\-:), allocatable fv\-\_\-cmp\-\_\-mod\-::table\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a7a34f8d4c0eefd0e66de45d280bb0ba4}
+
+
+Definition at line 113 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!table2@{table2}}
+\index{table2@{table2}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{table2}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension (\-:), allocatable fv\-\_\-cmp\-\_\-mod\-::table2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a16427443f0f4cc4376e7a7af841cc03d}
+
+
+Definition at line 113 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!tablew@{tablew}}
+\index{tablew@{tablew}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{tablew}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension (\-:), allocatable fv\-\_\-cmp\-\_\-mod\-::tablew\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a308d1b16faf8b0f7c53fb4ace71f326e}
+
+
+Definition at line 113 of file fv\-\_\-cmp.\-F90.
+
+\index{fv\-\_\-cmp\-\_\-mod@{fv\-\_\-cmp\-\_\-mod}!tice@{tice}}
+\index{tice@{tice}!fv_cmp_mod@{fv\-\_\-cmp\-\_\-mod}}
+\subsubsection[{tice}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-cmp\-\_\-mod\-::tice = 273.\-16\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__cmp__mod_a7ad671e67cd91ec927c0392e32bf5d7e}
+
+
+freezing temperature 
+
+
+
+Definition at line 96 of file fv\-\_\-cmp.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{fv__cmp_8F90}{fv\-\_\-cmp.\-F90}\end{DoxyCompactItemize}

@@ -1,0 +1,530 @@
+\section{fv\-\_\-arrays\-\_\-mod\-:\-:fv\-\_\-nest\-\_\-type Type Reference}
+\label{structfv__arrays__mod_1_1fv__nest__type}\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+
+
+Collaboration diagram for fv\-\_\-arrays\-\_\-mod\-:\-:fv\-\_\-nest\-\_\-type\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfv__arrays__mod_1_1fv__nest__type__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_abd58583303d5bb884b9b12a981ff5134}{refinement} = 3
+\begin{DoxyCompactList}\small\item\em Refinement ratio of the nested grid. This is the number of times that each coarse-\/grid cell face will be divided into smaller segments on the nested grid. Required to be a positive integer if nested = true. Nested grids are aligned with the coarse grid, so non-\/integer refinements are not permitted. The default value is 3. \end{DoxyCompactList}\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_aede3093421924ff4358cb95c28007329}{parent\-\_\-tile} = 1
+\begin{DoxyCompactList}\small\item\em Number of the tile (ie. face) in which this nested grid is found in its parent. Required to be a positive value if nested = true. If the parent grid is not a cubed sphere, or itself is a nested grid, this should be set to 1. If the parent grid has been rotated (using do\-\_\-schmidt) with the intent of centering the nested grid at target\-\_\-lat and target\-\_\-lon, then parent\-\_\-tile should be set to 6. The default value is 1. \end{DoxyCompactList}\item 
+logical \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a8f685ad8b666aa48cd72b369a3d6f7cd}{nested} = .false.
+\begin{DoxyCompactList}\small\item\em Whether this is a nested grid. The default value is .false. \end{DoxyCompactList}\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_adc7be956d3d3a5111c23c80548f87587}{nestbctype} = 1
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_aeb2fa3b74f53464f55ad889e1532dae1}{nsponge} = 0
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_af7ecd25821161fb9ee94fa569ce504f3}{nestupdate} = 0
+\begin{DoxyCompactList}\small\item\em Type of nested-\/grid update to use; details are given in \hyperlink{fv__nesting_8F90}{model/fv\-\_\-nesting.\-F90}. The default is 0. \end{DoxyCompactList}\item 
+logical \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a234513f19d64ac85cc358d3772d56a76}{twowaynest} = .false.
+\begin{DoxyCompactList}\small\item\em Whether to use two-\/way nesting, the process by which the nested-\/grid solution can feed back onto the coarse-\/grid solution. The default value is .false. \end{DoxyCompactList}\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a8de72175222aeea5f0b915b2ca1c0083}{ioffset}
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a0947c02b782d243a3ba7c1ba990d2995}{joffset}
+\begin{DoxyCompactList}\small\item\em Position of nest within parent grid. \end{DoxyCompactList}\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_ac784733ccc09f7037078b71074727228}{nest\-\_\-timestep} = 0
+\begin{DoxyCompactList}\small\item\em Counter for nested-\/grid timesteps. \end{DoxyCompactList}\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a0a40f5b9b3c88f219c15c4f5cf45d035}{tracer\-\_\-nest\-\_\-timestep} = 0
+\begin{DoxyCompactList}\small\item\em Counter for nested-\/grid timesteps. \end{DoxyCompactList}\item 
+real \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a70ba47b82bcf4969d6c200a553c1267a}{s\-\_\-weight} = 1.e-\/6
+\begin{DoxyCompactList}\small\item\em sponge weight \end{DoxyCompactList}\item 
+logical \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a751315043662ab03c036c2e8f35ed3e3}{first\-\_\-step} = .true.
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_ab6d053aade4a0057cd873c1c1fcd33fa}{refinement\-\_\-of\-\_\-global} = 1
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a9bb2f8c472e0b576582539e118ef44dd}{npx\-\_\-global}
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_ae71ff140cce3e6bee7ffd0f4c82da439}{upoff} = 1
+\begin{DoxyCompactList}\small\item\em currently the same for all variables \end{DoxyCompactList}\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a00e4c8056d2cdb4d365658f28b224db0}{isu} = -\/999
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_abf7c9c0bc141c25e6780cfb7fdf2c61a}{ieu} = -\/1000
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a3ff9370e06722ce089be75bbe4ddc870}{jsu} = -\/999
+\item 
+integer \hyperlink{structfv__arrays__mod_1_1fv__nest__type_acd802c1e3bcabb89e088cf208df03909}{jeu} = -\/1000
+\begin{DoxyCompactList}\small\item\em limits of update regions on coarse grid \end{DoxyCompactList}\item 
+type(nest\-\_\-domain\-\_\-type) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a2f7e06880fd4717d1aec364d3de4a2d3}{nest\-\_\-domain}
+\begin{DoxyCompactList}\small\item\em Structure holding link from this grid to its parent. \end{DoxyCompactList}\item 
+type(nest\-\_\-domain\-\_\-type), \\*
+dimension(\-:), allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a4b80c11edd90aa8ba757f5d11d8031d1}{nest\-\_\-domain\-\_\-all}
+\item 
+integer, dimension(\-:,\-:,\-:), \\*
+allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_aca2c6b35886f7d7de3d0f1b37c0bef1e}{ind\-\_\-h}
+\item 
+integer, dimension(\-:,\-:,\-:), \\*
+allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a45020a146430029b2aecfae4d0c3836e}{ind\-\_\-u}
+\item 
+integer, dimension(\-:,\-:,\-:), \\*
+allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a99e3c5ac558d6680d13abecdb19d42d6}{ind\-\_\-v}
+\item 
+integer, dimension(\-:,\-:,\-:), \\*
+allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_ac3a7fc6c7539c84371aabdf03358423d}{ind\-\_\-b}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_af5fdff5fb218822f5644bc4f4f259ea8}{wt\-\_\-h}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_adeb1401d97eaf79d1c981c5d7bd9c9aa}{wt\-\_\-u}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a987a44e252646188a908d61432fba24a}{wt\-\_\-v}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_aba478e4a4f147f23e80db3856a243724}{wt\-\_\-b}
+\item 
+integer, dimension(\-:,\-:,\-:), \\*
+allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a43b4cb8cbb446e895531952e42c0a4c1}{ind\-\_\-update\-\_\-h}
+\item 
+logical, dimension(\-:), allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a81f66a31dbcd4e6d25c2c40fe713d270}{child\-\_\-grids}
+\item 
+logical \hyperlink{structfv__arrays__mod_1_1fv__nest__type_aee5b7faaaea5ce7126d4a750aac0dd65}{parent\-\_\-proc}
+\item 
+logical \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a481dec3fef81744ffccc8d7c484d0996}{child\-\_\-proc}
+\item 
+logical \hyperlink{structfv__arrays__mod_1_1fv__nest__type_ad429837e6b04316f1a24ee0cdca2ea6a}{parent\-\_\-of\-\_\-twoway} = .false.
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_af01ad5bf7e21276cbdd2a462908ba9b7}{delp\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a6ab27401f6878ac25e0ae135a0421591}{u\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a63ef4f30326ec55106bc96e30a8e36ef}{v\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a788322ff21e9cd4ae87c5d5dc0fbb559}{uc\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a1ba2092e661ff1c06374c9e9ed7b9164}{vc\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a0a4874426e6bee79a4fef6ac4379b0af}{divg\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}), \\*
+dimension(\-:), allocatable \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a79129035b599fe5d20157b044275ce39}{q\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a94b7a20dbb7ee4b45a205c3ca3dd2e8c}{pt\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a91ca658afc2467a244897e03517ddf75}{w\-\_\-bc}
+\item 
+type(\hyperlink{structfv__arrays__mod_1_1fv__nest__bc__type__3d}{fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_af43f7736d23f17652015e657caa632d9}{delz\-\_\-bc}
+\item 
+logical \hyperlink{structfv__arrays__mod_1_1fv__nest__type_afe693f9e78d785ff459e258974dd4947}{do\-\_\-flux\-\_\-bcs}
+\item 
+logical \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a4e16a967cedaa9fc77a2380849fc5345}{do\-\_\-2way\-\_\-flux\-\_\-bcs}
+\begin{DoxyCompactList}\small\item\em For a parent grid; determine whether there is a need to send B\-Cs. \end{DoxyCompactList}\item 
+type(restart\-\_\-file\-\_\-type) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_a6c3a42fa4470f85cb7122203f20c91b1}{bcfile\-\_\-ne}
+\item 
+type(restart\-\_\-file\-\_\-type) \hyperlink{structfv__arrays__mod_1_1fv__nest__type_ae213d6b31c417bf50951cbfdd69f1713}{bcfile\-\_\-sw}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1047 of file fv\-\_\-arrays.\-F90.
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!bcfile\-\_\-ne@{bcfile\-\_\-ne}}
+\index{bcfile\-\_\-ne@{bcfile\-\_\-ne}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{bcfile\-\_\-ne}]{\setlength{\rightskip}{0pt plus 5cm}type(restart\-\_\-file\-\_\-type) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::bcfile\-\_\-ne}\label{structfv__arrays__mod_1_1fv__nest__type_a6c3a42fa4470f85cb7122203f20c91b1}
+
+
+Definition at line 1118 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!bcfile\-\_\-sw@{bcfile\-\_\-sw}}
+\index{bcfile\-\_\-sw@{bcfile\-\_\-sw}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{bcfile\-\_\-sw}]{\setlength{\rightskip}{0pt plus 5cm}type(restart\-\_\-file\-\_\-type) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::bcfile\-\_\-sw}\label{structfv__arrays__mod_1_1fv__nest__type_ae213d6b31c417bf50951cbfdd69f1713}
+
+
+Definition at line 1118 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!child\-\_\-grids@{child\-\_\-grids}}
+\index{child\-\_\-grids@{child\-\_\-grids}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{child\-\_\-grids}]{\setlength{\rightskip}{0pt plus 5cm}logical, dimension(\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::child\-\_\-grids}\label{structfv__arrays__mod_1_1fv__nest__type_a81f66a31dbcd4e6d25c2c40fe713d270}
+
+
+Definition at line 1098 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!child\-\_\-proc@{child\-\_\-proc}}
+\index{child\-\_\-proc@{child\-\_\-proc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{child\-\_\-proc}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::child\-\_\-proc}\label{structfv__arrays__mod_1_1fv__nest__type_a481dec3fef81744ffccc8d7c484d0996}
+
+
+Definition at line 1100 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!delp\-\_\-bc@{delp\-\_\-bc}}
+\index{delp\-\_\-bc@{delp\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{delp\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::delp\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_af01ad5bf7e21276cbdd2a462908ba9b7}
+
+
+Definition at line 1104 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!delz\-\_\-bc@{delz\-\_\-bc}}
+\index{delz\-\_\-bc@{delz\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{delz\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::delz\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_af43f7736d23f17652015e657caa632d9}
+
+
+Definition at line 1107 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!divg\-\_\-bc@{divg\-\_\-bc}}
+\index{divg\-\_\-bc@{divg\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{divg\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::divg\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_a0a4874426e6bee79a4fef6ac4379b0af}
+
+
+Definition at line 1104 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!do\-\_\-2way\-\_\-flux\-\_\-bcs@{do\-\_\-2way\-\_\-flux\-\_\-bcs}}
+\index{do\-\_\-2way\-\_\-flux\-\_\-bcs@{do\-\_\-2way\-\_\-flux\-\_\-bcs}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{do\-\_\-2way\-\_\-flux\-\_\-bcs}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::do\-\_\-2way\-\_\-flux\-\_\-bcs}\label{structfv__arrays__mod_1_1fv__nest__type_a4e16a967cedaa9fc77a2380849fc5345}
+
+
+For a parent grid; determine whether there is a need to send B\-Cs. 
+
+
+
+Definition at line 1117 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!do\-\_\-flux\-\_\-bcs@{do\-\_\-flux\-\_\-bcs}}
+\index{do\-\_\-flux\-\_\-bcs@{do\-\_\-flux\-\_\-bcs}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{do\-\_\-flux\-\_\-bcs}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::do\-\_\-flux\-\_\-bcs}\label{structfv__arrays__mod_1_1fv__nest__type_afe693f9e78d785ff459e258974dd4947}
+
+
+Definition at line 1117 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!first\-\_\-step@{first\-\_\-step}}
+\index{first\-\_\-step@{first\-\_\-step}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{first\-\_\-step}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::first\-\_\-step = .true.}\label{structfv__arrays__mod_1_1fv__nest__type_a751315043662ab03c036c2e8f35ed3e3}
+
+
+Definition at line 1081 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!ieu@{ieu}}
+\index{ieu@{ieu}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{ieu}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::ieu = -\/1000}\label{structfv__arrays__mod_1_1fv__nest__type_abf7c9c0bc141c25e6780cfb7fdf2c61a}
+
+
+Definition at line 1085 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!ind\-\_\-b@{ind\-\_\-b}}
+\index{ind\-\_\-b@{ind\-\_\-b}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{ind\-\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::ind\-\_\-b}\label{structfv__arrays__mod_1_1fv__nest__type_ac3a7fc6c7539c84371aabdf03358423d}
+
+
+Definition at line 1091 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!ind\-\_\-h@{ind\-\_\-h}}
+\index{ind\-\_\-h@{ind\-\_\-h}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{ind\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::ind\-\_\-h}\label{structfv__arrays__mod_1_1fv__nest__type_aca2c6b35886f7d7de3d0f1b37c0bef1e}
+
+
+Definition at line 1091 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!ind\-\_\-u@{ind\-\_\-u}}
+\index{ind\-\_\-u@{ind\-\_\-u}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{ind\-\_\-u}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::ind\-\_\-u}\label{structfv__arrays__mod_1_1fv__nest__type_a45020a146430029b2aecfae4d0c3836e}
+
+
+Definition at line 1091 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!ind\-\_\-update\-\_\-h@{ind\-\_\-update\-\_\-h}}
+\index{ind\-\_\-update\-\_\-h@{ind\-\_\-update\-\_\-h}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{ind\-\_\-update\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::ind\-\_\-update\-\_\-h}\label{structfv__arrays__mod_1_1fv__nest__type_a43b4cb8cbb446e895531952e42c0a4c1}
+
+
+Definition at line 1093 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!ind\-\_\-v@{ind\-\_\-v}}
+\index{ind\-\_\-v@{ind\-\_\-v}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{ind\-\_\-v}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::ind\-\_\-v}\label{structfv__arrays__mod_1_1fv__nest__type_a99e3c5ac558d6680d13abecdb19d42d6}
+
+
+Definition at line 1091 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!ioffset@{ioffset}}
+\index{ioffset@{ioffset}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{ioffset}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::ioffset}\label{structfv__arrays__mod_1_1fv__nest__type_a8de72175222aeea5f0b915b2ca1c0083}
+
+
+Definition at line 1076 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!isu@{isu}}
+\index{isu@{isu}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{isu}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::isu = -\/999}\label{structfv__arrays__mod_1_1fv__nest__type_a00e4c8056d2cdb4d365658f28b224db0}
+
+
+Definition at line 1085 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!jeu@{jeu}}
+\index{jeu@{jeu}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{jeu}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::jeu = -\/1000}\label{structfv__arrays__mod_1_1fv__nest__type_acd802c1e3bcabb89e088cf208df03909}
+
+
+limits of update regions on coarse grid 
+
+
+
+Definition at line 1085 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!joffset@{joffset}}
+\index{joffset@{joffset}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{joffset}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::joffset}\label{structfv__arrays__mod_1_1fv__nest__type_a0947c02b782d243a3ba7c1ba990d2995}
+
+
+Position of nest within parent grid. 
+
+
+
+Definition at line 1076 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!jsu@{jsu}}
+\index{jsu@{jsu}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{jsu}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::jsu = -\/999}\label{structfv__arrays__mod_1_1fv__nest__type_a3ff9370e06722ce089be75bbe4ddc870}
+
+
+Definition at line 1085 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!nest\-\_\-domain@{nest\-\_\-domain}}
+\index{nest\-\_\-domain@{nest\-\_\-domain}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{nest\-\_\-domain}]{\setlength{\rightskip}{0pt plus 5cm}type(nest\-\_\-domain\-\_\-type) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::nest\-\_\-domain}\label{structfv__arrays__mod_1_1fv__nest__type_a2f7e06880fd4717d1aec364d3de4a2d3}
+
+
+Structure holding link from this grid to its parent. 
+
+
+
+Definition at line 1087 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!nest\-\_\-domain\-\_\-all@{nest\-\_\-domain\-\_\-all}}
+\index{nest\-\_\-domain\-\_\-all@{nest\-\_\-domain\-\_\-all}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{nest\-\_\-domain\-\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}type(nest\-\_\-domain\-\_\-type), dimension(\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::nest\-\_\-domain\-\_\-all}\label{structfv__arrays__mod_1_1fv__nest__type_a4b80c11edd90aa8ba757f5d11d8031d1}
+
+
+Definition at line 1088 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!nest\-\_\-timestep@{nest\-\_\-timestep}}
+\index{nest\-\_\-timestep@{nest\-\_\-timestep}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{nest\-\_\-timestep}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::nest\-\_\-timestep = 0}\label{structfv__arrays__mod_1_1fv__nest__type_ac784733ccc09f7037078b71074727228}
+
+
+Counter for nested-\/grid timesteps. 
+
+
+
+Definition at line 1078 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!nestbctype@{nestbctype}}
+\index{nestbctype@{nestbctype}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{nestbctype}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::nestbctype = 1}\label{structfv__arrays__mod_1_1fv__nest__type_adc7be956d3d3a5111c23c80548f87587}
+
+
+Definition at line 1068 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!nested@{nested}}
+\index{nested@{nested}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{nested}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::nested = .false.}\label{structfv__arrays__mod_1_1fv__nest__type_a8f685ad8b666aa48cd72b369a3d6f7cd}
+
+
+Whether this is a nested grid. The default value is .false. 
+
+
+
+Definition at line 1066 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!nestupdate@{nestupdate}}
+\index{nestupdate@{nestupdate}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{nestupdate}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::nestupdate = 0}\label{structfv__arrays__mod_1_1fv__nest__type_af7ecd25821161fb9ee94fa569ce504f3}
+
+
+Type of nested-\/grid update to use; details are given in \hyperlink{fv__nesting_8F90}{model/fv\-\_\-nesting.\-F90}. The default is 0. 
+
+
+
+Definition at line 1070 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!npx\-\_\-global@{npx\-\_\-global}}
+\index{npx\-\_\-global@{npx\-\_\-global}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{npx\-\_\-global}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::npx\-\_\-global}\label{structfv__arrays__mod_1_1fv__nest__type_a9bb2f8c472e0b576582539e118ef44dd}
+
+
+Definition at line 1083 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!nsponge@{nsponge}}
+\index{nsponge@{nsponge}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{nsponge}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::nsponge = 0}\label{structfv__arrays__mod_1_1fv__nest__type_aeb2fa3b74f53464f55ad889e1532dae1}
+
+
+Definition at line 1069 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!parent\-\_\-of\-\_\-twoway@{parent\-\_\-of\-\_\-twoway}}
+\index{parent\-\_\-of\-\_\-twoway@{parent\-\_\-of\-\_\-twoway}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{parent\-\_\-of\-\_\-twoway}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::parent\-\_\-of\-\_\-twoway = .false.}\label{structfv__arrays__mod_1_1fv__nest__type_ad429837e6b04316f1a24ee0cdca2ea6a}
+
+
+Definition at line 1101 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!parent\-\_\-proc@{parent\-\_\-proc}}
+\index{parent\-\_\-proc@{parent\-\_\-proc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{parent\-\_\-proc}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::parent\-\_\-proc}\label{structfv__arrays__mod_1_1fv__nest__type_aee5b7faaaea5ce7126d4a750aac0dd65}
+
+
+Definition at line 1100 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!parent\-\_\-tile@{parent\-\_\-tile}}
+\index{parent\-\_\-tile@{parent\-\_\-tile}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{parent\-\_\-tile}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::parent\-\_\-tile = 1}\label{structfv__arrays__mod_1_1fv__nest__type_aede3093421924ff4358cb95c28007329}
+
+
+Number of the tile (ie. face) in which this nested grid is found in its parent. Required to be a positive value if nested = true. If the parent grid is not a cubed sphere, or itself is a nested grid, this should be set to 1. If the parent grid has been rotated (using do\-\_\-schmidt) with the intent of centering the nested grid at target\-\_\-lat and target\-\_\-lon, then parent\-\_\-tile should be set to 6. The default value is 1. 
+
+
+
+Definition at line 1059 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!pt\-\_\-bc@{pt\-\_\-bc}}
+\index{pt\-\_\-bc@{pt\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{pt\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::pt\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_a94b7a20dbb7ee4b45a205c3ca3dd2e8c}
+
+
+Definition at line 1107 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!q\-\_\-bc@{q\-\_\-bc}}
+\index{q\-\_\-bc@{q\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{q\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}), dimension(\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::q\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_a79129035b599fe5d20157b044275ce39}
+
+
+Definition at line 1105 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!refinement@{refinement}}
+\index{refinement@{refinement}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{refinement}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::refinement = 3}\label{structfv__arrays__mod_1_1fv__nest__type_abd58583303d5bb884b9b12a981ff5134}
+
+
+Refinement ratio of the nested grid. This is the number of times that each coarse-\/grid cell face will be divided into smaller segments on the nested grid. Required to be a positive integer if nested = true. Nested grids are aligned with the coarse grid, so non-\/integer refinements are not permitted. The default value is 3. 
+
+
+
+Definition at line 1051 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!refinement\-\_\-of\-\_\-global@{refinement\-\_\-of\-\_\-global}}
+\index{refinement\-\_\-of\-\_\-global@{refinement\-\_\-of\-\_\-global}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{refinement\-\_\-of\-\_\-global}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::refinement\-\_\-of\-\_\-global = 1}\label{structfv__arrays__mod_1_1fv__nest__type_ab6d053aade4a0057cd873c1c1fcd33fa}
+
+
+Definition at line 1082 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!s\-\_\-weight@{s\-\_\-weight}}
+\index{s\-\_\-weight@{s\-\_\-weight}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{s\-\_\-weight}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::s\-\_\-weight = 1.e-\/6}\label{structfv__arrays__mod_1_1fv__nest__type_a70ba47b82bcf4969d6c200a553c1267a}
+
+
+sponge weight 
+
+
+
+Definition at line 1080 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!tracer\-\_\-nest\-\_\-timestep@{tracer\-\_\-nest\-\_\-timestep}}
+\index{tracer\-\_\-nest\-\_\-timestep@{tracer\-\_\-nest\-\_\-timestep}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{tracer\-\_\-nest\-\_\-timestep}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::tracer\-\_\-nest\-\_\-timestep = 0}\label{structfv__arrays__mod_1_1fv__nest__type_a0a40f5b9b3c88f219c15c4f5cf45d035}
+
+
+Counter for nested-\/grid timesteps. 
+
+
+
+Definition at line 1079 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!twowaynest@{twowaynest}}
+\index{twowaynest@{twowaynest}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{twowaynest}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::twowaynest = .false.}\label{structfv__arrays__mod_1_1fv__nest__type_a234513f19d64ac85cc358d3772d56a76}
+
+
+Whether to use two-\/way nesting, the process by which the nested-\/grid solution can feed back onto the coarse-\/grid solution. The default value is .false. 
+
+
+
+Definition at line 1073 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!u\-\_\-bc@{u\-\_\-bc}}
+\index{u\-\_\-bc@{u\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{u\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::u\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_a6ab27401f6878ac25e0ae135a0421591}
+
+
+Definition at line 1104 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!uc\-\_\-bc@{uc\-\_\-bc}}
+\index{uc\-\_\-bc@{uc\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{uc\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::uc\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_a788322ff21e9cd4ae87c5d5dc0fbb559}
+
+
+Definition at line 1104 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!upoff@{upoff}}
+\index{upoff@{upoff}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{upoff}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::upoff = 1}\label{structfv__arrays__mod_1_1fv__nest__type_ae71ff140cce3e6bee7ffd0f4c82da439}
+
+
+currently the same for all variables 
+
+
+
+Definition at line 1084 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!v\-\_\-bc@{v\-\_\-bc}}
+\index{v\-\_\-bc@{v\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{v\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::v\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_a63ef4f30326ec55106bc96e30a8e36ef}
+
+
+Definition at line 1104 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!vc\-\_\-bc@{vc\-\_\-bc}}
+\index{vc\-\_\-bc@{vc\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{vc\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::vc\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_a1ba2092e661ff1c06374c9e9ed7b9164}
+
+
+Definition at line 1104 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!w\-\_\-bc@{w\-\_\-bc}}
+\index{w\-\_\-bc@{w\-\_\-bc}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{w\-\_\-bc}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}) fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::w\-\_\-bc}\label{structfv__arrays__mod_1_1fv__nest__type_a91ca658afc2467a244897e03517ddf75}
+
+
+Definition at line 1107 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!wt\-\_\-b@{wt\-\_\-b}}
+\index{wt\-\_\-b@{wt\-\_\-b}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{wt\-\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::wt\-\_\-b}\label{structfv__arrays__mod_1_1fv__nest__type_aba478e4a4f147f23e80db3856a243724}
+
+
+Definition at line 1092 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!wt\-\_\-h@{wt\-\_\-h}}
+\index{wt\-\_\-h@{wt\-\_\-h}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{wt\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::wt\-\_\-h}\label{structfv__arrays__mod_1_1fv__nest__type_af5fdff5fb218822f5644bc4f4f259ea8}
+
+
+Definition at line 1092 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!wt\-\_\-u@{wt\-\_\-u}}
+\index{wt\-\_\-u@{wt\-\_\-u}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{wt\-\_\-u}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::wt\-\_\-u}\label{structfv__arrays__mod_1_1fv__nest__type_adeb1401d97eaf79d1c981c5d7bd9c9aa}
+
+
+Definition at line 1092 of file fv\-\_\-arrays.\-F90.
+
+\index{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}!wt\-\_\-v@{wt\-\_\-v}}
+\index{wt\-\_\-v@{wt\-\_\-v}!fv_arrays_mod::fv_nest_type@{fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type}}
+\subsubsection[{wt\-\_\-v}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable fv\-\_\-arrays\-\_\-mod\-::fv\-\_\-nest\-\_\-type\-::wt\-\_\-v}\label{structfv__arrays__mod_1_1fv__nest__type_a987a44e252646188a908d61432fba24a}
+
+
+Definition at line 1092 of file fv\-\_\-arrays.\-F90.
+
+
+
+The documentation for this type was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{fv__arrays_8F90}{fv\-\_\-arrays.\-F90}\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\section{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.Ahern/acs\-\_\-master\-\_\-readonly/tools/fv\-\_\-grid\-\_\-tools.F90 File Reference}
+\label{fv__grid__tools_8F90}\index{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/tools/fv\-\_\-grid\-\_\-tools.\-F90@{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/tools/fv\-\_\-grid\-\_\-tools.\-F90}}
+{\ttfamily \#include $<$netcdf.\-inc$>$}\\*
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{classfv__grid__tools__mod}{fv\-\_\-grid\-\_\-tools\-\_\-mod}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{fv__grid__tools_8F90_adca74c8cf43f6b705d7d9c712c99e58a}{setup\-\_\-cartesian} (npx, npy, dx\-\_\-const, dy\-\_\-const, deglat, bd)
+\item 
+subroutine \hyperlink{fv__grid__tools_8F90_aced6a6ffc762e933b433072d70c8bf43}{setup\-\_\-aligned\-\_\-nest} (Atm)
+\item 
+subroutine \hyperlink{fv__grid__tools_8F90_a51556b6e7293f65bd5a1d07a058bb6bc}{setup\-\_\-latlon} (deglon\-\_\-start, deglon\-\_\-stop, deglat\-\_\-start, deglat\-\_\-stop, bd)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\index{fv\-\_\-grid\-\_\-tools.\-F90@{fv\-\_\-grid\-\_\-tools.\-F90}!setup\-\_\-aligned\-\_\-nest@{setup\-\_\-aligned\-\_\-nest}}
+\index{setup\-\_\-aligned\-\_\-nest@{setup\-\_\-aligned\-\_\-nest}!fv_grid_tools.F90@{fv\-\_\-grid\-\_\-tools.\-F90}}
+\subsubsection[{setup\-\_\-aligned\-\_\-nest}]{\setlength{\rightskip}{0pt plus 5cm}subroutine init\-\_\-grid\-::setup\-\_\-aligned\-\_\-nest (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), intent(inout), target}]{Atm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{fv__grid__tools_8F90_aced6a6ffc762e933b433072d70c8bf43}
+
+
+Definition at line 1273 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::cell\-\_\-center2(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::dist2side\-\_\-latlon(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::great\-\_\-circle\-\_\-dist(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::mid\-\_\-pt\-\_\-sphere(), and fv\-\_\-grid\-\_\-utils\-\_\-mod\-::spherical\-\_\-linear\-\_\-interpolation().
+
+
+
+Referenced by fv\-\_\-grid\-\_\-tools\-\_\-mod\-::init\-\_\-grid().
+
+\index{fv\-\_\-grid\-\_\-tools.\-F90@{fv\-\_\-grid\-\_\-tools.\-F90}!setup\-\_\-cartesian@{setup\-\_\-cartesian}}
+\index{setup\-\_\-cartesian@{setup\-\_\-cartesian}!fv_grid_tools.F90@{fv\-\_\-grid\-\_\-tools.\-F90}}
+\subsubsection[{setup\-\_\-cartesian}]{\setlength{\rightskip}{0pt plus 5cm}subroutine init\-\_\-grid\-::setup\-\_\-cartesian (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{dx\-\_\-const, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{dy\-\_\-const, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{deglat, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{fv__grid__tools_8F90_adca74c8cf43f6b705d7d9c712c99e58a}
+
+
+Definition at line 1205 of file fv\-\_\-grid\-\_\-tools.\-F90.
+
+
+
+Referenced by fv\-\_\-grid\-\_\-tools\-\_\-mod\-::init\-\_\-grid().
+
+\index{fv\-\_\-grid\-\_\-tools.\-F90@{fv\-\_\-grid\-\_\-tools.\-F90}!setup\-\_\-latlon@{setup\-\_\-latlon}}
+\index{setup\-\_\-latlon@{setup\-\_\-latlon}!fv_grid_tools.F90@{fv\-\_\-grid\-\_\-tools.\-F90}}
+\subsubsection[{setup\-\_\-latlon}]{\setlength{\rightskip}{0pt plus 5cm}subroutine init\-\_\-grid\-::setup\-\_\-latlon (
+\begin{DoxyParamCaption}
+\item[{real(kind=r\-\_\-grid), intent(in)}]{deglon\-\_\-start, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{deglon\-\_\-stop, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{deglat\-\_\-start, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{deglat\-\_\-stop, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{fv__grid__tools_8F90_a51556b6e7293f65bd5a1d07a058bb6bc}
+
+
+Definition at line 1800 of file fv\-\_\-grid\-\_\-tools.\-F90.
+

@@ -1,0 +1,50 @@
+\section{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.Ahern/acs\-\_\-master\-\_\-readonly/tools/fv\-\_\-treat\-\_\-da\-\_\-inc.F90 File Reference}
+\label{fv__treat__da__inc_8F90}\index{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/tools/fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90@{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/tools/fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{classfv__treat__da__inc__mod}{fv\-\_\-treat\-\_\-da\-\_\-inc\-\_\-mod}
+\begin{DoxyCompactList}\small\item\em 'The module 'tread\-\_\-da\-\_\-increment' contains routines for treating the increments of the prognostic variables that are calculated by the D\-A process \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fv__treat__da__inc_8F90_aa573d7adaa945bb61ee4d9ca00756c63}{\-\_\-\-G\-E\-T\-\_\-\-V\-A\-R1}~get\-\_\-var1\-\_\-double
+\end{DoxyCompactItemize}
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{fv__treat__da__inc_8F90_a54490bfdf02ea24f417cd322ecc4b615}{apply\-\_\-inc\-\_\-on\-\_\-3d\-\_\-scalar} (field\-\_\-name, var)
+\begin{DoxyCompactList}\small\item\em The subroutine 'apply\-\_\-inc\-\_\-on3d\-\_\-scalar' applies the input increments to the prognostic variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90@{fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90}!\-\_\-\-G\-E\-T\-\_\-\-V\-A\-R1@{\-\_\-\-G\-E\-T\-\_\-\-V\-A\-R1}}
+\index{\-\_\-\-G\-E\-T\-\_\-\-V\-A\-R1@{\-\_\-\-G\-E\-T\-\_\-\-V\-A\-R1}!fv_treat_da_inc.F90@{fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90}}
+\subsubsection[{\-\_\-\-G\-E\-T\-\_\-\-V\-A\-R1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-G\-E\-T\-\_\-\-V\-A\-R1~get\-\_\-var1\-\_\-double}\label{fv__treat__da__inc_8F90_aa573d7adaa945bb61ee4d9ca00756c63}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\index{fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90@{fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90}!apply\-\_\-inc\-\_\-on\-\_\-3d\-\_\-scalar@{apply\-\_\-inc\-\_\-on\-\_\-3d\-\_\-scalar}}
+\index{apply\-\_\-inc\-\_\-on\-\_\-3d\-\_\-scalar@{apply\-\_\-inc\-\_\-on\-\_\-3d\-\_\-scalar}!fv_treat_da_inc.F90@{fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90}}
+\subsubsection[{apply\-\_\-inc\-\_\-on\-\_\-3d\-\_\-scalar}]{\setlength{\rightskip}{0pt plus 5cm}subroutine read\-\_\-da\-\_\-inc\-::apply\-\_\-inc\-\_\-on\-\_\-3d\-\_\-scalar (
+\begin{DoxyParamCaption}
+\item[{character(len=$\ast$), intent(in)}]{field\-\_\-name, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,1\-:km), intent(inout)}]{var}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{fv__treat__da__inc_8F90_a54490bfdf02ea24f417cd322ecc4b615}
+
+
+The subroutine 'apply\-\_\-inc\-\_\-on3d\-\_\-scalar' applies the input increments to the prognostic variables. 
+
+
+
+Definition at line 430 of file fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90.
+
+
+
+References sim\-\_\-nc\-\_\-mod\-::check\-\_\-var\-\_\-exists(), and sim\-\_\-nc\-\_\-mod\-::get\-\_\-var3\-\_\-r4().
+
+
+
+Referenced by fv\-\_\-treat\-\_\-da\-\_\-inc\-\_\-mod\-::read\-\_\-da\-\_\-inc().
+

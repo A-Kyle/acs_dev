@@ -1,0 +1,9 @@
+digraph "fv_regional_mod::fv_regional_bc_variables"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="fv_regional_mod::fv\l_regional_bc_variables",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" q_bc\ndelp_bc\npt_bc\nw_bc\ndivgd_bc\nuc_bc\nv_bc\ndelz_bc\nvc_bc\nu_bc\n..." ];
+  Node2 [label="real",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

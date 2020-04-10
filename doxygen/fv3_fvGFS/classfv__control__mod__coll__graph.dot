@@ -1,0 +1,28 @@
+digraph "fv_control_mod"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="fv_control_mod",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dx_const\ndy_const\nstretch_fac\ndeglat_stop\ndeglat\ndeglon_start\ndeglon_stop\ntarget_lon\ntarget_lat\ndeglat_start\n..." ,fontname="Helvetica"];
+  Node2 [label="real(kind=r_grid),\l pointer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" res_latlon_dynamics\nres_latlon_tracers" ,fontname="Helvetica"];
+  Node3 [label="character(len=128),\l pointer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" phys_hydrostatic\nremap_t\nsrf_init\nrange_warn\nncep_ic\nreproduce_sum\nreed_cond_only\nnudge_dz\nuse_logp\nexternal_ic\n..." ,fontname="Helvetica"];
+  Node4 [label="logical, pointer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" io_layout\nlayout" ,fontname="Helvetica"];
+  Node5 [label="integer, dimension\l(:), pointer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" grid_name" ,fontname="Helvetica"];
+  Node6 [label="character(len=80),\l pointer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tau\nd_ext\nd_con\nbeta\ndddmp\ntau_h2o\np_fac\nw_max\nconsv_te\nke_bg\n..." ,fontname="Helvetica"];
+  Node7 [label="real, pointer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" grid_file" ,fontname="Helvetica"];
+  Node8 [label="character(len=120),\l pointer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" npy\nm_split\nkord_tm\ndnats\nnpz\nn_split\nkord_wz\nkord_mt\nndims\nhord_tr\n..." ,fontname="Helvetica"];
+  Node9 [label="integer, pointer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" too_big\numax" ,fontname="Helvetica"];
+  Node10 [label="real",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" halo_update_type\nparent_grid_num\ncommid\npelist_all\nmax_refinement\l_of_global\ngid\nntilesme\nngrids" ,fontname="Helvetica"];
+  Node11 [label="integer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

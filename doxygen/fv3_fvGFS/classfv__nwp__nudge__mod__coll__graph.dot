@@ -1,0 +1,24 @@
+digraph "fv_nwp_nudge_mod"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="fv_nwp_nudge_mod",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" add_bg_wind\nuse_pt_inc\nno_obs\nnudge_q\nconserve_mom\nmaster\nnudge_virt\nnudge_ps\nprint_end_breed\nnudge_winds\n..." ,fontname="Helvetica"];
+  Node2 [label="logical",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" q_dat\nt_dat\nu_dat\nv_dat" ,fontname="Helvetica"];
+  Node3 [label="real(kind=4), dimension\l(:,:,:,:), allocatable",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" x_obs\ny_obs\nrad_out\nmslp_out\nwind_obs\ntime_tc\nmslp_obs" ,fontname="Helvetica"];
+  Node4 [label="real(kind=4), dimension\l(nobs_max, max_storm)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" input_fname_list\nfile_names\nanalysis_file_first\nanalysis_file_last\ntrack_file_name" ,fontname="Helvetica"];
+  Node5 [label="character(len=128)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" gz3" ,fontname="Helvetica"];
+  Node6 [label="real(kind=4), dimension\l(:,:,:), allocatable",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" del2_cd\nr_lo\npre0_env\ntau_q\nr_fac\npt_lim\nmask_fac\nak0\ntau_vt_rad\nrad2deg\n..." ,fontname="Helvetica"];
+  Node7 [label="real",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" year_track_data\nkbot_t\nk_breed\nied\nkbot_winds\nnf_uv\njend\nkm\njed\njdc\n..." ,fontname="Helvetica"];
+  Node8 [label="integer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" radius" ,fontname="Helvetica"];
+  Node9 [label="real(kind=r_grid)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

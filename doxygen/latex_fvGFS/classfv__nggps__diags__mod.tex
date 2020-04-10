@@ -1,0 +1,1364 @@
+\section{fv\-\_\-nggps\-\_\-diags\-\_\-mod Module Reference}
+\label{classfv__nggps__diags__mod}\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+
+
+The module 'fv\-\_\-nggps\-\_\-diags' computes output diagnostics entirely on 3\-D pressure levels.  
+
+
+
+
+Collaboration diagram for fv\-\_\-nggps\-\_\-diags\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classfv__nggps__diags__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__nggps__diags__mod_ab37da1eb0394d52c06db856e9f875833}{fv\-\_\-nggps\-\_\-diag\-\_\-init} (Atm, axes, Time)
+\item 
+subroutine, public \hyperlink{classfv__nggps__diags__mod_a2067cd5af978609a6dc1614795abea87}{fv\-\_\-nggps\-\_\-diag} (Atm, zvir, Time)
+\item 
+subroutine, public \hyperlink{classfv__nggps__diags__mod_a87ed4a1f80258a1b15835104526747e8}{fv\-\_\-nggps\-\_\-tavg} (Atm, Time\-\_\-step\-\_\-atmos, avg\-\_\-max\-\_\-length, zvir)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classfv__nggps__diags__mod_a4f6c0fecf1cbb62eb2990ed66895f59a}{store\-\_\-data} (id, work, Time, nstt, nend)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real, parameter \hyperlink{classfv__nggps__diags__mod_ae58ca0a4c6f6a924fe1ad700c59e7835}{missing\-\_\-value} = -\/1.e10
+\item 
+real, parameter \hyperlink{classfv__nggps__diags__mod_a67f209631191a0c270db5c26d5613683}{stndrd\-\_\-atmos\-\_\-ps} = 101325.
+\item 
+real, parameter \hyperlink{classfv__nggps__diags__mod_ac448721091d8e09234e09b5e3e4d0d68}{stndrd\-\_\-atmos\-\_\-lapse} = 0.\-0065
+\item 
+logical \hyperlink{classfv__nggps__diags__mod_a1cd9085200009db10173487afdf6107c}{master}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aa33d7dc926260a8a41cb7c5c4952c7ee}{id\-\_\-ua}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aafff421203a7bb0b275df42417272314}{id\-\_\-va}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad1c08702435f095c18a06e1070a607f7}{id\-\_\-pt}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aec07245665ff3463d2c2801eae6706b7}{id\-\_\-delp}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a714a8b91e9583fc54a76401abf6c942f}{id\-\_\-pfhy}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a807900a4b82994c01e0a4da6bea37cac}{id\-\_\-pfnh}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aefe549069cacd0721fdc4c5c3d266743}{id\-\_\-w}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a905a7d18ebee5090090ae09da236114f}{id\-\_\-delz}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad4a684d38a9581ad8102dc39d1fe5879}{id\-\_\-diss}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad1d89db3f69ad85f97da253ceb8591b2}{id\-\_\-ps}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ab67fd10f74cfab0898427bbc86b30245}{id\-\_\-hs}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a230a7e07e841292812b5e02aaa2b4b25}{id\-\_\-dbz}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad19e4b6ed51fbcee19a31b34687c712b}{id\-\_\-omga}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a841854dee23e174673acab69d5293ca5}{kstt\-\_\-ua}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aea4c4320cbee76e02d3cd4d8d27d66e3}{kstt\-\_\-va}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_af2dba276e2ab084389801c14c40d7dd0}{kstt\-\_\-pt}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a07543cb41e9f75914dc6f63a434dcbb7}{kstt\-\_\-delp}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a3bfe44068a85feebd00641d36146f9b3}{kstt\-\_\-pfhy}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a0fadec8236bccc124436e3c86d142549}{kstt\-\_\-pfnh}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a7a314e9a214f9738be68f59c0d85b000}{kstt\-\_\-w}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a3d23cc53d5a05338874318b17773b5ad}{kstt\-\_\-delz}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ae361446a10580ad1c6d445491d8a1404}{kstt\-\_\-diss}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a3fdf87034b89ea7b38f9261f6f447ded}{kstt\-\_\-ps}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a4f11b91bbe6d3d6fd26326f1a4611855}{kstt\-\_\-hs}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a678d21e583784e54c0957c1f2c429a14}{kend\-\_\-ua}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a1080bff68c07915d95f82fd40b4e76fc}{kend\-\_\-va}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a22c4d230636276c749ddc369297dd85e}{kend\-\_\-pt}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_af22080302fa1bfce2c3dbd28d7ec1a65}{kend\-\_\-delp}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a52ec4ebc17baed9773c0e0facc94d80f}{kend\-\_\-pfhy}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a560c79be33d3cf6c601c382c9827b550}{kend\-\_\-pfnh}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a7448a16d1d56fd8a7b71ed79418d1fca}{kend\-\_\-w}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a1032edab5be3a430c7089c2dd5b6f2bb}{kend\-\_\-delz}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a37a13813d7e5941869d5666844dc3601}{kend\-\_\-diss}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a2bc1187c816698a5e9ad14f3769a904a}{kend\-\_\-ps}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_af675001c796dc16dbbd5642fb38c9247}{kend\-\_\-hs}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a6197e3be2df8bd2599697c61d5ed950c}{kstt\-\_\-dbz}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aa0dbd9fec62f6dc0ed89809c9e9b6074}{kend\-\_\-dbz}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aa4455319113ad1862929a6fdf72a5beb}{kstt\-\_\-omga}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a4e11455c15981a042cd6cc91bd000576}{kend\-\_\-omga}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad2da0c51ff10c97635de92984451f577}{kstt\-\_\-windvect}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a0e04e352b7e1e2353e3a2e9245662270}{kend\-\_\-windvect}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a059ef910811a03117bf40a1406521276}{id\-\_\-wmaxup}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a3d99dc518af844fdea2b88da471ff681}{id\-\_\-wmaxdn}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a86051f0376102e15a8a1a0fc8fe5429f}{kstt\-\_\-wup}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a117adcb804018f56ea41b9582964a174}{kend\-\_\-wup}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aba42685aa149ce68cbfb653d3263842d}{kstt\-\_\-wdn}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ac1745bf6697cf2d62afe2bc2cf0e862b}{kend\-\_\-wdn}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aa5d2111d9515e6bc6cf874a484c19da2}{id\-\_\-uhmax03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad44911da667d63fa3868d6a7de563a06}{id\-\_\-uhmin03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a8380e83c77a5d69766a8b48f53f632ba}{id\-\_\-uhmax25}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a846858aba1610f7019bf8ccfa5a180d5}{id\-\_\-uhmin25}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a2d7cc1ed40321df218306e01db6c6421}{id\-\_\-maxvort01}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a7d134cd1a19c9f09f5b09c792998661c}{id\-\_\-maxvorthy1}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a31273860fe6f1bc0bdd3a07768388d7d}{kstt\-\_\-maxvorthy1}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a319a895968b7632a1affa7d179dc7014}{kstt\-\_\-maxvort01}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a0a344ad39e04d91a5681074202f28f33}{id\-\_\-ustm}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a657cc9bef8d0085fd26b49e3bf52caae}{kend\-\_\-maxvorthy1}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a2e2ed0bad30f5dd6f820947195e645ae}{kend\-\_\-maxvort01}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aea5bfa0a2e46ae23d8607bdd9bb3564b}{id\-\_\-vstm}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ab0239911c83229042619225d7dd71493}{id\-\_\-srh01}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a845db491df47731200e2a56e8baafc1a}{id\-\_\-srh03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad0ea5ae698cef5167c7fdbd41efe192c}{kstt\-\_\-uhmax03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ae746952c86b8fd6dc88b35f8809c979d}{kstt\-\_\-uhmin03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a48ae4373e398c796a19a6a13a5e8e3bc}{kend\-\_\-uhmax03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a66ef8543a0e87256fcb41ab221f5bf9a}{kend\-\_\-uhmin03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad33734413c2cfcb6c3a253206a9f0b7a}{kstt\-\_\-uhmax25}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a73ee0ca4c35514c00e2da4dee53907e7}{kstt\-\_\-uhmin25}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a412e06b26f348767682f214b1a4c9d98}{kend\-\_\-uhmax25}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ab6c67f2d511df4ff9aaebbc9cd50ee0b}{kend\-\_\-uhmin25}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a4ead52177a3f64c0f0e25bd5b1a0f2d0}{kstt\-\_\-ustm}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a4abdf8ebb7e177ea5bbe1c78b16d9b30}{kstt\-\_\-vstm}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aa4d8f69c24c8046c34dc89485c2c4569}{kend\-\_\-ustm}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a3285e3b7986deb7f90ba3a8cdb5e5c7f}{kend\-\_\-vstm}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ad874bf572a0671a4b9ab899687ac92da}{kstt\-\_\-srh01}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a69af7c0dbc3c41d121b40a331bf37bd3}{kstt\-\_\-srh03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a78fcf7e103ecbbce2efb73cac3724aa1}{kend\-\_\-srh01}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a7ed4ac96d6427e52194a7b6068868d4f}{kend\-\_\-srh03}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a413e171814995c4a4564b3456e555289}{id\-\_\-maxvort02}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a787967d9782109f77ea6e5eff2806d6d}{kstt\-\_\-maxvort02}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a92c55d7b8d59128cd1252c604178154a}{kend\-\_\-maxvort02}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a6dc04c934787487f49e805ba7e0d02d9}{isco}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aaa0060794882b98c8a6bab0cff1c49d7}{ieco}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a5b3666ef22265e7fd39b94fc8c874807}{jsco}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a7e0188e6cd56b04d9496a771a61ab691}{jeco}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a34ced43246de58031ac0f5bc43d7f043}{npzo}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_aa4520f56a48c115c6fbe88f3855fdf8c}{ncnsto}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ac61f1b2f52e12f3e0e351d5016c2b414}{isdo}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ae7a3518a61e0e94f8076c43be5be6678}{iedo}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_ae65d337428ccfa00e3ab41cb9601d57d}{jsdo}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a5dfb7589948d6b78782b87990c55f88d}{jedo}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a45187525edfc30bf711eeb0bb8efb040}{nlevs}
+\item 
+logical \hyperlink{classfv__nggps__diags__mod_a3cc8e2ed9272c3c8703ce8acea63b841}{hydrostatico}
+\item 
+integer, dimension(\-:), allocatable \hyperlink{classfv__nggps__diags__mod_a10e0ceae3cbe500fac557d39d5ce87ed}{id\-\_\-tracer}
+\item 
+integer, dimension(\-:), allocatable \hyperlink{classfv__nggps__diags__mod_ad7f236d66e4b3d41e0501bd9693bdd9e}{all\-\_\-axes}
+\item 
+integer, dimension(\-:), allocatable \hyperlink{classfv__nggps__diags__mod_a7f1246aa235291e0baf4f056f7d05895}{kstt\-\_\-tracer}
+\item 
+integer, dimension(\-:), allocatable \hyperlink{classfv__nggps__diags__mod_acf7563c97e50eba24a2800623db2c963}{kend\-\_\-tracer}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__nggps__diags__mod_ad97d0a85431a2677248d025ec37b3630}{ak}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__nggps__diags__mod_a3bfc67471e76aec3cec99058b20cd5a0}{bk}
+\item 
+character(20), dimension(\-:), \\*
+allocatable \hyperlink{classfv__nggps__diags__mod_a9b3c6afd1c1d787a6025594b51ffbe41}{axis\-\_\-name}
+\item 
+character(20), dimension(\-:), \\*
+allocatable \hyperlink{classfv__nggps__diags__mod_aa890948022803ec69a3d017f66653db6}{axis\-\_\-name\-\_\-vert}
+\item 
+logical \hyperlink{classfv__nggps__diags__mod_abc0aa3699a7eff720af358c47301af18}{module\-\_\-is\-\_\-initialized} =.false.
+\item 
+logical \hyperlink{classfv__nggps__diags__mod_a70632914cad68cbfde798ff630987d0f}{use\-\_\-wrtgridcomp\-\_\-output} =.false.
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a0bf39b42a909bb2f0fa740a3b186eb10}{sphum}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a972ef31ad558e0e5f6eec28762065b1f}{liq\-\_\-wat}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a82c8e61ce22732cdb42c55c97811b4a0}{ice\-\_\-wat}
+\begin{DoxyCompactList}\small\item\em G\-F\-D\-L physics. \end{DoxyCompactList}\item 
+integer \hyperlink{classfv__nggps__diags__mod_adc96217bcb04e9c325be22b533ad6fda}{rainwat}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a90f11314ec23054c97a9c1a6a94c0818}{snowwat}
+\item 
+integer \hyperlink{classfv__nggps__diags__mod_a82ca590baa623f6193156ebaabbd387c}{graupel}
+\item 
+real, dimension(2) \hyperlink{classfv__nggps__diags__mod_a09ecb76f21e39af3216eb05b1b913419}{vrange} = (/ -\/330., 330. /)
+\begin{DoxyCompactList}\small\item\em winds \end{DoxyCompactList}\item 
+real, dimension(2) \hyperlink{classfv__nggps__diags__mod_ac62774517426ba9abf37f95e33a53c75}{wrange} = (/ -\/100., 100. /)
+\begin{DoxyCompactList}\small\item\em vertical wind \end{DoxyCompactList}\item 
+real, dimension(2) \hyperlink{classfv__nggps__diags__mod_a63ac798b7bdc14c9cad4830deef4241d}{trange} = (/ 100., 350. /)
+\begin{DoxyCompactList}\small\item\em temperature \end{DoxyCompactList}\item 
+real, dimension(2) \hyperlink{classfv__nggps__diags__mod_a2f51cdf63c0bffba99bfcecb26302104}{skrange} = (/ -\/10000000.\-0, 10000000.\-0 /)
+\begin{DoxyCompactList}\small\item\em dissipation estimate for S\-K\-E\-B \end{DoxyCompactList}\item 
+character(len=64) \hyperlink{classfv__nggps__diags__mod_a737e86420ad5d5b431a3117ce623e313}{file\-\_\-name} = 'gfs\-\_\-dyn'
+\item 
+character(len=128) \hyperlink{classfv__nggps__diags__mod_ade8a5d09872d5c2ba95c9a9a81e916fe}{tname}
+\item 
+character(len=256) \hyperlink{classfv__nggps__diags__mod_a8acfdda0bd8e8b86b400a86615f1b3ef}{tlongname}
+\item 
+character(len=256) \hyperlink{classfv__nggps__diags__mod_acf58902ead32fad28330b73b5aa61955}{tunits}
+\item 
+real(4), dimension(\-:,\-:,\-:), \\*
+allocatable, target \hyperlink{classfv__nggps__diags__mod_a5e8a9c5b4b5ad6df66de967461a3338b}{buffer\-\_\-dyn}
+\item 
+real(4), dimension(\-:,\-:,\-:,\-:), \\*
+allocatable, target \hyperlink{classfv__nggps__diags__mod_ad92d40cf9570d98ea35bc7da2815dc38}{windvect}
+\item 
+real(4), dimension(\-:,\-:), \\*
+allocatable, target \hyperlink{classfv__nggps__diags__mod_af7f5be1d89289b4cf2b12c6b11fad16a}{psurf}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_aafdb15d16067525ed3d44c2cdde8e417}{lon}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_a134ea86f7c12011dda0297316dc3ea52}{lat}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_aad395c43512c289616cfe7c63927fe51}{up2}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_a6eead80f8c1f8eb3e6d5c5e85856340e}{dn2}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_a672498c2dd7e91c63c8a14544b89313e}{uhmax03}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_aeb25900a2ec78b17f30b044f0dab51fa}{uhmin03}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_ad0c2b22c16b4343ee02a0da7770b1189}{uhmax25}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_a517b0627b47ddc6de2c53f9f13974730}{uhmin25}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_ab16739d4afbb45dc85d35490ace8b500}{maxvort01}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_a8ebec458193f8834ccfe45e2d770e9d7}{maxvorthy1}
+\item 
+real, dimension(\-:,\-:), allocatable \hyperlink{classfv__nggps__diags__mod_ae3d6e23a909d7ca356786721cebc4c66}{maxvort02}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'fv\-\_\-nggps\-\_\-diags' computes output diagnostics entirely on 3\-D pressure levels. 
+
+The module is designed for applications that process the full 3\-D fields through the N\-C\-E\-P post-\/processor. 
+
+Definition at line 28 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!fv\-\_\-nggps\-\_\-diag@{fv\-\_\-nggps\-\_\-diag}}
+\index{fv\-\_\-nggps\-\_\-diag@{fv\-\_\-nggps\-\_\-diag}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{fv\-\_\-nggps\-\_\-diag}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::fv\-\_\-nggps\-\_\-diag (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), dimension(\-:), intent(inout)}]{Atm, }
+\item[{real, intent(in)}]{zvir, }
+\item[{type(time\-\_\-type), intent(in)}]{Time}
+\end{DoxyParamCaption}
+)}\label{classfv__nggps__diags__mod_a2067cd5af978609a6dc1614795abea87}
+
+
+Definition at line 435 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+
+
+References fv\-\_\-diagnostics\-\_\-mod\-::bunkers\-\_\-vector(), fv\-\_\-diagnostics\-\_\-mod\-::dbzcalc(), fv\-\_\-diagnostics\-\_\-mod\-::helicity\-\_\-relative\-\_\-caps(), fv\-\_\-diagnostics\-\_\-mod\-::range\-\_\-check(), store\-\_\-data(), and multi\-\_\-gases\-\_\-mod\-::virq().
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-end(), and atmosphere\-\_\-mod\-::atmosphere\-\_\-nggps\-\_\-diag().
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!fv\-\_\-nggps\-\_\-diag\-\_\-init@{fv\-\_\-nggps\-\_\-diag\-\_\-init}}
+\index{fv\-\_\-nggps\-\_\-diag\-\_\-init@{fv\-\_\-nggps\-\_\-diag\-\_\-init}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{fv\-\_\-nggps\-\_\-diag\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::fv\-\_\-nggps\-\_\-diag\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), dimension(\-:), intent(inout), target}]{Atm, }
+\item[{integer, dimension(4), intent(in)}]{axes, }
+\item[{type(time\-\_\-type), intent(in)}]{Time}
+\end{DoxyParamCaption}
+)}\label{classfv__nggps__diags__mod_ab37da1eb0394d52c06db856e9f875833}
+
+
+Definition at line 153 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-nggps\-\_\-diag().
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!fv\-\_\-nggps\-\_\-tavg@{fv\-\_\-nggps\-\_\-tavg}}
+\index{fv\-\_\-nggps\-\_\-tavg@{fv\-\_\-nggps\-\_\-tavg}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{fv\-\_\-nggps\-\_\-tavg}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::fv\-\_\-nggps\-\_\-tavg (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), dimension(\-:), intent(inout)}]{Atm, }
+\item[{type(time\-\_\-type), intent(in)}]{Time\-\_\-step\-\_\-atmos, }
+\item[{real}]{avg\-\_\-max\-\_\-length, }
+\item[{real, intent(in)}]{zvir}
+\end{DoxyParamCaption}
+)}\label{classfv__nggps__diags__mod_a87ed4a1f80258a1b15835104526747e8}
+
+
+Definition at line 736 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+
+
+References fv\-\_\-diagnostics\-\_\-mod\-::get\-\_\-vorticity(), fv\-\_\-diagnostics\-\_\-mod\-::max\-\_\-uh(), fv\-\_\-diagnostics\-\_\-mod\-::max\-\_\-vorticity(), fv\-\_\-diagnostics\-\_\-mod\-::max\-\_\-vorticity\-\_\-hy1(), and fv\-\_\-diagnostics\-\_\-mod\-::max\-\_\-vv().
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-nggps\-\_\-diag().
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!store\-\_\-data@{store\-\_\-data}}
+\index{store\-\_\-data@{store\-\_\-data}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{store\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::store\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{id, }
+\item[{real, dimension(isco\-:ieco,jsco\-:jeco,nend-\/nstt+1), intent(in)}]{work, }
+\item[{type(time\-\_\-type), intent(in)}]{Time, }
+\item[{integer, intent(in)}]{nstt, }
+\item[{integer, intent(in)}]{nend}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a4f6c0fecf1cbb62eb2990ed66895f59a}
+
+
+Definition at line 832 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+
+
+Referenced by fv\-\_\-nggps\-\_\-diag().
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!ak@{ak}}
+\index{ak@{ak}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{ak}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::ak\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad97d0a85431a2677248d025ec37b3630}
+
+
+Definition at line 119 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!all\-\_\-axes@{all\-\_\-axes}}
+\index{all\-\_\-axes@{all\-\_\-axes}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{all\-\_\-axes}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::all\-\_\-axes\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad7f236d66e4b3d41e0501bd9693bdd9e}
+
+
+Definition at line 117 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!axis\-\_\-name@{axis\-\_\-name}}
+\index{axis\-\_\-name@{axis\-\_\-name}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{axis\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}character(20), dimension(\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::axis\-\_\-name\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a9b3c6afd1c1d787a6025594b51ffbe41}
+
+
+Definition at line 120 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!axis\-\_\-name\-\_\-vert@{axis\-\_\-name\-\_\-vert}}
+\index{axis\-\_\-name\-\_\-vert@{axis\-\_\-name\-\_\-vert}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{axis\-\_\-name\-\_\-vert}]{\setlength{\rightskip}{0pt plus 5cm}character(20), dimension(\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::axis\-\_\-name\-\_\-vert\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aa890948022803ec69a3d017f66653db6}
+
+
+Definition at line 120 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!bk@{bk}}
+\index{bk@{bk}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{bk}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::bk\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a3bfc67471e76aec3cec99058b20cd5a0}
+
+
+Definition at line 119 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!buffer\-\_\-dyn@{buffer\-\_\-dyn}}
+\index{buffer\-\_\-dyn@{buffer\-\_\-dyn}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{buffer\-\_\-dyn}]{\setlength{\rightskip}{0pt plus 5cm}real(4), dimension(\-:,\-:,\-:), allocatable, target fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::buffer\-\_\-dyn\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a5e8a9c5b4b5ad6df66de967461a3338b}
+
+
+Definition at line 139 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!dn2@{dn2}}
+\index{dn2@{dn2}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{dn2}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::dn2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a6eead80f8c1f8eb3e6d5c5e85856340e}
+
+
+Definition at line 143 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!file\-\_\-name@{file\-\_\-name}}
+\index{file\-\_\-name@{file\-\_\-name}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{file\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}character(len=64) fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::file\-\_\-name = 'gfs\-\_\-dyn'\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a737e86420ad5d5b431a3117ce623e313}
+
+
+Definition at line 132 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!graupel@{graupel}}
+\index{graupel@{graupel}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{graupel}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::graupel\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a82ca590baa623f6193156ebaabbd387c}
+
+
+Definition at line 125 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!hydrostatico@{hydrostatico}}
+\index{hydrostatico@{hydrostatico}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{hydrostatico}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::hydrostatico\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a3cc8e2ed9272c3c8703ce8acea63b841}
+
+
+Definition at line 116 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!ice\-\_\-wat@{ice\-\_\-wat}}
+\index{ice\-\_\-wat@{ice\-\_\-wat}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{ice\-\_\-wat}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::ice\-\_\-wat\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a82c8e61ce22732cdb42c55c97811b4a0}
+
+
+G\-F\-D\-L physics. 
+
+
+
+Definition at line 124 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-dbz@{id\-\_\-dbz}}
+\index{id\-\_\-dbz@{id\-\_\-dbz}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-dbz}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-dbz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a230a7e07e841292812b5e02aaa2b4b25}
+
+
+Definition at line 97 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-delp@{id\-\_\-delp}}
+\index{id\-\_\-delp@{id\-\_\-delp}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-delp}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-delp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aec07245665ff3463d2c2801eae6706b7}
+
+
+Definition at line 96 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-delz@{id\-\_\-delz}}
+\index{id\-\_\-delz@{id\-\_\-delz}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-delz}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-delz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a905a7d18ebee5090090ae09da236114f}
+
+
+Definition at line 97 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-diss@{id\-\_\-diss}}
+\index{id\-\_\-diss@{id\-\_\-diss}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-diss}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-diss\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad4a684d38a9581ad8102dc39d1fe5879}
+
+
+Definition at line 97 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-hs@{id\-\_\-hs}}
+\index{id\-\_\-hs@{id\-\_\-hs}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-hs}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-hs\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ab67fd10f74cfab0898427bbc86b30245}
+
+
+Definition at line 97 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-maxvort01@{id\-\_\-maxvort01}}
+\index{id\-\_\-maxvort01@{id\-\_\-maxvort01}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-maxvort01}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-maxvort01\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a2d7cc1ed40321df218306e01db6c6421}
+
+
+Definition at line 105 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-maxvort02@{id\-\_\-maxvort02}}
+\index{id\-\_\-maxvort02@{id\-\_\-maxvort02}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-maxvort02}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-maxvort02\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a413e171814995c4a4564b3456e555289}
+
+
+Definition at line 112 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-maxvorthy1@{id\-\_\-maxvorthy1}}
+\index{id\-\_\-maxvorthy1@{id\-\_\-maxvorthy1}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-maxvorthy1}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-maxvorthy1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a7d134cd1a19c9f09f5b09c792998661c}
+
+
+Definition at line 106 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-omga@{id\-\_\-omga}}
+\index{id\-\_\-omga@{id\-\_\-omga}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-omga}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-omga\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad19e4b6ed51fbcee19a31b34687c712b}
+
+
+Definition at line 97 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-pfhy@{id\-\_\-pfhy}}
+\index{id\-\_\-pfhy@{id\-\_\-pfhy}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-pfhy}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-pfhy\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a714a8b91e9583fc54a76401abf6c942f}
+
+
+Definition at line 96 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-pfnh@{id\-\_\-pfnh}}
+\index{id\-\_\-pfnh@{id\-\_\-pfnh}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-pfnh}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-pfnh\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a807900a4b82994c01e0a4da6bea37cac}
+
+
+Definition at line 96 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-ps@{id\-\_\-ps}}
+\index{id\-\_\-ps@{id\-\_\-ps}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-ps}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-ps\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad1d89db3f69ad85f97da253ceb8591b2}
+
+
+Definition at line 97 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-pt@{id\-\_\-pt}}
+\index{id\-\_\-pt@{id\-\_\-pt}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-pt}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-pt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad1c08702435f095c18a06e1070a607f7}
+
+
+Definition at line 96 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-srh01@{id\-\_\-srh01}}
+\index{id\-\_\-srh01@{id\-\_\-srh01}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-srh01}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-srh01\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ab0239911c83229042619225d7dd71493}
+
+
+Definition at line 107 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-srh03@{id\-\_\-srh03}}
+\index{id\-\_\-srh03@{id\-\_\-srh03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-srh03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-srh03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a845db491df47731200e2a56e8baafc1a}
+
+
+Definition at line 107 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-tracer@{id\-\_\-tracer}}
+\index{id\-\_\-tracer@{id\-\_\-tracer}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-tracer}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-tracer\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a10e0ceae3cbe500fac557d39d5ce87ed}
+
+
+Definition at line 117 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-ua@{id\-\_\-ua}}
+\index{id\-\_\-ua@{id\-\_\-ua}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-ua}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-ua\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aa33d7dc926260a8a41cb7c5c4952c7ee}
+
+
+Definition at line 96 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-uhmax03@{id\-\_\-uhmax03}}
+\index{id\-\_\-uhmax03@{id\-\_\-uhmax03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-uhmax03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-uhmax03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aa5d2111d9515e6bc6cf874a484c19da2}
+
+
+Definition at line 105 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-uhmax25@{id\-\_\-uhmax25}}
+\index{id\-\_\-uhmax25@{id\-\_\-uhmax25}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-uhmax25}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-uhmax25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a8380e83c77a5d69766a8b48f53f632ba}
+
+
+Definition at line 105 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-uhmin03@{id\-\_\-uhmin03}}
+\index{id\-\_\-uhmin03@{id\-\_\-uhmin03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-uhmin03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-uhmin03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad44911da667d63fa3868d6a7de563a06}
+
+
+Definition at line 105 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-uhmin25@{id\-\_\-uhmin25}}
+\index{id\-\_\-uhmin25@{id\-\_\-uhmin25}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-uhmin25}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-uhmin25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a846858aba1610f7019bf8ccfa5a180d5}
+
+
+Definition at line 105 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-ustm@{id\-\_\-ustm}}
+\index{id\-\_\-ustm@{id\-\_\-ustm}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-ustm}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-ustm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a0a344ad39e04d91a5681074202f28f33}
+
+
+Definition at line 106 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-va@{id\-\_\-va}}
+\index{id\-\_\-va@{id\-\_\-va}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-va}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-va\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aafff421203a7bb0b275df42417272314}
+
+
+Definition at line 96 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-vstm@{id\-\_\-vstm}}
+\index{id\-\_\-vstm@{id\-\_\-vstm}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-vstm}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-vstm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aea5bfa0a2e46ae23d8607bdd9bb3564b}
+
+
+Definition at line 107 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-w@{id\-\_\-w}}
+\index{id\-\_\-w@{id\-\_\-w}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-w}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-w\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aefe549069cacd0721fdc4c5c3d266743}
+
+
+Definition at line 97 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-wmaxdn@{id\-\_\-wmaxdn}}
+\index{id\-\_\-wmaxdn@{id\-\_\-wmaxdn}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-wmaxdn}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-wmaxdn\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a3d99dc518af844fdea2b88da471ff681}
+
+
+Definition at line 104 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!id\-\_\-wmaxup@{id\-\_\-wmaxup}}
+\index{id\-\_\-wmaxup@{id\-\_\-wmaxup}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{id\-\_\-wmaxup}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::id\-\_\-wmaxup\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a059ef910811a03117bf40a1406521276}
+
+
+Definition at line 104 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!ieco@{ieco}}
+\index{ieco@{ieco}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{ieco}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::ieco\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aaa0060794882b98c8a6bab0cff1c49d7}
+
+
+Definition at line 113 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!iedo@{iedo}}
+\index{iedo@{iedo}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{iedo}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::iedo\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ae7a3518a61e0e94f8076c43be5be6678}
+
+
+Definition at line 114 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!isco@{isco}}
+\index{isco@{isco}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{isco}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::isco\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a6dc04c934787487f49e805ba7e0d02d9}
+
+
+Definition at line 113 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!isdo@{isdo}}
+\index{isdo@{isdo}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{isdo}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::isdo\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ac61f1b2f52e12f3e0e351d5016c2b414}
+
+
+Definition at line 114 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!jeco@{jeco}}
+\index{jeco@{jeco}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{jeco}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::jeco\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a7e0188e6cd56b04d9496a771a61ab691}
+
+
+Definition at line 113 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!jedo@{jedo}}
+\index{jedo@{jedo}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{jedo}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::jedo\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a5dfb7589948d6b78782b87990c55f88d}
+
+
+Definition at line 114 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!jsco@{jsco}}
+\index{jsco@{jsco}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{jsco}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::jsco\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a5b3666ef22265e7fd39b94fc8c874807}
+
+
+Definition at line 113 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!jsdo@{jsdo}}
+\index{jsdo@{jsdo}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{jsdo}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::jsdo\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ae65d337428ccfa00e3ab41cb9601d57d}
+
+
+Definition at line 114 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-dbz@{kend\-\_\-dbz}}
+\index{kend\-\_\-dbz@{kend\-\_\-dbz}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-dbz}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-dbz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aa0dbd9fec62f6dc0ed89809c9e9b6074}
+
+
+Definition at line 102 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-delp@{kend\-\_\-delp}}
+\index{kend\-\_\-delp@{kend\-\_\-delp}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-delp}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-delp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_af22080302fa1bfce2c3dbd28d7ec1a65}
+
+
+Definition at line 100 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-delz@{kend\-\_\-delz}}
+\index{kend\-\_\-delz@{kend\-\_\-delz}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-delz}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-delz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a1032edab5be3a430c7089c2dd5b6f2bb}
+
+
+Definition at line 101 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-diss@{kend\-\_\-diss}}
+\index{kend\-\_\-diss@{kend\-\_\-diss}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-diss}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-diss\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a37a13813d7e5941869d5666844dc3601}
+
+
+Definition at line 101 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-hs@{kend\-\_\-hs}}
+\index{kend\-\_\-hs@{kend\-\_\-hs}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-hs}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-hs\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_af675001c796dc16dbbd5642fb38c9247}
+
+
+Definition at line 101 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-maxvort01@{kend\-\_\-maxvort01}}
+\index{kend\-\_\-maxvort01@{kend\-\_\-maxvort01}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-maxvort01}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-maxvort01\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a2e2ed0bad30f5dd6f820947195e645ae}
+
+
+Definition at line 107 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-maxvort02@{kend\-\_\-maxvort02}}
+\index{kend\-\_\-maxvort02@{kend\-\_\-maxvort02}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-maxvort02}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-maxvort02\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a92c55d7b8d59128cd1252c604178154a}
+
+
+Definition at line 112 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-maxvorthy1@{kend\-\_\-maxvorthy1}}
+\index{kend\-\_\-maxvorthy1@{kend\-\_\-maxvorthy1}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-maxvorthy1}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-maxvorthy1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a657cc9bef8d0085fd26b49e3bf52caae}
+
+
+Definition at line 107 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-omga@{kend\-\_\-omga}}
+\index{kend\-\_\-omga@{kend\-\_\-omga}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-omga}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-omga\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a4e11455c15981a042cd6cc91bd000576}
+
+
+Definition at line 102 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-pfhy@{kend\-\_\-pfhy}}
+\index{kend\-\_\-pfhy@{kend\-\_\-pfhy}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-pfhy}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-pfhy\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a52ec4ebc17baed9773c0e0facc94d80f}
+
+
+Definition at line 100 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-pfnh@{kend\-\_\-pfnh}}
+\index{kend\-\_\-pfnh@{kend\-\_\-pfnh}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-pfnh}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-pfnh\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a560c79be33d3cf6c601c382c9827b550}
+
+
+Definition at line 101 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-ps@{kend\-\_\-ps}}
+\index{kend\-\_\-ps@{kend\-\_\-ps}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-ps}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-ps\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a2bc1187c816698a5e9ad14f3769a904a}
+
+
+Definition at line 101 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-pt@{kend\-\_\-pt}}
+\index{kend\-\_\-pt@{kend\-\_\-pt}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-pt}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-pt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a22c4d230636276c749ddc369297dd85e}
+
+
+Definition at line 100 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-srh01@{kend\-\_\-srh01}}
+\index{kend\-\_\-srh01@{kend\-\_\-srh01}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-srh01}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-srh01\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a78fcf7e103ecbbce2efb73cac3724aa1}
+
+
+Definition at line 111 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-srh03@{kend\-\_\-srh03}}
+\index{kend\-\_\-srh03@{kend\-\_\-srh03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-srh03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-srh03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a7ed4ac96d6427e52194a7b6068868d4f}
+
+
+Definition at line 111 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-tracer@{kend\-\_\-tracer}}
+\index{kend\-\_\-tracer@{kend\-\_\-tracer}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-tracer}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-tracer\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_acf7563c97e50eba24a2800623db2c963}
+
+
+Definition at line 118 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-ua@{kend\-\_\-ua}}
+\index{kend\-\_\-ua@{kend\-\_\-ua}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-ua}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-ua\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a678d21e583784e54c0957c1f2c429a14}
+
+
+Definition at line 100 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-uhmax03@{kend\-\_\-uhmax03}}
+\index{kend\-\_\-uhmax03@{kend\-\_\-uhmax03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-uhmax03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-uhmax03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a48ae4373e398c796a19a6a13a5e8e3bc}
+
+
+Definition at line 108 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-uhmax25@{kend\-\_\-uhmax25}}
+\index{kend\-\_\-uhmax25@{kend\-\_\-uhmax25}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-uhmax25}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-uhmax25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a412e06b26f348767682f214b1a4c9d98}
+
+
+Definition at line 109 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-uhmin03@{kend\-\_\-uhmin03}}
+\index{kend\-\_\-uhmin03@{kend\-\_\-uhmin03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-uhmin03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-uhmin03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a66ef8543a0e87256fcb41ab221f5bf9a}
+
+
+Definition at line 108 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-uhmin25@{kend\-\_\-uhmin25}}
+\index{kend\-\_\-uhmin25@{kend\-\_\-uhmin25}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-uhmin25}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-uhmin25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ab6c67f2d511df4ff9aaebbc9cd50ee0b}
+
+
+Definition at line 109 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-ustm@{kend\-\_\-ustm}}
+\index{kend\-\_\-ustm@{kend\-\_\-ustm}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-ustm}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-ustm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aa4d8f69c24c8046c34dc89485c2c4569}
+
+
+Definition at line 110 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-va@{kend\-\_\-va}}
+\index{kend\-\_\-va@{kend\-\_\-va}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-va}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-va\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a1080bff68c07915d95f82fd40b4e76fc}
+
+
+Definition at line 100 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-vstm@{kend\-\_\-vstm}}
+\index{kend\-\_\-vstm@{kend\-\_\-vstm}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-vstm}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-vstm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a3285e3b7986deb7f90ba3a8cdb5e5c7f}
+
+
+Definition at line 110 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-w@{kend\-\_\-w}}
+\index{kend\-\_\-w@{kend\-\_\-w}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-w}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-w\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a7448a16d1d56fd8a7b71ed79418d1fca}
+
+
+Definition at line 101 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-wdn@{kend\-\_\-wdn}}
+\index{kend\-\_\-wdn@{kend\-\_\-wdn}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-wdn}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-wdn\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ac1745bf6697cf2d62afe2bc2cf0e862b}
+
+
+Definition at line 104 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-windvect@{kend\-\_\-windvect}}
+\index{kend\-\_\-windvect@{kend\-\_\-windvect}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-windvect}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-windvect\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a0e04e352b7e1e2353e3a2e9245662270}
+
+
+Definition at line 103 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kend\-\_\-wup@{kend\-\_\-wup}}
+\index{kend\-\_\-wup@{kend\-\_\-wup}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kend\-\_\-wup}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kend\-\_\-wup\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a117adcb804018f56ea41b9582964a174}
+
+
+Definition at line 104 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-dbz@{kstt\-\_\-dbz}}
+\index{kstt\-\_\-dbz@{kstt\-\_\-dbz}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-dbz}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-dbz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a6197e3be2df8bd2599697c61d5ed950c}
+
+
+Definition at line 102 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-delp@{kstt\-\_\-delp}}
+\index{kstt\-\_\-delp@{kstt\-\_\-delp}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-delp}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-delp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a07543cb41e9f75914dc6f63a434dcbb7}
+
+
+Definition at line 98 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-delz@{kstt\-\_\-delz}}
+\index{kstt\-\_\-delz@{kstt\-\_\-delz}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-delz}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-delz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a3d23cc53d5a05338874318b17773b5ad}
+
+
+Definition at line 99 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-diss@{kstt\-\_\-diss}}
+\index{kstt\-\_\-diss@{kstt\-\_\-diss}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-diss}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-diss\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ae361446a10580ad1c6d445491d8a1404}
+
+
+Definition at line 99 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-hs@{kstt\-\_\-hs}}
+\index{kstt\-\_\-hs@{kstt\-\_\-hs}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-hs}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-hs\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a4f11b91bbe6d3d6fd26326f1a4611855}
+
+
+Definition at line 99 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-maxvort01@{kstt\-\_\-maxvort01}}
+\index{kstt\-\_\-maxvort01@{kstt\-\_\-maxvort01}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-maxvort01}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-maxvort01\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a319a895968b7632a1affa7d179dc7014}
+
+
+Definition at line 106 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-maxvort02@{kstt\-\_\-maxvort02}}
+\index{kstt\-\_\-maxvort02@{kstt\-\_\-maxvort02}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-maxvort02}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-maxvort02\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a787967d9782109f77ea6e5eff2806d6d}
+
+
+Definition at line 112 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-maxvorthy1@{kstt\-\_\-maxvorthy1}}
+\index{kstt\-\_\-maxvorthy1@{kstt\-\_\-maxvorthy1}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-maxvorthy1}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-maxvorthy1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a31273860fe6f1bc0bdd3a07768388d7d}
+
+
+Definition at line 106 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-omga@{kstt\-\_\-omga}}
+\index{kstt\-\_\-omga@{kstt\-\_\-omga}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-omga}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-omga\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aa4455319113ad1862929a6fdf72a5beb}
+
+
+Definition at line 102 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-pfhy@{kstt\-\_\-pfhy}}
+\index{kstt\-\_\-pfhy@{kstt\-\_\-pfhy}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-pfhy}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-pfhy\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a3bfe44068a85feebd00641d36146f9b3}
+
+
+Definition at line 98 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-pfnh@{kstt\-\_\-pfnh}}
+\index{kstt\-\_\-pfnh@{kstt\-\_\-pfnh}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-pfnh}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-pfnh\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a0fadec8236bccc124436e3c86d142549}
+
+
+Definition at line 99 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-ps@{kstt\-\_\-ps}}
+\index{kstt\-\_\-ps@{kstt\-\_\-ps}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-ps}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-ps\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a3fdf87034b89ea7b38f9261f6f447ded}
+
+
+Definition at line 99 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-pt@{kstt\-\_\-pt}}
+\index{kstt\-\_\-pt@{kstt\-\_\-pt}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-pt}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-pt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_af2dba276e2ab084389801c14c40d7dd0}
+
+
+Definition at line 98 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-srh01@{kstt\-\_\-srh01}}
+\index{kstt\-\_\-srh01@{kstt\-\_\-srh01}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-srh01}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-srh01\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad874bf572a0671a4b9ab899687ac92da}
+
+
+Definition at line 110 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-srh03@{kstt\-\_\-srh03}}
+\index{kstt\-\_\-srh03@{kstt\-\_\-srh03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-srh03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-srh03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a69af7c0dbc3c41d121b40a331bf37bd3}
+
+
+Definition at line 111 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-tracer@{kstt\-\_\-tracer}}
+\index{kstt\-\_\-tracer@{kstt\-\_\-tracer}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-tracer}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-tracer\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a7f1246aa235291e0baf4f056f7d05895}
+
+
+Definition at line 118 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-ua@{kstt\-\_\-ua}}
+\index{kstt\-\_\-ua@{kstt\-\_\-ua}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-ua}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-ua\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a841854dee23e174673acab69d5293ca5}
+
+
+Definition at line 98 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-uhmax03@{kstt\-\_\-uhmax03}}
+\index{kstt\-\_\-uhmax03@{kstt\-\_\-uhmax03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-uhmax03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-uhmax03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad0ea5ae698cef5167c7fdbd41efe192c}
+
+
+Definition at line 108 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-uhmax25@{kstt\-\_\-uhmax25}}
+\index{kstt\-\_\-uhmax25@{kstt\-\_\-uhmax25}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-uhmax25}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-uhmax25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad33734413c2cfcb6c3a253206a9f0b7a}
+
+
+Definition at line 109 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-uhmin03@{kstt\-\_\-uhmin03}}
+\index{kstt\-\_\-uhmin03@{kstt\-\_\-uhmin03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-uhmin03}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-uhmin03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ae746952c86b8fd6dc88b35f8809c979d}
+
+
+Definition at line 108 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-uhmin25@{kstt\-\_\-uhmin25}}
+\index{kstt\-\_\-uhmin25@{kstt\-\_\-uhmin25}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-uhmin25}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-uhmin25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a73ee0ca4c35514c00e2da4dee53907e7}
+
+
+Definition at line 109 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-ustm@{kstt\-\_\-ustm}}
+\index{kstt\-\_\-ustm@{kstt\-\_\-ustm}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-ustm}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-ustm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a4ead52177a3f64c0f0e25bd5b1a0f2d0}
+
+
+Definition at line 110 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-va@{kstt\-\_\-va}}
+\index{kstt\-\_\-va@{kstt\-\_\-va}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-va}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-va\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aea4c4320cbee76e02d3cd4d8d27d66e3}
+
+
+Definition at line 98 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-vstm@{kstt\-\_\-vstm}}
+\index{kstt\-\_\-vstm@{kstt\-\_\-vstm}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-vstm}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-vstm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a4abdf8ebb7e177ea5bbe1c78b16d9b30}
+
+
+Definition at line 110 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-w@{kstt\-\_\-w}}
+\index{kstt\-\_\-w@{kstt\-\_\-w}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-w}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-w\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a7a314e9a214f9738be68f59c0d85b000}
+
+
+Definition at line 99 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-wdn@{kstt\-\_\-wdn}}
+\index{kstt\-\_\-wdn@{kstt\-\_\-wdn}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-wdn}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-wdn\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aba42685aa149ce68cbfb653d3263842d}
+
+
+Definition at line 104 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-windvect@{kstt\-\_\-windvect}}
+\index{kstt\-\_\-windvect@{kstt\-\_\-windvect}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-windvect}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-windvect\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad2da0c51ff10c97635de92984451f577}
+
+
+Definition at line 103 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!kstt\-\_\-wup@{kstt\-\_\-wup}}
+\index{kstt\-\_\-wup@{kstt\-\_\-wup}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{kstt\-\_\-wup}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::kstt\-\_\-wup\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a86051f0376102e15a8a1a0fc8fe5429f}
+
+
+Definition at line 104 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!lat@{lat}}
+\index{lat@{lat}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{lat}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::lat\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a134ea86f7c12011dda0297316dc3ea52}
+
+
+Definition at line 142 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!liq\-\_\-wat@{liq\-\_\-wat}}
+\index{liq\-\_\-wat@{liq\-\_\-wat}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{liq\-\_\-wat}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::liq\-\_\-wat\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a972ef31ad558e0e5f6eec28762065b1f}
+
+
+Definition at line 124 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!lon@{lon}}
+\index{lon@{lon}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{lon}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::lon\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aafdb15d16067525ed3d44c2cdde8e417}
+
+
+Definition at line 142 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!master@{master}}
+\index{master@{master}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{master}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::master\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a1cd9085200009db10173487afdf6107c}
+
+
+Definition at line 95 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!maxvort01@{maxvort01}}
+\index{maxvort01@{maxvort01}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{maxvort01}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::maxvort01\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ab16739d4afbb45dc85d35490ace8b500}
+
+
+Definition at line 144 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!maxvort02@{maxvort02}}
+\index{maxvort02@{maxvort02}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{maxvort02}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::maxvort02\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ae3d6e23a909d7ca356786721cebc4c66}
+
+
+Definition at line 145 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!maxvorthy1@{maxvorthy1}}
+\index{maxvorthy1@{maxvorthy1}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{maxvorthy1}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::maxvorthy1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a8ebec458193f8834ccfe45e2d770e9d7}
+
+
+Definition at line 145 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!missing\-\_\-value@{missing\-\_\-value}}
+\index{missing\-\_\-value@{missing\-\_\-value}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{missing\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::missing\-\_\-value = -\/1.e10\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ae58ca0a4c6f6a924fe1ad700c59e7835}
+
+
+Definition at line 91 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!module\-\_\-is\-\_\-initialized@{module\-\_\-is\-\_\-initialized}}
+\index{module\-\_\-is\-\_\-initialized@{module\-\_\-is\-\_\-initialized}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{module\-\_\-is\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::module\-\_\-is\-\_\-initialized =.false.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_abc0aa3699a7eff720af358c47301af18}
+
+
+Definition at line 122 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!ncnsto@{ncnsto}}
+\index{ncnsto@{ncnsto}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{ncnsto}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::ncnsto\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aa4520f56a48c115c6fbe88f3855fdf8c}
+
+
+Definition at line 113 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!nlevs@{nlevs}}
+\index{nlevs@{nlevs}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{nlevs}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::nlevs\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a45187525edfc30bf711eeb0bb8efb040}
+
+
+Definition at line 115 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!npzo@{npzo}}
+\index{npzo@{npzo}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{npzo}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::npzo\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a34ced43246de58031ac0f5bc43d7f043}
+
+
+Definition at line 113 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!psurf@{psurf}}
+\index{psurf@{psurf}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{psurf}]{\setlength{\rightskip}{0pt plus 5cm}real(4), dimension(\-:,\-:), allocatable, target fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::psurf\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_af7f5be1d89289b4cf2b12c6b11fad16a}
+
+
+Definition at line 141 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!rainwat@{rainwat}}
+\index{rainwat@{rainwat}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{rainwat}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::rainwat\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_adc96217bcb04e9c325be22b533ad6fda}
+
+
+Definition at line 125 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!skrange@{skrange}}
+\index{skrange@{skrange}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{skrange}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(2) fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::skrange = (/ -\/10000000.\-0, 10000000.\-0 /)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a2f51cdf63c0bffba99bfcecb26302104}
+
+
+dissipation estimate for S\-K\-E\-B 
+
+
+
+Definition at line 129 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!snowwat@{snowwat}}
+\index{snowwat@{snowwat}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{snowwat}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::snowwat\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a90f11314ec23054c97a9c1a6a94c0818}
+
+
+Definition at line 125 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!sphum@{sphum}}
+\index{sphum@{sphum}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{sphum}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::sphum\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a0bf39b42a909bb2f0fa740a3b186eb10}
+
+
+Definition at line 124 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!stndrd\-\_\-atmos\-\_\-lapse@{stndrd\-\_\-atmos\-\_\-lapse}}
+\index{stndrd\-\_\-atmos\-\_\-lapse@{stndrd\-\_\-atmos\-\_\-lapse}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{stndrd\-\_\-atmos\-\_\-lapse}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::stndrd\-\_\-atmos\-\_\-lapse = 0.\-0065\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ac448721091d8e09234e09b5e3e4d0d68}
+
+
+Definition at line 93 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!stndrd\-\_\-atmos\-\_\-ps@{stndrd\-\_\-atmos\-\_\-ps}}
+\index{stndrd\-\_\-atmos\-\_\-ps@{stndrd\-\_\-atmos\-\_\-ps}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{stndrd\-\_\-atmos\-\_\-ps}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::stndrd\-\_\-atmos\-\_\-ps = 101325.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a67f209631191a0c270db5c26d5613683}
+
+
+Definition at line 92 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!tlongname@{tlongname}}
+\index{tlongname@{tlongname}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{tlongname}]{\setlength{\rightskip}{0pt plus 5cm}character(len=256) fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::tlongname\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a8acfdda0bd8e8b86b400a86615f1b3ef}
+
+
+Definition at line 136 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!tname@{tname}}
+\index{tname@{tname}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{tname}]{\setlength{\rightskip}{0pt plus 5cm}character(len=128) fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::tname\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ade8a5d09872d5c2ba95c9a9a81e916fe}
+
+
+Definition at line 135 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!trange@{trange}}
+\index{trange@{trange}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{trange}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(2) fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::trange = (/ 100., 350. /)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a63ac798b7bdc14c9cad4830deef4241d}
+
+
+temperature 
+
+
+
+Definition at line 128 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!tunits@{tunits}}
+\index{tunits@{tunits}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{tunits}]{\setlength{\rightskip}{0pt plus 5cm}character(len=256) fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::tunits\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_acf58902ead32fad28330b73b5aa61955}
+
+
+Definition at line 136 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!uhmax03@{uhmax03}}
+\index{uhmax03@{uhmax03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{uhmax03}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::uhmax03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a672498c2dd7e91c63c8a14544b89313e}
+
+
+Definition at line 143 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!uhmax25@{uhmax25}}
+\index{uhmax25@{uhmax25}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{uhmax25}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::uhmax25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad0c2b22c16b4343ee02a0da7770b1189}
+
+
+Definition at line 144 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!uhmin03@{uhmin03}}
+\index{uhmin03@{uhmin03}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{uhmin03}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::uhmin03\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aeb25900a2ec78b17f30b044f0dab51fa}
+
+
+Definition at line 143 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!uhmin25@{uhmin25}}
+\index{uhmin25@{uhmin25}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{uhmin25}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::uhmin25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a517b0627b47ddc6de2c53f9f13974730}
+
+
+Definition at line 144 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!up2@{up2}}
+\index{up2@{up2}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{up2}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:), allocatable fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::up2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_aad395c43512c289616cfe7c63927fe51}
+
+
+Definition at line 143 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!use\-\_\-wrtgridcomp\-\_\-output@{use\-\_\-wrtgridcomp\-\_\-output}}
+\index{use\-\_\-wrtgridcomp\-\_\-output@{use\-\_\-wrtgridcomp\-\_\-output}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{use\-\_\-wrtgridcomp\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::use\-\_\-wrtgridcomp\-\_\-output =.false.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a70632914cad68cbfde798ff630987d0f}
+
+
+Definition at line 123 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!vrange@{vrange}}
+\index{vrange@{vrange}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{vrange}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(2) fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::vrange = (/ -\/330., 330. /)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_a09ecb76f21e39af3216eb05b1b913419}
+
+
+winds 
+
+
+
+Definition at line 126 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!windvect@{windvect}}
+\index{windvect@{windvect}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{windvect}]{\setlength{\rightskip}{0pt plus 5cm}real(4), dimension(\-:,\-:,\-:,\-:), allocatable, target fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::windvect\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ad92d40cf9570d98ea35bc7da2815dc38}
+
+
+Definition at line 140 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+\index{fv\-\_\-nggps\-\_\-diags\-\_\-mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}!wrange@{wrange}}
+\index{wrange@{wrange}!fv_nggps_diags_mod@{fv\-\_\-nggps\-\_\-diags\-\_\-mod}}
+\subsubsection[{wrange}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(2) fv\-\_\-nggps\-\_\-diags\-\_\-mod\-::wrange = (/ -\/100., 100. /)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__nggps__diags__mod_ac62774517426ba9abf37f95e33a53c75}
+
+
+vertical wind 
+
+
+
+Definition at line 127 of file fv\-\_\-nggps\-\_\-diag.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/driver/fv\-G\-F\-S/\hyperlink{fv__nggps__diag_8F90}{fv\-\_\-nggps\-\_\-diag.\-F90}\end{DoxyCompactItemize}

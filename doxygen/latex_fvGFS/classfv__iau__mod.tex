@@ -1,0 +1,388 @@
+\section{fv\-\_\-iau\-\_\-mod Module Reference}
+\label{classfv__iau__mod}\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}}
+
+
+incremental analysis update module  
+
+
+
+
+Collaboration diagram for fv\-\_\-iau\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfv__iau__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \hyperlink{structfv__iau__mod_1_1iau__external__data__type}{iau\-\_\-external\-\_\-data\-\_\-type}
+\item 
+type \hyperlink{structfv__iau__mod_1_1iau__internal__data__type}{iau\-\_\-internal\-\_\-data\-\_\-type}
+\item 
+type \hyperlink{structfv__iau__mod_1_1iau__state__type}{iau\-\_\-state\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__iau__mod_a4caa0c7cbde506ddfd85fb2a4cb17d31}{iau\-\_\-initialize} (I\-P\-D\-\_\-\-Control, I\-A\-U\-\_\-\-Data, Init\-\_\-parm)
+\item 
+subroutine, public \hyperlink{classfv__iau__mod_ae529ff05f683e363f03577449cc5e678}{getiauforcing} (I\-P\-D\-\_\-\-Control, I\-A\-U\-\_\-\-Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classfv__iau__mod_a6c82860ced03945e7efa22f4a80c2eb4}{updateiauforcing} (I\-P\-D\-\_\-\-Control, I\-A\-U\-\_\-\-Data, wt)
+\item 
+subroutine \hyperlink{classfv__iau__mod_a5701c1ca8d6df61a85cf83e808fc8962}{setiauforcing} (I\-P\-D\-\_\-\-Control, I\-A\-U\-\_\-\-Data, wt)
+\item 
+subroutine \hyperlink{classfv__iau__mod_a6fe83e01a0384b0391fd77833e4281c9}{read\-\_\-iau\-\_\-forcing} (I\-P\-D\-\_\-\-Control, increments, fname)
+\item 
+subroutine \hyperlink{classfv__iau__mod_a96c143c7c507b624327f7b0c45a7492e}{interp\-\_\-inc} (field\-\_\-name, var, jbeg, jend)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classfv__iau__mod_a0967901620cb181a32bcb765735ca893}{s2c}
+\item 
+integer, dimension(\-:,\-:), \\*
+allocatable \hyperlink{classfv__iau__mod_af29c8a827572b31a036d0abdf9e069ce}{id1}
+\item 
+integer, dimension(\-:,\-:), \\*
+allocatable \hyperlink{classfv__iau__mod_a58dd6dc94c1c0d8573764ea8a8dbf8fe}{id2}
+\item 
+integer, dimension(\-:,\-:), \\*
+allocatable \hyperlink{classfv__iau__mod_a41ed3fc692c4d53ad905c7bb685ef4a0}{jdc}
+\item 
+real \hyperlink{classfv__iau__mod_ac636879eb6bdbeee409bbd34c6658035}{deg2rad}
+\item 
+real \hyperlink{classfv__iau__mod_aa09091f1f91b28a3137ebc5f59c654aa}{dt}
+\item 
+real \hyperlink{classfv__iau__mod_a60ee6932472e1de9516db019295fd7d1}{rdt}
+\item 
+integer \hyperlink{classfv__iau__mod_af1d250bc9006235754621652e834c674}{im}
+\item 
+integer \hyperlink{classfv__iau__mod_a6c78ca52b83ca9f3e6045d9f06f889bc}{jm}
+\item 
+integer \hyperlink{classfv__iau__mod_a59eb624f87e12b21694f85684d1c89b7}{km}
+\item 
+integer \hyperlink{classfv__iau__mod_a756fe43c3f4a450d555fc78eef47d82d}{nfiles}
+\item 
+integer \hyperlink{classfv__iau__mod_a723f72c8cff32995d1dcd3a7f2661df2}{ncid}
+\item 
+integer \hyperlink{classfv__iau__mod_afb1c5125d4ad50603b747abd8e2cfd66}{is}
+\item 
+integer \hyperlink{classfv__iau__mod_af5515c4fa4f895ab74405846237a057b}{ie}
+\item 
+integer \hyperlink{classfv__iau__mod_a8cfba167a9bf88f42967b9bb5644443c}{js}
+\item 
+integer \hyperlink{classfv__iau__mod_a3a77635e7bb49d54f620f47019277693}{je}
+\item 
+integer \hyperlink{classfv__iau__mod_aaf9ea7c9b134626a73380e7fdd86e42d}{npz}
+\item 
+integer \hyperlink{classfv__iau__mod_a024c7a7ef109d8c660c3df5faf6746f4}{ntracers}
+\item 
+character(len=32), dimension(\-:), \\*
+allocatable \hyperlink{classfv__iau__mod_a271662be2cbbaca55eee2fcba5fe1aa0}{tracer\-\_\-names}
+\item 
+integer, dimension(\-:), allocatable \hyperlink{classfv__iau__mod_a21f83d74d28c045c736b76aa21d14811}{tracer\-\_\-indicies}
+\item 
+real(kind=4), dimension(\-:,\-:,\-:), \\*
+allocatable \hyperlink{classfv__iau__mod_a9d129637a99655ead2bcf3978b8e03bb}{wk3}
+\item 
+type(\hyperlink{structfv__iau__mod_1_1iau__state__type}{iau\-\_\-state\-\_\-type}) \hyperlink{classfv__iau__mod_a589667f66e33a418ed898421a7c10d93}{iau\-\_\-state}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+incremental analysis update module 
+
+\begin{DoxyAuthor}{Author}
+Xi.\-Chen -\/ author of \hyperlink{fv__treat__da__inc_8F90}{fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90} 
+
+Philip Pegion \href{mailto:philip.pegion@noaa.gov}{\tt philip.\-pegion@noaa.\-gov} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09/13/2017 R\-E\-V\-I\-S\-I\-O\-N H\-I\-S\-T\-O\-R\-Y\-: 09/13/2017 -\/ Initial Version based on \hyperlink{fv__treat__da__inc_8F90}{fv\-\_\-treat\-\_\-da\-\_\-inc.\-F90} 
+\end{DoxyDate}
+
+
+Definition at line 38 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!getiauforcing@{getiauforcing}}
+\index{getiauforcing@{getiauforcing}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{getiauforcing}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-iau\-\_\-mod\-::getiauforcing (
+\begin{DoxyParamCaption}
+\item[{type (ipd\-\_\-control\-\_\-type), intent(in)}]{I\-P\-D\-\_\-\-Control, }
+\item[{type({\bf iau\-\_\-external\-\_\-data\-\_\-type}), intent(inout)}]{I\-A\-U\-\_\-\-Data}
+\end{DoxyParamCaption}
+)}\label{classfv__iau__mod_ae529ff05f683e363f03577449cc5e678}
+
+
+Definition at line 286 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+
+
+References read\-\_\-iau\-\_\-forcing(), setiauforcing(), and updateiauforcing().
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!iau\-\_\-initialize@{iau\-\_\-initialize}}
+\index{iau\-\_\-initialize@{iau\-\_\-initialize}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{iau\-\_\-initialize}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-iau\-\_\-mod\-::iau\-\_\-initialize (
+\begin{DoxyParamCaption}
+\item[{type (ipd\-\_\-control\-\_\-type), intent(in)}]{I\-P\-D\-\_\-\-Control, }
+\item[{type ({\bf iau\-\_\-external\-\_\-data\-\_\-type}), intent(inout)}]{I\-A\-U\-\_\-\-Data, }
+\item[{type (ipd\-\_\-init\-\_\-type), intent(in)}]{Init\-\_\-parm}
+\end{DoxyParamCaption}
+)}\label{classfv__iau__mod_a4caa0c7cbde506ddfd85fb2a4cb17d31}
+
+
+Definition at line 109 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+
+
+References sim\-\_\-nc\-\_\-mod\-::close\-\_\-ncfile(), sim\-\_\-nc\-\_\-mod\-::get\-\_\-ncdim1(), sim\-\_\-nc\-\_\-mod\-::open\-\_\-ncfile(), read\-\_\-iau\-\_\-forcing(), external\-\_\-ic\-\_\-mod\-::remap\-\_\-coef(), and setiauforcing().
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!interp\-\_\-inc@{interp\-\_\-inc}}
+\index{interp\-\_\-inc@{interp\-\_\-inc}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{interp\-\_\-inc}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-iau\-\_\-mod\-::interp\-\_\-inc (
+\begin{DoxyParamCaption}
+\item[{character(len=$\ast$), intent(in)}]{field\-\_\-name, }
+\item[{real, dimension(is\-:ie,js\-:je,1\-:{\bf km}), intent(inout)}]{var, }
+\item[{integer, intent(in)}]{jbeg, }
+\item[{integer, intent(in)}]{jend}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a96c143c7c507b624327f7b0c45a7492e}
+
+
+Definition at line 477 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+
+
+References sim\-\_\-nc\-\_\-mod\-::check\-\_\-var\-\_\-exists(), and sim\-\_\-nc\-\_\-mod\-::get\-\_\-var3\-\_\-r4().
+
+
+
+Referenced by read\-\_\-iau\-\_\-forcing().
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!read\-\_\-iau\-\_\-forcing@{read\-\_\-iau\-\_\-forcing}}
+\index{read\-\_\-iau\-\_\-forcing@{read\-\_\-iau\-\_\-forcing}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{read\-\_\-iau\-\_\-forcing}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-iau\-\_\-mod\-::read\-\_\-iau\-\_\-forcing (
+\begin{DoxyParamCaption}
+\item[{type (ipd\-\_\-control\-\_\-type), intent(in)}]{I\-P\-D\-\_\-\-Control, }
+\item[{type({\bf iau\-\_\-internal\-\_\-data\-\_\-type}), intent(inout)}]{increments, }
+\item[{character(len=$\ast$), intent(in)}]{fname}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a6fe83e01a0384b0391fd77833e4281c9}
+
+
+Definition at line 419 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+
+
+References sim\-\_\-nc\-\_\-mod\-::close\-\_\-ncfile(), interp\-\_\-inc(), and sim\-\_\-nc\-\_\-mod\-::open\-\_\-ncfile().
+
+
+
+Referenced by getiauforcing(), and iau\-\_\-initialize().
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!setiauforcing@{setiauforcing}}
+\index{setiauforcing@{setiauforcing}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{setiauforcing}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-iau\-\_\-mod\-::setiauforcing (
+\begin{DoxyParamCaption}
+\item[{type (ipd\-\_\-control\-\_\-type), intent(in)}]{I\-P\-D\-\_\-\-Control, }
+\item[{type({\bf iau\-\_\-external\-\_\-data\-\_\-type}), intent(inout)}]{I\-A\-U\-\_\-\-Data, }
+\item[{real(kind\-\_\-phys)}]{wt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a5701c1ca8d6df61a85cf83e808fc8962}
+
+
+Definition at line 393 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+
+
+Referenced by getiauforcing(), and iau\-\_\-initialize().
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!updateiauforcing@{updateiauforcing}}
+\index{updateiauforcing@{updateiauforcing}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{updateiauforcing}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-iau\-\_\-mod\-::updateiauforcing (
+\begin{DoxyParamCaption}
+\item[{type (ipd\-\_\-control\-\_\-type), intent(in)}]{I\-P\-D\-\_\-\-Control, }
+\item[{type({\bf iau\-\_\-external\-\_\-data\-\_\-type}), intent(inout)}]{I\-A\-U\-\_\-\-Data, }
+\item[{real(kind\-\_\-phys)}]{wt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a6c82860ced03945e7efa22f4a80c2eb4}
+
+
+Definition at line 366 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+
+
+Referenced by getiauforcing().
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!deg2rad@{deg2rad}}
+\index{deg2rad@{deg2rad}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{deg2rad}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-iau\-\_\-mod\-::deg2rad\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_ac636879eb6bdbeee409bbd34c6658035}
+
+
+Definition at line 72 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!dt@{dt}}
+\index{dt@{dt}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{dt}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-iau\-\_\-mod\-::dt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_aa09091f1f91b28a3137ebc5f59c654aa}
+
+
+Definition at line 72 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!iau\-\_\-state@{iau\-\_\-state}}
+\index{iau\-\_\-state@{iau\-\_\-state}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{iau\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf iau\-\_\-state\-\_\-type}) fv\-\_\-iau\-\_\-mod\-::iau\-\_\-state\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a589667f66e33a418ed898421a7c10d93}
+
+
+Definition at line 105 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!id1@{id1}}
+\index{id1@{id1}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{id1}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:,\-:), allocatable fv\-\_\-iau\-\_\-mod\-::id1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_af29c8a827572b31a036d0abdf9e069ce}
+
+
+Definition at line 70 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!id2@{id2}}
+\index{id2@{id2}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{id2}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:,\-:), allocatable fv\-\_\-iau\-\_\-mod\-::id2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a58dd6dc94c1c0d8573764ea8a8dbf8fe}
+
+
+Definition at line 70 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!ie@{ie}}
+\index{ie@{ie}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{ie}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::ie\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_af5515c4fa4f895ab74405846237a057b}
+
+
+Definition at line 74 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!im@{im}}
+\index{im@{im}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{im}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::im\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_af1d250bc9006235754621652e834c674}
+
+
+Definition at line 73 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!is@{is}}
+\index{is@{is}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{is}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::is\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_afb1c5125d4ad50603b747abd8e2cfd66}
+
+
+Definition at line 74 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!jdc@{jdc}}
+\index{jdc@{jdc}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{jdc}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:,\-:), allocatable fv\-\_\-iau\-\_\-mod\-::jdc\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a41ed3fc692c4d53ad905c7bb685ef4a0}
+
+
+Definition at line 70 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!je@{je}}
+\index{je@{je}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{je}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::je\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a3a77635e7bb49d54f620f47019277693}
+
+
+Definition at line 74 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!jm@{jm}}
+\index{jm@{jm}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{jm}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::jm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a6c78ca52b83ca9f3e6045d9f06f889bc}
+
+
+Definition at line 73 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!js@{js}}
+\index{js@{js}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{js}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::js\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a8cfba167a9bf88f42967b9bb5644443c}
+
+
+Definition at line 74 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!km@{km}}
+\index{km@{km}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{km}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::km\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a59eb624f87e12b21694f85684d1c89b7}
+
+
+Definition at line 73 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!ncid@{ncid}}
+\index{ncid@{ncid}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{ncid}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::ncid\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a723f72c8cff32995d1dcd3a7f2661df2}
+
+
+Definition at line 73 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!nfiles@{nfiles}}
+\index{nfiles@{nfiles}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{nfiles}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::nfiles\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a756fe43c3f4a450d555fc78eef47d82d}
+
+
+Definition at line 73 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!npz@{npz}}
+\index{npz@{npz}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{npz}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::npz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_aaf9ea7c9b134626a73380e7fdd86e42d}
+
+
+Definition at line 75 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!ntracers@{ntracers}}
+\index{ntracers@{ntracers}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{ntracers}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-iau\-\_\-mod\-::ntracers\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a024c7a7ef109d8c660c3df5faf6746f4}
+
+
+Definition at line 75 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!rdt@{rdt}}
+\index{rdt@{rdt}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{rdt}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-iau\-\_\-mod\-::rdt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a60ee6932472e1de9516db019295fd7d1}
+
+
+Definition at line 72 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!s2c@{s2c}}
+\index{s2c@{s2c}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{s2c}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable fv\-\_\-iau\-\_\-mod\-::s2c\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a0967901620cb181a32bcb765735ca893}
+
+
+Definition at line 66 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!tracer\-\_\-indicies@{tracer\-\_\-indicies}}
+\index{tracer\-\_\-indicies@{tracer\-\_\-indicies}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{tracer\-\_\-indicies}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:), allocatable fv\-\_\-iau\-\_\-mod\-::tracer\-\_\-indicies\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a21f83d74d28c045c736b76aa21d14811}
+
+
+Definition at line 77 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!tracer\-\_\-names@{tracer\-\_\-names}}
+\index{tracer\-\_\-names@{tracer\-\_\-names}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{tracer\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}character(len=32), dimension(\-:), allocatable fv\-\_\-iau\-\_\-mod\-::tracer\-\_\-names\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a271662be2cbbaca55eee2fcba5fe1aa0}
+
+
+Definition at line 76 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+\index{fv\-\_\-iau\-\_\-mod@{fv\-\_\-iau\-\_\-mod}!wk3@{wk3}}
+\index{wk3@{wk3}!fv_iau_mod@{fv\-\_\-iau\-\_\-mod}}
+\subsubsection[{wk3}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:,\-:), allocatable fv\-\_\-iau\-\_\-mod\-::wk3\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__iau__mod_a9d129637a99655ead2bcf3978b8e03bb}
+
+
+Definition at line 79 of file fv\-\_\-iau\-\_\-mod.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/tools/\hyperlink{fv__iau__mod_8F90}{fv\-\_\-iau\-\_\-mod.\-F90}\end{DoxyCompactItemize}

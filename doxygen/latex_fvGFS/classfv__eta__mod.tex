@@ -1,0 +1,521 @@
+\section{fv\-\_\-eta\-\_\-mod Module Reference}
+\label{classfv__eta__mod}\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}}
+
+
+The module 'fv\-\_\-eta' contains routine to set up the reference (Eulerian) pressure coordinate.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__eta__mod_a4a75f788fcb7401c0064bdb92d3b4953}{set\-\_\-eta} (km, ks, ptop, ak, bk)
+\begin{DoxyCompactList}\small\item\em This is the version of set\-\_\-eta used in fv\-G\-F\-S and A\-M4. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classfv__eta__mod_a9bcd4fafe443993cdfbddbb177cfc033}{set\-\_\-external\-\_\-eta} (ak, bk, ptop, ks)
+\begin{DoxyCompactList}\small\item\em The subroutine 'set\-\_\-external\-\_\-eta' sets 'ptop' (model top) and 'ks' (first level of pure pressure coordinates given the coefficients 'ak' and 'bk'. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classfv__eta__mod_a4e4105dac9b697433c572db3c7025f16}{hybrid\-\_\-z\-\_\-dz} (km, dz, ztop, s\-\_\-rate)
+\item 
+subroutine, public \hyperlink{classfv__eta__mod_ac666b63cee9afad18f2cf33dbced10f6}{get\-\_\-eta\-\_\-level} (npz, p\-\_\-s, pf, ph, ak, bk, pscale)
+\begin{DoxyCompactList}\small\item\em The subroutine 'get\-\_\-eta\-\_\-level' returns the interface and layer-\/mean pressures for reference. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classfv__eta__mod_a2e39e6b09b9c0fa35603b30259dbf116}{compute\-\_\-dz} (km, ztop, dz)
+\item 
+subroutine, public \hyperlink{classfv__eta__mod_a1d0b3f206b0bfbdf5e3cf0d628a541cf}{compute\-\_\-dz\-\_\-var} (km, ztop, dz)
+\item 
+subroutine, public \hyperlink{classfv__eta__mod_a053b0ba1233d84a26d711e5eb52067d6}{compute\-\_\-dz\-\_\-l32} (km, ztop, dz)
+\item 
+subroutine, public \hyperlink{classfv__eta__mod_a9a86c1048a7447b78e476bdc8779c66b}{compute\-\_\-dz\-\_\-l101} (km, ztop, dz)
+\item 
+subroutine, public \hyperlink{classfv__eta__mod_a3cc1b049b1ea1a7946fe7822d487b96e}{set\-\_\-hybrid\-\_\-z} (is, ie, js, je, ng, km, ztop, dz, rgrav, hs, ze, dz3)
+\item 
+subroutine, public \hyperlink{classfv__eta__mod_a28257151239cbcf2109332794c3c8ca7}{sm1\-\_\-edge} (is, ie, js, je, km, i, j, ze, ntimes)
+\item 
+subroutine, public \hyperlink{classfv__eta__mod_a700124642759a074f906c37e97759143}{gw\-\_\-1d} (km, p0, ak, bk, ptop, ztop, pt1)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classfv__eta__mod_a485f88952280ceb9c730bc2ed08c3078}{var\-\_\-les} (km, ak, bk, ptop, ks, pint, s\-\_\-rate)
+\item 
+subroutine \hyperlink{classfv__eta__mod_a6ec582f058a1d23edd2b7d79edd78ee5}{var\-\_\-gfs} (km, ak, bk, ptop, ks, pint, s\-\_\-rate)
+\item 
+subroutine \hyperlink{classfv__eta__mod_a8c6950ee0b7fd66c1b35de24dc7d6d17}{var\-\_\-hi} (km, ak, bk, ptop, ks, pint, s\-\_\-rate)
+\item 
+subroutine \hyperlink{classfv__eta__mod_ad5e4e4a50f8c29c986a4093990d46442}{var\-\_\-hi2} (km, ak, bk, ptop, ks, pint, s\-\_\-rate)
+\item 
+subroutine \hyperlink{classfv__eta__mod_af1838090c58f286a4c66ce76a7d6b55a}{var\-\_\-dz} (km, ak, bk, ptop, ks, pint, s\-\_\-rate)
+\item 
+subroutine \hyperlink{classfv__eta__mod_a59a8fe6b8a243e7bd30a030d13f13658}{var55\-\_\-dz} (km, ak, bk, ptop, ks, pint, s\-\_\-rate)
+\item 
+subroutine \hyperlink{classfv__eta__mod_a794583ebdb4823bcbdde4cca4b019f91}{zflip} (q, im, km)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'fv\-\_\-eta' contains routine to set up the reference (Eulerian) pressure coordinate. 
+
+Definition at line 25 of file fv\-\_\-eta.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!compute\-\_\-dz@{compute\-\_\-dz}}
+\index{compute\-\_\-dz@{compute\-\_\-dz}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{compute\-\_\-dz}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::compute\-\_\-dz (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, intent(in)}]{ztop, }
+\item[{real, dimension(km), intent(out)}]{dz}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a2e39e6b09b9c0fa35603b30259dbf116}
+
+
+Definition at line 2622 of file fv\-\_\-eta.\-F90.
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!compute\-\_\-dz\-\_\-l101@{compute\-\_\-dz\-\_\-l101}}
+\index{compute\-\_\-dz\-\_\-l101@{compute\-\_\-dz\-\_\-l101}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{compute\-\_\-dz\-\_\-l101}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::compute\-\_\-dz\-\_\-l101 (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, intent(out)}]{ztop, }
+\item[{real, dimension(km), intent(out)}]{dz}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a9a86c1048a7447b78e476bdc8779c66b}
+
+
+Definition at line 2797 of file fv\-\_\-eta.\-F90.
+
+
+
+Referenced by test\-\_\-cases\-\_\-mod\-::init\-\_\-double\-\_\-periodic().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!compute\-\_\-dz\-\_\-l32@{compute\-\_\-dz\-\_\-l32}}
+\index{compute\-\_\-dz\-\_\-l32@{compute\-\_\-dz\-\_\-l32}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{compute\-\_\-dz\-\_\-l32}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::compute\-\_\-dz\-\_\-l32 (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, intent(out)}]{ztop, }
+\item[{real, dimension(km), intent(out)}]{dz}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a053b0ba1233d84a26d711e5eb52067d6}
+
+
+Definition at line 2728 of file fv\-\_\-eta.\-F90.
+
+
+
+References zflip().
+
+
+
+Referenced by fv\-\_\-restart\-\_\-mod\-::fv\-\_\-restart(), and test\-\_\-cases\-\_\-mod\-::init\-\_\-case().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!compute\-\_\-dz\-\_\-var@{compute\-\_\-dz\-\_\-var}}
+\index{compute\-\_\-dz\-\_\-var@{compute\-\_\-dz\-\_\-var}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{compute\-\_\-dz\-\_\-var}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::compute\-\_\-dz\-\_\-var (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, intent(in)}]{ztop, }
+\item[{real, dimension(km), intent(out)}]{dz}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a1d0b3f206b0bfbdf5e3cf0d628a541cf}
+
+
+Definition at line 2658 of file fv\-\_\-eta.\-F90.
+
+
+
+References sm1\-\_\-edge().
+
+
+
+Referenced by fv\-\_\-restart\-\_\-mod\-::fv\-\_\-restart().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!get\-\_\-eta\-\_\-level@{get\-\_\-eta\-\_\-level}}
+\index{get\-\_\-eta\-\_\-level@{get\-\_\-eta\-\_\-level}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{get\-\_\-eta\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::get\-\_\-eta\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{npz, }
+\item[{real, intent(in)}]{p\-\_\-s, }
+\item[{real, dimension(npz), intent(out)}]{pf, }
+\item[{real, dimension(npz+1), intent(out)}]{ph, }
+\item[{real, dimension(npz+1), intent(in)}]{ak, }
+\item[{real, dimension(npz+1), intent(in)}]{bk, }
+\item[{real, intent(in), optional}]{pscale}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_ac666b63cee9afad18f2cf33dbced10f6}
+
+
+The subroutine 'get\-\_\-eta\-\_\-level' returns the interface and layer-\/mean pressures for reference. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p\-\_\-s} & unit\-: pascal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2587 of file fv\-\_\-eta.\-F90.
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-init(), fv\-\_\-diagnostics\-\_\-mod\-::fv\-\_\-diag\-\_\-init(), fv\-\_\-update\-\_\-phys\-\_\-mod\-::fv\-\_\-update\-\_\-phys(), and fv\-\_\-regional\-\_\-mod\-::setup\-\_\-regional\-\_\-bc().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!gw\-\_\-1d@{gw\-\_\-1d}}
+\index{gw\-\_\-1d@{gw\-\_\-1d}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{gw\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::gw\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, intent(in)}]{p0, }
+\item[{real, dimension(km+1), intent(inout)}]{ak, }
+\item[{real, dimension(km+1), intent(inout)}]{bk, }
+\item[{real, intent(inout)}]{ptop, }
+\item[{real, intent(in)}]{ztop, }
+\item[{real, dimension(km), intent(out)}]{pt1}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a700124642759a074f906c37e97759143}
+
+
+Definition at line 3014 of file fv\-\_\-eta.\-F90.
+
+
+
+Referenced by fv\-\_\-diagnostics\-\_\-mod\-::fv\-\_\-diag(), fv\-\_\-diagnostics\-\_\-mod\-::fv\-\_\-diag\-\_\-init(), test\-\_\-cases\-\_\-mod\-::init\-\_\-case(), and set\-\_\-eta().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!hybrid\-\_\-z\-\_\-dz@{hybrid\-\_\-z\-\_\-dz}}
+\index{hybrid\-\_\-z\-\_\-dz@{hybrid\-\_\-z\-\_\-dz}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{hybrid\-\_\-z\-\_\-dz}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::hybrid\-\_\-z\-\_\-dz (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(km), intent(out)}]{dz, }
+\item[{real, intent(in)}]{ztop, }
+\item[{real, intent(in)}]{s\-\_\-rate}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a4e4105dac9b697433c572db3c7025f16}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\-\_\-rate} & between \mbox{[}1. 1.\-1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2522 of file fv\-\_\-eta.\-F90.
+
+
+
+References sm1\-\_\-edge().
+
+
+
+Referenced by test\-\_\-cases\-\_\-mod\-::init\-\_\-case().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!set\-\_\-eta@{set\-\_\-eta}}
+\index{set\-\_\-eta@{set\-\_\-eta}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{set\-\_\-eta}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::set\-\_\-eta (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{integer, intent(out)}]{ks, }
+\item[{real, intent(out)}]{ptop, }
+\item[{real, dimension(km+1), intent(out)}]{ak, }
+\item[{real, dimension(km+1), intent(out)}]{bk}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a4a75f788fcb7401c0064bdb92d3b4953}
+
+
+This is the version of set\-\_\-eta used in fv\-G\-F\-S and A\-M4. 
+
+\begin{DoxyNote}{Note}
+01/2018\-: 'set\-\_\-eta' is being cleaned up.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em km} & vertical dimension\\
+\hline
+\mbox{\tt out}  & {\em ks} & number of pure p layers\\
+\hline
+\mbox{\tt out}  & {\em ptop} & model top (Pa) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 419 of file fv\-\_\-eta.\-F90.
+
+
+
+References gw\-\_\-1d(), var\-\_\-dz(), var\-\_\-gfs(), and var\-\_\-hi().
+
+
+
+Referenced by external\-\_\-ic\-\_\-mod\-::get\-\_\-ecmwf\-\_\-ic(), external\-\_\-ic\-\_\-mod\-::get\-\_\-nggps\-\_\-ic(), and fv\-\_\-grid\-\_\-utils\-\_\-mod\-::grid\-\_\-utils\-\_\-init().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!set\-\_\-external\-\_\-eta@{set\-\_\-external\-\_\-eta}}
+\index{set\-\_\-external\-\_\-eta@{set\-\_\-external\-\_\-eta}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{set\-\_\-external\-\_\-eta}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::set\-\_\-external\-\_\-eta (
+\begin{DoxyParamCaption}
+\item[{real, dimension(\-:), intent(in)}]{ak, }
+\item[{real, dimension(\-:), intent(in)}]{bk, }
+\item[{real, intent(out)}]{ptop, }
+\item[{integer, intent(out)}]{ks}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a9bcd4fafe443993cdfbddbb177cfc033}
+
+
+The subroutine 'set\-\_\-external\-\_\-eta' sets 'ptop' (model top) and 'ks' (first level of pure pressure coordinates given the coefficients 'ak' and 'bk'. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ptop} & model top (Pa)\\
+\hline
+\mbox{\tt out}  & {\em ks} & number of pure p layers \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1516 of file fv\-\_\-eta.\-F90.
+
+
+
+Referenced by fv\-\_\-io\-\_\-mod\-::fv\-\_\-io\-\_\-read\-\_\-restart(), and external\-\_\-ic\-\_\-mod\-::get\-\_\-nggps\-\_\-ic().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!set\-\_\-hybrid\-\_\-z@{set\-\_\-hybrid\-\_\-z}}
+\index{set\-\_\-hybrid\-\_\-z@{set\-\_\-hybrid\-\_\-z}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{set\-\_\-hybrid\-\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::set\-\_\-hybrid\-\_\-z (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{ng, }
+\item[{integer, intent(in)}]{km, }
+\item[{real, intent(in)}]{ztop, }
+\item[{real, dimension(km), intent(in)}]{dz, }
+\item[{real, intent(in)}]{rgrav, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng), intent(in)}]{hs, }
+\item[{real, dimension(is\-:ie,js\-:je,km+1), intent(inout)}]{ze, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,km), intent(out), optional}]{dz3}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a3cc1b049b1ea1a7946fe7822d487b96e}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dz} & Reference vertical resolution for zs=0 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2839 of file fv\-\_\-eta.\-F90.
+
+
+
+References dyn\-\_\-core\-\_\-mod\-::del2\-\_\-cubed(), and sm1\-\_\-edge().
+
+
+
+Referenced by fv\-\_\-restart\-\_\-mod\-::fv\-\_\-restart(), test\-\_\-cases\-\_\-mod\-::init\-\_\-case(), and test\-\_\-cases\-\_\-mod\-::init\-\_\-double\-\_\-periodic().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!sm1\-\_\-edge@{sm1\-\_\-edge}}
+\index{sm1\-\_\-edge@{sm1\-\_\-edge}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{sm1\-\_\-edge}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-eta\-\_\-mod\-::sm1\-\_\-edge (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{km, }
+\item[{integer, intent(in)}]{i, }
+\item[{integer, intent(in)}]{j, }
+\item[{real, dimension(is\-:ie,js\-:je,km+1), intent(inout)}]{ze, }
+\item[{integer, intent(in)}]{ntimes}
+\end{DoxyParamCaption}
+)}\label{classfv__eta__mod_a28257151239cbcf2109332794c3c8ca7}
+
+
+Definition at line 2977 of file fv\-\_\-eta.\-F90.
+
+
+
+Referenced by compute\-\_\-dz\-\_\-var(), hybrid\-\_\-z\-\_\-dz(), set\-\_\-hybrid\-\_\-z(), var55\-\_\-dz(), var\-\_\-dz(), test\-\_\-cases\-\_\-mod\-::var\-\_\-dz(), var\-\_\-hi(), var\-\_\-hi2(), and var\-\_\-les().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!var55\-\_\-dz@{var55\-\_\-dz}}
+\index{var55\-\_\-dz@{var55\-\_\-dz}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{var55\-\_\-dz}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-eta\-\_\-mod\-::var55\-\_\-dz (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(km+1), intent(out)}]{ak, }
+\item[{real, dimension(km+1), intent(out)}]{bk, }
+\item[{real, intent(in)}]{ptop, }
+\item[{integer, intent(out)}]{ks, }
+\item[{real, intent(inout)}]{pint, }
+\item[{real, intent(in)}]{s\-\_\-rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__eta__mod_a59a8fe6b8a243e7bd30a030d13f13658}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\-\_\-rate} & between \mbox{[}1. 1.\-1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2360 of file fv\-\_\-eta.\-F90.
+
+
+
+References sm1\-\_\-edge().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!var\-\_\-dz@{var\-\_\-dz}}
+\index{var\-\_\-dz@{var\-\_\-dz}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{var\-\_\-dz}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-eta\-\_\-mod\-::var\-\_\-dz (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(km+1), intent(out)}]{ak, }
+\item[{real, dimension(km+1), intent(out)}]{bk, }
+\item[{real, intent(in)}]{ptop, }
+\item[{integer, intent(out)}]{ks, }
+\item[{real, intent(inout)}]{pint, }
+\item[{real, intent(in)}]{s\-\_\-rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__eta__mod_af1838090c58f286a4c66ce76a7d6b55a}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\-\_\-rate} & between \mbox{[}1. 1.\-1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2199 of file fv\-\_\-eta.\-F90.
+
+
+
+References sm1\-\_\-edge().
+
+
+
+Referenced by test\-\_\-cases\-\_\-mod\-::init\-\_\-case(), and set\-\_\-eta().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!var\-\_\-gfs@{var\-\_\-gfs}}
+\index{var\-\_\-gfs@{var\-\_\-gfs}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{var\-\_\-gfs}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-eta\-\_\-mod\-::var\-\_\-gfs (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(km+1), intent(out)}]{ak, }
+\item[{real, dimension(km+1), intent(out)}]{bk, }
+\item[{real, intent(in)}]{ptop, }
+\item[{integer, intent(out)}]{ks, }
+\item[{real, intent(inout)}]{pint, }
+\item[{real, intent(in)}]{s\-\_\-rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__eta__mod_a6ec582f058a1d23edd2b7d79edd78ee5}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\-\_\-rate} & between \mbox{[}1. 1.\-1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1700 of file fv\-\_\-eta.\-F90.
+
+
+
+Referenced by set\-\_\-eta().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!var\-\_\-hi@{var\-\_\-hi}}
+\index{var\-\_\-hi@{var\-\_\-hi}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{var\-\_\-hi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-eta\-\_\-mod\-::var\-\_\-hi (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(km+1), intent(out)}]{ak, }
+\item[{real, dimension(km+1), intent(out)}]{bk, }
+\item[{real, intent(in)}]{ptop, }
+\item[{integer, intent(out)}]{ks, }
+\item[{real, intent(inout)}]{pint, }
+\item[{real, intent(in)}]{s\-\_\-rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__eta__mod_a8c6950ee0b7fd66c1b35de24dc7d6d17}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\-\_\-rate} & between \mbox{[}1. 1.\-1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1864 of file fv\-\_\-eta.\-F90.
+
+
+
+References sm1\-\_\-edge().
+
+
+
+Referenced by set\-\_\-eta().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!var\-\_\-hi2@{var\-\_\-hi2}}
+\index{var\-\_\-hi2@{var\-\_\-hi2}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{var\-\_\-hi2}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-eta\-\_\-mod\-::var\-\_\-hi2 (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(km+1), intent(out)}]{ak, }
+\item[{real, dimension(km+1), intent(out)}]{bk, }
+\item[{real, intent(in)}]{ptop, }
+\item[{integer, intent(out)}]{ks, }
+\item[{real, intent(inout)}]{pint, }
+\item[{real, intent(in)}]{s\-\_\-rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__eta__mod_ad5e4e4a50f8c29c986a4093990d46442}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\-\_\-rate} & between \mbox{[}1. 1.\-1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2040 of file fv\-\_\-eta.\-F90.
+
+
+
+References sm1\-\_\-edge().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!var\-\_\-les@{var\-\_\-les}}
+\index{var\-\_\-les@{var\-\_\-les}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{var\-\_\-les}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-eta\-\_\-mod\-::var\-\_\-les (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(km+1), intent(out)}]{ak, }
+\item[{real, dimension(km+1), intent(out)}]{bk, }
+\item[{real, intent(in)}]{ptop, }
+\item[{integer, intent(out)}]{ks, }
+\item[{real, intent(inout)}]{pint, }
+\item[{real, intent(in)}]{s\-\_\-rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__eta__mod_a485f88952280ceb9c730bc2ed08c3078}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s\-\_\-rate} & between \mbox{[}1. 1.\-1\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1538 of file fv\-\_\-eta.\-F90.
+
+
+
+References sm1\-\_\-edge().
+
+\index{fv\-\_\-eta\-\_\-mod@{fv\-\_\-eta\-\_\-mod}!zflip@{zflip}}
+\index{zflip@{zflip}!fv_eta_mod@{fv\-\_\-eta\-\_\-mod}}
+\subsubsection[{zflip}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-eta\-\_\-mod\-::zflip (
+\begin{DoxyParamCaption}
+\item[{real, dimension(im,km), intent(inout)}]{q, }
+\item[{integer, intent(in)}]{im, }
+\item[{integer, intent(in)}]{km}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__eta__mod_a794583ebdb4823bcbdde4cca4b019f91}
+
+
+Definition at line 3076 of file fv\-\_\-eta.\-F90.
+
+
+
+Referenced by compute\-\_\-dz\-\_\-l32().
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/tools/\hyperlink{fv__eta_8F90}{fv\-\_\-eta.\-F90}\end{DoxyCompactItemize}

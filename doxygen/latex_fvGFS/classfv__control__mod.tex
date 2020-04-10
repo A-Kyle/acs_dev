@@ -1,0 +1,1700 @@
+\section{fv\-\_\-control\-\_\-mod Module Reference}
+\label{classfv__control__mod}\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}}
+
+
+The module 'F\-V3\-\_\-control' is for initialization and termination of the model, and controls namelist parameters in F\-V3.  
+
+
+
+
+Collaboration diagram for fv\-\_\-control\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classfv__control__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__control__mod_ad626f01c20738f5101fb5f64e5d3dcfe}{fv\-\_\-init} (Atm, dt\-\_\-atmos, grids\-\_\-on\-\_\-this\-\_\-pe, p\-\_\-split)
+\begin{DoxyCompactList}\small\item\em The subroutine 'fv\-\_\-init' initializes F\-V3. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classfv__control__mod_a8478437752b9d21f6d2f936c8b65284c}{fv\-\_\-end} (Atm, grids\-\_\-on\-\_\-this\-\_\-pe, restart\-\_\-endfcst)
+\begin{DoxyCompactList}\small\item\em The subroutine 'fv\-\_\-end' terminates F\-V3, deallocates memory, saves restart files, and stops I/\-O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer, public \hyperlink{classfv__control__mod_abaa40fc70569bf400e1385f95bae1f5f}{ngrids} = 1
+\item 
+integer, dimension(\-:), \\*
+allocatable, public \hyperlink{classfv__control__mod_acb8e6baca36aa5140d2d15258e1cf1d6}{pelist\-\_\-all}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classfv__control__mod_acdd82af4ac35306817aa955d95ec09f9}{run\-\_\-setup} (Atm, dt\-\_\-atmos, grids\-\_\-on\-\_\-this\-\_\-pe, p\-\_\-split)
+\begin{DoxyCompactList}\small\item\em The subroutine 'run\-\_\-setup' initializes the run from a namelist. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classfv__control__mod_a1b8adec29d73938d0ce672126c20f323}{init\-\_\-nesting} (Atm, grids\-\_\-on\-\_\-this\-\_\-pe, p\-\_\-split)
+\item 
+subroutine \hyperlink{classfv__control__mod_ac0ed388b3e29b664d242cdc28fc0bd64}{setup\-\_\-pointers} (Atm)
+\begin{DoxyCompactList}\small\item\em The subroutine 'setup\-\_\-pointers' associates the M\-O\-D\-U\-L\-E flag pointers with the A\-R\-R\-A\-Y flag variables for the grid active on T\-H\-I\-S pe so the flags can be read in from the namelist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+character(len=80), pointer \hyperlink{classfv__control__mod_ab4d0c803dedf251c5be32d99a5aa8c5d}{grid\-\_\-name}
+\item 
+character(len=120), pointer \hyperlink{classfv__control__mod_ab66042467e04279683c403c49e70d9a4}{grid\-\_\-file}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ab429e3c6b455d8f4b4a33bb0b38e3377}{grid\-\_\-type}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a9673087af927980ad41bce4c63ff0420}{hord\-\_\-mt}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a72331132938fe4e15a1476ea5e86c590}{kord\-\_\-mt}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a59c2ef1ff452aa8609a6f0adf8934196}{kord\-\_\-wz}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a8449a84c4d6a876356e036a171ee2b2c}{hord\-\_\-vt}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a1032a6ad00034e6a75dd9d652f8b8fb0}{hord\-\_\-tm}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ab43356c6c0ba965bb6e2c626c2d6b3a7}{hord\-\_\-dp}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a36c2bfe007d2c6556cf6908901a9c781}{kord\-\_\-tm}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_adb56058680af2238e44abdd8e8881782}{hord\-\_\-tr}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ab086182327f3d6ab0b8c634608845252}{kord\-\_\-tr}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a33331d1b80f42ac121c7e433ce110e4f}{scale\-\_\-z}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a913483ee0df1ec846e1a3ebd4f8b183e}{w\-\_\-max}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a65816317cf5d1265356c6373d64deecf}{z\-\_\-min}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a47bfac3f007039bf56a2aea807ae6fc5}{lim\-\_\-fac}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ab04c00bf38a9bb2111f7787ad1d92be0}{nord}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a68ec2562c9db66671c7d7b4cbd3d88b8}{nord\-\_\-tr}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a24119b4a68eeaddf30c32d7c9f3cad41}{dddmp}
+\item 
+real, pointer \hyperlink{classfv__control__mod_adf2af616e47d9f38418179eaf0eb84aa}{d2\-\_\-bg}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a0e1b0fd6d4c21d485510378c79c59914}{d4\-\_\-bg}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a5ea33e8ef19009f42a071cbd5c861413}{vtdm4}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a1c559ada35adc60b532cc77e0a7963ec}{trdm2}
+\item 
+real, pointer \hyperlink{classfv__control__mod_ae8d918b4d99a7e2fc1d25041ab7d99a1}{d2\-\_\-bg\-\_\-k1}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a216ec767e61e174cefa24dc5762f234c}{d2\-\_\-bg\-\_\-k2}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a2dc7ef9c15b934d9f19130db25179437}{d2\-\_\-divg\-\_\-max\-\_\-k1}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a4fd4a8dd3bd72aafb8fcbaf4c29e78b1}{d2\-\_\-divg\-\_\-max\-\_\-k2}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a58caca738b75ce861c8b4d95021207d7}{damp\-\_\-k\-\_\-k1}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a322872be8489e07ab3bda83ccdf28c6d}{damp\-\_\-k\-\_\-k2}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a35724aa7d912fc934a1706bee488134b}{n\-\_\-zs\-\_\-filter}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a9b3efe0ee1171abdffb92d589012c488}{nord\-\_\-zs\-\_\-filter}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a1dfb700af3f7669f0629f42a68ba042f}{full\-\_\-zs\-\_\-filter}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ac25e0b8133cbc74acdfffc12de4ef035}{rf\-\_\-fast}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_abe66b78f16d9db198fb246382e76dd2f}{consv\-\_\-am}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a0abb7b731ab56c18f0ad1d1e19867c2a}{do\-\_\-sat\-\_\-adj}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a27ffd44f2834dd58dc395929f979cd0b}{do\-\_\-f3d}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_af6f083211eda48e5d40ed207ccc75dac}{no\-\_\-dycore}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ad752cc0b235be8111c1e0535ee4ab5be}{convert\-\_\-ke}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_af67a5101144aa261557a851a6d696f71}{do\-\_\-vort\-\_\-damp}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a47cc705f642ad3e11f7ae4bef4d35572}{use\-\_\-old\-\_\-omega}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a5d1a537c7dbc2feea09ca52d1c0f3a1a}{beta}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_aa49e642e289810bd0ae3e8d564ca9daa}{n\-\_\-sponge}
+\item 
+real, pointer \hyperlink{classfv__control__mod_ac3f8891ff52f95a7ed8a495518ba3321}{d\-\_\-ext}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_acedcdd0be0664497b28861c69b006c40}{nwat}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a902561af942a30ae404d58555bcf849c}{warm\-\_\-start}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_afcc0691ad688ba6c0403a246913ce4b8}{inline\-\_\-q}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a9578e6526f4ae8e6707ba795b3ca8f1f}{shift\-\_\-fac}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a7c583929b563afebe8c3928541715f28}{do\-\_\-schmidt}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_a8bf7e998d37424a5acfd20a1d4345655}{stretch\-\_\-fac}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_ab6c815af85f5ad4e350b9a70e835863b}{target\-\_\-lat}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_a4be1f3d3b7f0f82146aabd90d5b1aee9}{target\-\_\-lon}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a6e851229cba913fe5086128ab28022aa}{reset\-\_\-eta}
+\item 
+real, pointer \hyperlink{classfv__control__mod_ad983b216be38cb6ce1bb231af7257939}{p\-\_\-fac}
+\item 
+real, pointer \hyperlink{classfv__control__mod_aceee4c7f56525845684efc1a4fa67422}{a\-\_\-imp}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a77f7e22e7cf16d6eb172e70cc2d00978}{n\-\_\-split}
+\item 
+real, pointer \hyperlink{classfv__control__mod_afc7f6b4f409eaa570ca132fad25816b7}{fac\-\_\-n\-\_\-spl}
+\item 
+real, pointer \hyperlink{classfv__control__mod_afc7eeadf515c9c1fc8b419404025f570}{fhouri}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a58306d27122b3238fc203cca6a6f73d4}{m\-\_\-split}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a79e7bc857b0773099d50877366fb9289}{k\-\_\-split}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a45d2ea868677009a92bac663e2a6fe55}{use\-\_\-logp}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a783be2fb9b692752e90b4ca57504be48}{q\-\_\-split}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ac0fcc8e15fdfcefc0e0e93e830b44748}{print\-\_\-freq}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_abdedb56658d66d52ddd0462ddf5438fd}{write\-\_\-3d\-\_\-diags}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_aa5bfdcfa4bf39b144d7f077526170b15}{npx}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a26b947c94b06e66f76f3e5cc38aa3a16}{npy}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ad0ff6f7684c200055fe2c239b67d1d54}{npz}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ad5083ad3c6d1a221b76b47973646c078}{npz\-\_\-rst}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_aab6800a7f9ff32d719265330dbc16f1d}{ncnst}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_acc1391e246a9a26aebf562ac3ab8232e}{pnats}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_afecebcac01d762f645993aa69d99826c}{dnats}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a03c69dd485bf4db4a1b65e9865ed9360}{ntiles}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_af5caed647905a5044033d699efb9d678}{nf\-\_\-omega}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a8a62e2737bfece356131347ab8bbc19c}{fv\-\_\-sg\-\_\-adj}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a8fbe8612bdbe6d72e8790ff88dca41a6}{na\-\_\-init}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a8ae39c9f86e291e2d1a3d547c013833a}{nudge\-\_\-dz}
+\item 
+real, pointer \hyperlink{classfv__control__mod_afde12ac7af6b571a903c1927932582ff}{p\-\_\-ref}
+\item 
+real, pointer \hyperlink{classfv__control__mod_ae07ac6dea52be935ced1472909778ccb}{dry\-\_\-mass}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a41418fcc74203cd7a8a201edb78c1956}{nt\-\_\-prog}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a7cdc994b0e188655a7c21504db5e1731}{nt\-\_\-phys}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a6429af2384662d32d0ac8e8b861f0a31}{tau\-\_\-h2o}
+\item 
+real, pointer \hyperlink{classfv__control__mod_aa87cabccfecdc02ac2bea4465cd1436f}{delt\-\_\-max}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a3dcfeda51f7710fa74e8646d9c477dec}{d\-\_\-con}
+\item 
+real, pointer \hyperlink{classfv__control__mod_aa12a6f639924bcce16aea92d92725f17}{ke\-\_\-bg}
+\item 
+real, pointer \hyperlink{classfv__control__mod_aea594e5fb2d344f493c621f7d89d8f69}{consv\-\_\-te}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a9eb0433cb807fe22e9a244bfca40ff21}{tau}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a2815e52e7b4af1a6e5fa34d99ad9d7cc}{rf\-\_\-cutoff}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a09465ea27767a03eabece8b1c3bed623}{filter\-\_\-phys}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ac5c21298b6f4836851b6223b2a888906}{dwind\-\_\-2d}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a693fa8e76b528190da7bbc9a93a4f052}{breed\-\_\-vortex\-\_\-inline}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a1ebd288b513de31ca3790fd7b5ae49b3}{range\-\_\-warn}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a1c8e563dc793a7a9fdb217086386f370}{fill}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a0ef8552f4ff8792c17eeff1b212dad52}{fill\-\_\-dp}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a66f62df44cc9f1d8bae9a60868742934}{fill\-\_\-wz}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_aa2e1b1eb3fdd42425c13c76b8d1fe939}{check\-\_\-negative}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a43435c908837a24797feeda4b6299c85}{non\-\_\-ortho}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a6b2b6dac1b995dba9bc0470a45b90c7f}{adiabatic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ac0a394d19dca47dbadf863da0f8237c5}{moist\-\_\-phys}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_aa8f21329b0315f3270ade9d6ea2d6e40}{do\-\_\-held\-\_\-suarez}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_aaba0a316e4944159dc4c88724d3058cb}{do\-\_\-reed\-\_\-physics}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a2b3d0562dc8b3bf11a64ed364e054869}{reed\-\_\-cond\-\_\-only}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a668baeb813fce15e439934c6a8fb6ea1}{reproduce\-\_\-sum}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a165574794aaa021231e7c00d7d200419}{adjust\-\_\-dry\-\_\-mass}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a7c3504459e1540c0d6360d992b484fda}{fv\-\_\-debug}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a32fd358d603e9d36b2d892f598819878}{srf\-\_\-init}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a4491cd64caa35ee066a3a6a22331c33b}{mountain}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a8bef0383195e3a490e60402a03274b8a}{remap\-\_\-t}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_af47884ffb9df2d7a1ef46cad26ef3c14}{z\-\_\-tracer}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a32a2ea4bdec1e069f6461fb5b1471d93}{old\-\_\-divg\-\_\-damp}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_af4c314c13b9fc726587ce6b016ea4e91}{fv\-\_\-land}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a07a467d55363147e21ffdb90196521c5}{nudge}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_acf381938c799f3bf387b28c9a5d2e06c}{nudge\-\_\-ic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_aff372420df2393f8cf3582a9ed117a1c}{ncep\-\_\-ic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a6b8b8e887c41c9b275875bf1e24f17a4}{nggps\-\_\-ic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a2c5506c3c86aaa2ea7ee7e7db98f6f03}{ecmwf\-\_\-ic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a23d51351494286e342a9ff3f808254f0}{gfs\-\_\-phil}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ad0db04a64c5ffb2ae0e4b4baed552dec}{agrid\-\_\-vel\-\_\-rst}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a02a42143570e966aa1c87122b8d6e49a}{use\-\_\-new\-\_\-ncep}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a79bd1445421e88a4b7a21af6745a7dd3}{use\-\_\-ncep\-\_\-phy}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ac1952fa035cb6a71f7a72eb765c36ca6}{fv\-\_\-diag\-\_\-ic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a98a28143f20b09d0d461a3378cce066c}{external\-\_\-ic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a0457568f23f81b319e4000137cb85cd2}{external\-\_\-eta}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a3a2a138b7e1dcfd1f7bd0e2bda7a2ebf}{read\-\_\-increment}
+\item 
+character(len=128), pointer \hyperlink{classfv__control__mod_a39dbf978496637d0fc8949fa68cd3b17}{res\-\_\-latlon\-\_\-dynamics}
+\item 
+character(len=128), pointer \hyperlink{classfv__control__mod_aa31278efd25dc639b4c0ca97f158a746}{res\-\_\-latlon\-\_\-tracers}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a253a9df8fc703d934789a380034b3124}{hydrostatic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_acb8e0fa14bd650f1480f4e06e3ef8db5}{phys\-\_\-hydrostatic}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a8adf373513e87e6f924b04c06a1f8e68}{use\-\_\-hydro\-\_\-pressure}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a0177940eab03249d9b347df15e5022bc}{do\-\_\-uni\-\_\-zfull}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ab60d2685b73f5240ec7042fa03eed5a5}{adj\-\_\-mass\-\_\-vmr}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_acabdc7dc9152ee3102b9d5e3f5b0c83d}{hybrid\-\_\-z}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a86a0ab9a71b491d54a83213c3a9aeb9d}{make\-\_\-nh}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a3e80dbc93b095de51dab7baeca7c28c8}{make\-\_\-hybrid\-\_\-z}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ad7e3b542651cf836a315dcf36149256d}{nudge\-\_\-qv}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a163f8e15e0a8c866b7983d6886314c07}{add\-\_\-noise}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_acaa650e90ef998f47a632f0ee11740bd}{a2b\-\_\-ord}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ad022d95cf215a34772cae65cb436cf82}{c2l\-\_\-ord}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a4a79e8e5ca77c49a271741e59dfc9723}{ndims}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_a1e8f42debd53f3900228b56386993ef4}{dx\-\_\-const}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_a88f665268580524b485db484cc3b69ff}{dy\-\_\-const}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_a18d2e658d7550cba86773f1b68e8369c}{deglon\-\_\-start}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_ab666fb8d3f5d8126bd9e756907e613e1}{deglon\-\_\-stop}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_a3115a067b4b068522b933e2cc3e561e9}{deglat\-\_\-start}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_ab6ff7a8ad9c9efb237e38ee764aeebed}{deglat\-\_\-stop}
+\item 
+real(kind=r\-\_\-grid), pointer \hyperlink{classfv__control__mod_ac023f3c9fe559dbcf7206c9e95365adf}{deglat}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a888c427a6af3ddf02bd3cfa499735161}{nested}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_ac3aa92c051cecb429cfe4459f0bc20ec}{twowaynest}
+\item 
+logical, pointer \hyperlink{classfv__control__mod_a2c117981e3eaaa04ed8665dc676cae1a}{regional}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a0b129755b56cb9d70a929b5d46ea0384}{bc\-\_\-update\-\_\-interval}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_aa8414caeda62e3b0d0323b5651dc6ceb}{parent\-\_\-tile}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a1ea5ca193a308c6557a1d51c1cd78e5c}{refinement}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a8501bcfc790a38b595fe96fdbf094dcc}{nestbctype}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_aa2a2e8daf4ef4127a85ff187f6bdb44a}{nestupdate}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_ad64bda37c9167de57eb5c08e1cd21588}{nsponge}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a931b77a75c5dcd01595b45112bae9638}{ioffset}
+\item 
+integer, pointer \hyperlink{classfv__control__mod_a9ff9b60e60c1a2f85df3abf9ade7d57d}{joffset}
+\item 
+real, pointer \hyperlink{classfv__control__mod_a84710a8f70995d6c5c2436471f516d19}{s\-\_\-weight}
+\item 
+real, pointer \hyperlink{classfv__control__mod_adc0d08b31c495fc6b3e272b90b654a98}{update\-\_\-blend}
+\item 
+integer, dimension(\-:), pointer \hyperlink{classfv__control__mod_afe243c14856ffd8377a4cfb0b5f14e84}{layout}
+\item 
+integer, dimension(\-:), pointer \hyperlink{classfv__control__mod_a98f797f3a34e834e28ecad3a99ea2a06}{io\-\_\-layout}
+\item 
+integer \hyperlink{classfv__control__mod_a3d3dfa096dc269b05b2969281d35c453}{ntilesme}
+\item 
+real \hyperlink{classfv__control__mod_a6b6be52e25375aff31a0cf50bfada435}{too\-\_\-big} = 1.E35
+\item 
+integer \hyperlink{classfv__control__mod_ab89d522e6d2e7e81dd9adc88477c54d6}{commid}
+\item 
+integer \hyperlink{classfv__control__mod_a52a5e694a3dff2419b9cab131ffbdcbb}{max\-\_\-refinement\-\_\-of\-\_\-global} = 1.
+\item 
+integer \hyperlink{classfv__control__mod_a5604520a8bd260a859a6ec9dbaa60ad8}{gid}
+\item 
+real \hyperlink{classfv__control__mod_a6da7ed00f053d3675e9de3748bf8931e}{umax} = 350.
+\begin{DoxyCompactList}\small\item\em max wave speed for grid\-\_\-type$>$3 \end{DoxyCompactList}\item 
+integer \hyperlink{classfv__control__mod_ab921b928551b09feff4a8f27ab427293}{parent\-\_\-grid\-\_\-num} = -\/1
+\item 
+integer \hyperlink{classfv__control__mod_a1806aedab0a728a6bf6b8fed41e121a9}{halo\-\_\-update\-\_\-type} = 1
+\begin{DoxyCompactList}\small\item\em 1 for two-\/interfaces non-\/block 2 for block 3 for four-\/interfaces non-\/block \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'F\-V3\-\_\-control' is for initialization and termination of the model, and controls namelist parameters in F\-V3. 
+
+Definition at line 29 of file fv\-\_\-control.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fv\-\_\-end@{fv\-\_\-end}}
+\index{fv\-\_\-end@{fv\-\_\-end}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fv\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-control\-\_\-mod\-::fv\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), dimension(\-:), intent(inout)}]{Atm, }
+\item[{logical, dimension(\-:), intent(inout)}]{grids\-\_\-on\-\_\-this\-\_\-pe, }
+\item[{logical, intent(in)}]{restart\-\_\-endfcst}
+\end{DoxyParamCaption}
+)}\label{classfv__control__mod_a8478437752b9d21f6d2f936c8b65284c}
+
+
+The subroutine 'fv\-\_\-end' terminates F\-V3, deallocates memory, saves restart files, and stops I/\-O. 
+
+
+
+Definition at line 595 of file fv\-\_\-control.\-F90.
+
+
+
+References fv\-\_\-arrays\-\_\-mod\-::deallocate\-\_\-fv\-\_\-atmos\-\_\-type(), fv\-\_\-io\-\_\-mod\-::fv\-\_\-io\-\_\-exit(), fv\-\_\-restart\-\_\-mod\-::fv\-\_\-restart\-\_\-end(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::grid\-\_\-utils\-\_\-end(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), and fv\-\_\-timing\-\_\-mod\-::timing\-\_\-prt().
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-end().
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fv\-\_\-init@{fv\-\_\-init}}
+\index{fv\-\_\-init@{fv\-\_\-init}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fv\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-control\-\_\-mod\-::fv\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), dimension(\-:), intent(inout), allocatable, target}]{Atm, }
+\item[{real, intent(in)}]{dt\-\_\-atmos, }
+\item[{logical, dimension(\-:), intent(inout), allocatable}]{grids\-\_\-on\-\_\-this\-\_\-pe, }
+\item[{integer, intent(inout)}]{p\-\_\-split}
+\end{DoxyParamCaption}
+)}\label{classfv__control__mod_ad626f01c20738f5101fb5f64e5d3dcfe}
+
+
+The subroutine 'fv\-\_\-init' initializes F\-V3. 
+
+It allocates memory, sets up M\-P\-I and processor lists, sets up the grid, and controls F\-V3 namelist parameters. 
+
+Definition at line 372 of file fv\-\_\-control.\-F90.
+
+
+
+References fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-atmos\-\_\-type(), fv\-\_\-restart\-\_\-mod\-::fv\-\_\-restart\-\_\-init(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::grid\-\_\-utils\-\_\-init(), fv\-\_\-grid\-\_\-tools\-\_\-mod\-::init\-\_\-grid(), init\-\_\-nesting(), run\-\_\-setup(), setup\-\_\-pointers(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-init(), and fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on().
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-init().
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!init\-\_\-nesting@{init\-\_\-nesting}}
+\index{init\-\_\-nesting@{init\-\_\-nesting}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{init\-\_\-nesting}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-control\-\_\-mod\-::init\-\_\-nesting (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), dimension(\-:), intent(inout), allocatable}]{Atm, }
+\item[{logical, dimension(\-:), intent(inout), allocatable}]{grids\-\_\-on\-\_\-this\-\_\-pe, }
+\item[{integer, intent(inout)}]{p\-\_\-split}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1b8adec29d73938d0ce672126c20f323}
+
+
+Definition at line 1049 of file fv\-\_\-control.\-F90.
+
+
+
+Referenced by fv\-\_\-init().
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!run\-\_\-setup@{run\-\_\-setup}}
+\index{run\-\_\-setup@{run\-\_\-setup}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{run\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-control\-\_\-mod\-::run\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), dimension(\-:), intent(inout), target}]{Atm, }
+\item[{real, intent(in)}]{dt\-\_\-atmos, }
+\item[{logical, dimension(\-:), intent(inout)}]{grids\-\_\-on\-\_\-this\-\_\-pe, }
+\item[{integer, intent(inout)}]{p\-\_\-split}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_acdd82af4ac35306817aa955d95ec09f9}
+
+
+The subroutine 'run\-\_\-setup' initializes the run from a namelist. 
+
+
+
+Definition at line 623 of file fv\-\_\-control.\-F90.
+
+
+
+References fv\-\_\-diagnostics\-\_\-mod\-::fv\-\_\-diag\-\_\-init\-\_\-gn(), multi\-\_\-gases\-\_\-mod\-::multi\-\_\-gases\-\_\-init(), and setup\-\_\-pointers().
+
+
+
+Referenced by fv\-\_\-init().
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!setup\-\_\-pointers@{setup\-\_\-pointers}}
+\index{setup\-\_\-pointers@{setup\-\_\-pointers}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{setup\-\_\-pointers}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-control\-\_\-mod\-::setup\-\_\-pointers (
+\begin{DoxyParamCaption}
+\item[{type(fv\-\_\-atmos\-\_\-type), intent(inout), target}]{Atm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac0ed388b3e29b664d242cdc28fc0bd64}
+
+
+The subroutine 'setup\-\_\-pointers' associates the M\-O\-D\-U\-L\-E flag pointers with the A\-R\-R\-A\-Y flag variables for the grid active on T\-H\-I\-S pe so the flags can be read in from the namelist. 
+
+
+
+Definition at line 1173 of file fv\-\_\-control.\-F90.
+
+
+
+Referenced by fv\-\_\-init(), and run\-\_\-setup().
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!a2b\-\_\-ord@{a2b\-\_\-ord}}
+\index{a2b\-\_\-ord@{a2b\-\_\-ord}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{a2b\-\_\-ord}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::a2b\-\_\-ord\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_acaa650e90ef998f47a632f0ee11740bd}
+
+
+Definition at line 320 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!a\-\_\-imp@{a\-\_\-imp}}
+\index{a\-\_\-imp@{a\-\_\-imp}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{a\-\_\-imp}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::a\-\_\-imp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aceee4c7f56525845684efc1a4fa67422}
+
+
+Definition at line 230 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!add\-\_\-noise@{add\-\_\-noise}}
+\index{add\-\_\-noise@{add\-\_\-noise}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{add\-\_\-noise}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::add\-\_\-noise\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a163f8e15e0a8c866b7983d6886314c07}
+
+
+Definition at line 318 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!adiabatic@{adiabatic}}
+\index{adiabatic@{adiabatic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{adiabatic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::adiabatic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a6b2b6dac1b995dba9bc0470a45b90c7f}
+
+
+Definition at line 279 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!adj\-\_\-mass\-\_\-vmr@{adj\-\_\-mass\-\_\-vmr}}
+\index{adj\-\_\-mass\-\_\-vmr@{adj\-\_\-mass\-\_\-vmr}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{adj\-\_\-mass\-\_\-vmr}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::adj\-\_\-mass\-\_\-vmr\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab60d2685b73f5240ec7042fa03eed5a5}
+
+
+Definition at line 313 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!adjust\-\_\-dry\-\_\-mass@{adjust\-\_\-dry\-\_\-mass}}
+\index{adjust\-\_\-dry\-\_\-mass@{adjust\-\_\-dry\-\_\-mass}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{adjust\-\_\-dry\-\_\-mass}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::adjust\-\_\-dry\-\_\-mass\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a165574794aaa021231e7c00d7d200419}
+
+
+Definition at line 285 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!agrid\-\_\-vel\-\_\-rst@{agrid\-\_\-vel\-\_\-rst}}
+\index{agrid\-\_\-vel\-\_\-rst@{agrid\-\_\-vel\-\_\-rst}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{agrid\-\_\-vel\-\_\-rst}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::agrid\-\_\-vel\-\_\-rst\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ad0db04a64c5ffb2ae0e4b4baed552dec}
+
+
+Definition at line 300 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!bc\-\_\-update\-\_\-interval@{bc\-\_\-update\-\_\-interval}}
+\index{bc\-\_\-update\-\_\-interval@{bc\-\_\-update\-\_\-interval}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{bc\-\_\-update\-\_\-interval}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::bc\-\_\-update\-\_\-interval\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a0b129755b56cb9d70a929b5d46ea0384}
+
+
+Definition at line 333 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!beta@{beta}}
+\index{beta@{beta}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{beta}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::beta\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a5d1a537c7dbc2feea09ca52d1c0f3a1a}
+
+
+Definition at line 216 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!breed\-\_\-vortex\-\_\-inline@{breed\-\_\-vortex\-\_\-inline}}
+\index{breed\-\_\-vortex\-\_\-inline@{breed\-\_\-vortex\-\_\-inline}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{breed\-\_\-vortex\-\_\-inline}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::breed\-\_\-vortex\-\_\-inline\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a693fa8e76b528190da7bbc9a93a4f052}
+
+
+Definition at line 272 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!c2l\-\_\-ord@{c2l\-\_\-ord}}
+\index{c2l\-\_\-ord@{c2l\-\_\-ord}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{c2l\-\_\-ord}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::c2l\-\_\-ord\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ad022d95cf215a34772cae65cb436cf82}
+
+
+Definition at line 321 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!check\-\_\-negative@{check\-\_\-negative}}
+\index{check\-\_\-negative@{check\-\_\-negative}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{check\-\_\-negative}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::check\-\_\-negative\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa2e1b1eb3fdd42425c13c76b8d1fe939}
+
+
+Definition at line 277 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!commid@{commid}}
+\index{commid@{commid}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{commid}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-control\-\_\-mod\-::commid\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab89d522e6d2e7e81dd9adc88477c54d6}
+
+
+Definition at line 350 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!consv\-\_\-am@{consv\-\_\-am}}
+\index{consv\-\_\-am@{consv\-\_\-am}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{consv\-\_\-am}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::consv\-\_\-am\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_abe66b78f16d9db198fb246382e76dd2f}
+
+
+Definition at line 208 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!consv\-\_\-te@{consv\-\_\-te}}
+\index{consv\-\_\-te@{consv\-\_\-te}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{consv\-\_\-te}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::consv\-\_\-te\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aea594e5fb2d344f493c621f7d89d8f69}
+
+
+Definition at line 267 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!convert\-\_\-ke@{convert\-\_\-ke}}
+\index{convert\-\_\-ke@{convert\-\_\-ke}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{convert\-\_\-ke}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::convert\-\_\-ke\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ad752cc0b235be8111c1e0535ee4ab5be}
+
+
+Definition at line 212 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!d2\-\_\-bg@{d2\-\_\-bg}}
+\index{d2\-\_\-bg@{d2\-\_\-bg}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{d2\-\_\-bg}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::d2\-\_\-bg\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_adf2af616e47d9f38418179eaf0eb84aa}
+
+
+Definition at line 193 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!d2\-\_\-bg\-\_\-k1@{d2\-\_\-bg\-\_\-k1}}
+\index{d2\-\_\-bg\-\_\-k1@{d2\-\_\-bg\-\_\-k1}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{d2\-\_\-bg\-\_\-k1}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::d2\-\_\-bg\-\_\-k1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ae8d918b4d99a7e2fc1d25041ab7d99a1}
+
+
+Definition at line 197 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!d2\-\_\-bg\-\_\-k2@{d2\-\_\-bg\-\_\-k2}}
+\index{d2\-\_\-bg\-\_\-k2@{d2\-\_\-bg\-\_\-k2}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{d2\-\_\-bg\-\_\-k2}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::d2\-\_\-bg\-\_\-k2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a216ec767e61e174cefa24dc5762f234c}
+
+
+Definition at line 198 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!d2\-\_\-divg\-\_\-max\-\_\-k1@{d2\-\_\-divg\-\_\-max\-\_\-k1}}
+\index{d2\-\_\-divg\-\_\-max\-\_\-k1@{d2\-\_\-divg\-\_\-max\-\_\-k1}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{d2\-\_\-divg\-\_\-max\-\_\-k1}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::d2\-\_\-divg\-\_\-max\-\_\-k1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a2dc7ef9c15b934d9f19130db25179437}
+
+
+Definition at line 199 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!d2\-\_\-divg\-\_\-max\-\_\-k2@{d2\-\_\-divg\-\_\-max\-\_\-k2}}
+\index{d2\-\_\-divg\-\_\-max\-\_\-k2@{d2\-\_\-divg\-\_\-max\-\_\-k2}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{d2\-\_\-divg\-\_\-max\-\_\-k2}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::d2\-\_\-divg\-\_\-max\-\_\-k2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a4fd4a8dd3bd72aafb8fcbaf4c29e78b1}
+
+
+Definition at line 200 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!d4\-\_\-bg@{d4\-\_\-bg}}
+\index{d4\-\_\-bg@{d4\-\_\-bg}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{d4\-\_\-bg}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::d4\-\_\-bg\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a0e1b0fd6d4c21d485510378c79c59914}
+
+
+Definition at line 194 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!d\-\_\-con@{d\-\_\-con}}
+\index{d\-\_\-con@{d\-\_\-con}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{d\-\_\-con}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::d\-\_\-con\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a3dcfeda51f7710fa74e8646d9c477dec}
+
+
+Definition at line 265 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!d\-\_\-ext@{d\-\_\-ext}}
+\index{d\-\_\-ext@{d\-\_\-ext}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{d\-\_\-ext}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::d\-\_\-ext\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac3f8891ff52f95a7ed8a495518ba3321}
+
+
+Definition at line 218 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!damp\-\_\-k\-\_\-k1@{damp\-\_\-k\-\_\-k1}}
+\index{damp\-\_\-k\-\_\-k1@{damp\-\_\-k\-\_\-k1}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{damp\-\_\-k\-\_\-k1}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::damp\-\_\-k\-\_\-k1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a58caca738b75ce861c8b4d95021207d7}
+
+
+Definition at line 201 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!damp\-\_\-k\-\_\-k2@{damp\-\_\-k\-\_\-k2}}
+\index{damp\-\_\-k\-\_\-k2@{damp\-\_\-k\-\_\-k2}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{damp\-\_\-k\-\_\-k2}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::damp\-\_\-k\-\_\-k2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a322872be8489e07ab3bda83ccdf28c6d}
+
+
+Definition at line 202 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!dddmp@{dddmp}}
+\index{dddmp@{dddmp}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{dddmp}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::dddmp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a24119b4a68eeaddf30c32d7c9f3cad41}
+
+
+Definition at line 192 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!deglat@{deglat}}
+\index{deglat@{deglat}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{deglat}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::deglat\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac023f3c9fe559dbcf7206c9e95365adf}
+
+
+Definition at line 329 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!deglat\-\_\-start@{deglat\-\_\-start}}
+\index{deglat\-\_\-start@{deglat\-\_\-start}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{deglat\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::deglat\-\_\-start\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a3115a067b4b068522b933e2cc3e561e9}
+
+
+Definition at line 327 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!deglat\-\_\-stop@{deglat\-\_\-stop}}
+\index{deglat\-\_\-stop@{deglat\-\_\-stop}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{deglat\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::deglat\-\_\-stop\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab6ff7a8ad9c9efb237e38ee764aeebed}
+
+
+Definition at line 327 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!deglon\-\_\-start@{deglon\-\_\-start}}
+\index{deglon\-\_\-start@{deglon\-\_\-start}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{deglon\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::deglon\-\_\-start\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a18d2e658d7550cba86773f1b68e8369c}
+
+
+Definition at line 327 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!deglon\-\_\-stop@{deglon\-\_\-stop}}
+\index{deglon\-\_\-stop@{deglon\-\_\-stop}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{deglon\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::deglon\-\_\-stop\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab666fb8d3f5d8126bd9e756907e613e1}
+
+
+Definition at line 327 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!delt\-\_\-max@{delt\-\_\-max}}
+\index{delt\-\_\-max@{delt\-\_\-max}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{delt\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::delt\-\_\-max\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa87cabccfecdc02ac2bea4465cd1436f}
+
+
+Definition at line 264 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!dnats@{dnats}}
+\index{dnats@{dnats}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{dnats}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::dnats\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_afecebcac01d762f645993aa69d99826c}
+
+
+Definition at line 251 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!do\-\_\-f3d@{do\-\_\-f3d}}
+\index{do\-\_\-f3d@{do\-\_\-f3d}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{do\-\_\-f3d}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::do\-\_\-f3d\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a27ffd44f2834dd58dc395929f979cd0b}
+
+
+Definition at line 210 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!do\-\_\-held\-\_\-suarez@{do\-\_\-held\-\_\-suarez}}
+\index{do\-\_\-held\-\_\-suarez@{do\-\_\-held\-\_\-suarez}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{do\-\_\-held\-\_\-suarez}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::do\-\_\-held\-\_\-suarez\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa8f21329b0315f3270ade9d6ea2d6e40}
+
+
+Definition at line 281 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!do\-\_\-reed\-\_\-physics@{do\-\_\-reed\-\_\-physics}}
+\index{do\-\_\-reed\-\_\-physics@{do\-\_\-reed\-\_\-physics}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{do\-\_\-reed\-\_\-physics}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::do\-\_\-reed\-\_\-physics\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aaba0a316e4944159dc4c88724d3058cb}
+
+
+Definition at line 282 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!do\-\_\-sat\-\_\-adj@{do\-\_\-sat\-\_\-adj}}
+\index{do\-\_\-sat\-\_\-adj@{do\-\_\-sat\-\_\-adj}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{do\-\_\-sat\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::do\-\_\-sat\-\_\-adj\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a0abb7b731ab56c18f0ad1d1e19867c2a}
+
+
+Definition at line 209 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!do\-\_\-schmidt@{do\-\_\-schmidt}}
+\index{do\-\_\-schmidt@{do\-\_\-schmidt}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{do\-\_\-schmidt}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::do\-\_\-schmidt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a7c583929b563afebe8c3928541715f28}
+
+
+Definition at line 223 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!do\-\_\-uni\-\_\-zfull@{do\-\_\-uni\-\_\-zfull}}
+\index{do\-\_\-uni\-\_\-zfull@{do\-\_\-uni\-\_\-zfull}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{do\-\_\-uni\-\_\-zfull}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::do\-\_\-uni\-\_\-zfull\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a0177940eab03249d9b347df15e5022bc}
+
+
+Definition at line 312 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!do\-\_\-vort\-\_\-damp@{do\-\_\-vort\-\_\-damp}}
+\index{do\-\_\-vort\-\_\-damp@{do\-\_\-vort\-\_\-damp}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{do\-\_\-vort\-\_\-damp}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::do\-\_\-vort\-\_\-damp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_af67a5101144aa261557a851a6d696f71}
+
+
+Definition at line 213 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!dry\-\_\-mass@{dry\-\_\-mass}}
+\index{dry\-\_\-mass@{dry\-\_\-mass}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{dry\-\_\-mass}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::dry\-\_\-mass\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ae07ac6dea52be935ced1472909778ccb}
+
+
+Definition at line 259 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!dwind\-\_\-2d@{dwind\-\_\-2d}}
+\index{dwind\-\_\-2d@{dwind\-\_\-2d}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{dwind\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::dwind\-\_\-2d\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac5c21298b6f4836851b6223b2a888906}
+
+
+Definition at line 271 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!dx\-\_\-const@{dx\-\_\-const}}
+\index{dx\-\_\-const@{dx\-\_\-const}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{dx\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::dx\-\_\-const\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1e8f42debd53f3900228b56386993ef4}
+
+
+Definition at line 325 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!dy\-\_\-const@{dy\-\_\-const}}
+\index{dy\-\_\-const@{dy\-\_\-const}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{dy\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::dy\-\_\-const\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a88f665268580524b485db484cc3b69ff}
+
+
+Definition at line 326 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ecmwf\-\_\-ic@{ecmwf\-\_\-ic}}
+\index{ecmwf\-\_\-ic@{ecmwf\-\_\-ic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ecmwf\-\_\-ic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::ecmwf\-\_\-ic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a2c5506c3c86aaa2ea7ee7e7db98f6f03}
+
+
+Definition at line 298 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!external\-\_\-eta@{external\-\_\-eta}}
+\index{external\-\_\-eta@{external\-\_\-eta}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{external\-\_\-eta}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::external\-\_\-eta\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a0457568f23f81b319e4000137cb85cd2}
+
+
+Definition at line 305 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!external\-\_\-ic@{external\-\_\-ic}}
+\index{external\-\_\-ic@{external\-\_\-ic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{external\-\_\-ic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::external\-\_\-ic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a98a28143f20b09d0d461a3378cce066c}
+
+
+Definition at line 304 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fac\-\_\-n\-\_\-spl@{fac\-\_\-n\-\_\-spl}}
+\index{fac\-\_\-n\-\_\-spl@{fac\-\_\-n\-\_\-spl}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fac\-\_\-n\-\_\-spl}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::fac\-\_\-n\-\_\-spl\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_afc7f6b4f409eaa570ca132fad25816b7}
+
+
+Definition at line 233 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fhouri@{fhouri}}
+\index{fhouri@{fhouri}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fhouri}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::fhouri\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_afc7eeadf515c9c1fc8b419404025f570}
+
+
+Definition at line 234 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fill@{fill}}
+\index{fill@{fill}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::fill\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1c8e563dc793a7a9fdb217086386f370}
+
+
+Definition at line 274 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fill\-\_\-dp@{fill\-\_\-dp}}
+\index{fill\-\_\-dp@{fill\-\_\-dp}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fill\-\_\-dp}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::fill\-\_\-dp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a0ef8552f4ff8792c17eeff1b212dad52}
+
+
+Definition at line 275 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fill\-\_\-wz@{fill\-\_\-wz}}
+\index{fill\-\_\-wz@{fill\-\_\-wz}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fill\-\_\-wz}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::fill\-\_\-wz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a66f62df44cc9f1d8bae9a60868742934}
+
+
+Definition at line 276 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!filter\-\_\-phys@{filter\-\_\-phys}}
+\index{filter\-\_\-phys@{filter\-\_\-phys}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{filter\-\_\-phys}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::filter\-\_\-phys\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a09465ea27767a03eabece8b1c3bed623}
+
+
+Definition at line 270 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!full\-\_\-zs\-\_\-filter@{full\-\_\-zs\-\_\-filter}}
+\index{full\-\_\-zs\-\_\-filter@{full\-\_\-zs\-\_\-filter}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{full\-\_\-zs\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::full\-\_\-zs\-\_\-filter\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1dfb700af3f7669f0629f42a68ba042f}
+
+
+Definition at line 205 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fv\-\_\-debug@{fv\-\_\-debug}}
+\index{fv\-\_\-debug@{fv\-\_\-debug}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fv\-\_\-debug}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::fv\-\_\-debug\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a7c3504459e1540c0d6360d992b484fda}
+
+
+Definition at line 286 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fv\-\_\-diag\-\_\-ic@{fv\-\_\-diag\-\_\-ic}}
+\index{fv\-\_\-diag\-\_\-ic@{fv\-\_\-diag\-\_\-ic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fv\-\_\-diag\-\_\-ic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::fv\-\_\-diag\-\_\-ic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac1952fa035cb6a71f7a72eb765c36ca6}
+
+
+Definition at line 303 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fv\-\_\-land@{fv\-\_\-land}}
+\index{fv\-\_\-land@{fv\-\_\-land}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fv\-\_\-land}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::fv\-\_\-land\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_af4c314c13b9fc726587ce6b016ea4e91}
+
+
+Definition at line 293 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!fv\-\_\-sg\-\_\-adj@{fv\-\_\-sg\-\_\-adj}}
+\index{fv\-\_\-sg\-\_\-adj@{fv\-\_\-sg\-\_\-adj}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{fv\-\_\-sg\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::fv\-\_\-sg\-\_\-adj\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a8a62e2737bfece356131347ab8bbc19c}
+
+
+Definition at line 254 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!gfs\-\_\-phil@{gfs\-\_\-phil}}
+\index{gfs\-\_\-phil@{gfs\-\_\-phil}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{gfs\-\_\-phil}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::gfs\-\_\-phil\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a23d51351494286e342a9ff3f808254f0}
+
+
+Definition at line 299 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!gid@{gid}}
+\index{gid@{gid}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{gid}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-control\-\_\-mod\-::gid\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a5604520a8bd260a859a6ec9dbaa60ad8}
+
+
+Definition at line 351 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!grid\-\_\-file@{grid\-\_\-file}}
+\index{grid\-\_\-file@{grid\-\_\-file}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{grid\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}character(len=120), pointer fv\-\_\-control\-\_\-mod\-::grid\-\_\-file\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab66042467e04279683c403c49e70d9a4}
+
+
+Definition at line 174 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!grid\-\_\-name@{grid\-\_\-name}}
+\index{grid\-\_\-name@{grid\-\_\-name}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{grid\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}character(len=80), pointer fv\-\_\-control\-\_\-mod\-::grid\-\_\-name\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab4d0c803dedf251c5be32d99a5aa8c5d}
+
+
+Definition at line 173 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!grid\-\_\-type@{grid\-\_\-type}}
+\index{grid\-\_\-type@{grid\-\_\-type}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{grid\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::grid\-\_\-type\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab429e3c6b455d8f4b4a33bb0b38e3377}
+
+
+Definition at line 175 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!halo\-\_\-update\-\_\-type@{halo\-\_\-update\-\_\-type}}
+\index{halo\-\_\-update\-\_\-type@{halo\-\_\-update\-\_\-type}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{halo\-\_\-update\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-control\-\_\-mod\-::halo\-\_\-update\-\_\-type = 1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1806aedab0a728a6bf6b8fed41e121a9}
+
+
+1 for two-\/interfaces non-\/block 2 for block 3 for four-\/interfaces non-\/block 
+
+
+
+Definition at line 356 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!hord\-\_\-dp@{hord\-\_\-dp}}
+\index{hord\-\_\-dp@{hord\-\_\-dp}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{hord\-\_\-dp}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::hord\-\_\-dp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab43356c6c0ba965bb6e2c626c2d6b3a7}
+
+
+Definition at line 181 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!hord\-\_\-mt@{hord\-\_\-mt}}
+\index{hord\-\_\-mt@{hord\-\_\-mt}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{hord\-\_\-mt}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::hord\-\_\-mt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a9673087af927980ad41bce4c63ff0420}
+
+
+Definition at line 176 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!hord\-\_\-tm@{hord\-\_\-tm}}
+\index{hord\-\_\-tm@{hord\-\_\-tm}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{hord\-\_\-tm}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::hord\-\_\-tm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1032a6ad00034e6a75dd9d652f8b8fb0}
+
+
+Definition at line 180 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!hord\-\_\-tr@{hord\-\_\-tr}}
+\index{hord\-\_\-tr@{hord\-\_\-tr}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{hord\-\_\-tr}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::hord\-\_\-tr\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_adb56058680af2238e44abdd8e8881782}
+
+
+Definition at line 183 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!hord\-\_\-vt@{hord\-\_\-vt}}
+\index{hord\-\_\-vt@{hord\-\_\-vt}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{hord\-\_\-vt}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::hord\-\_\-vt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a8449a84c4d6a876356e036a171ee2b2c}
+
+
+Definition at line 179 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!hybrid\-\_\-z@{hybrid\-\_\-z}}
+\index{hybrid\-\_\-z@{hybrid\-\_\-z}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{hybrid\-\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::hybrid\-\_\-z\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_acabdc7dc9152ee3102b9d5e3f5b0c83d}
+
+
+Definition at line 314 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!hydrostatic@{hydrostatic}}
+\index{hydrostatic@{hydrostatic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{hydrostatic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::hydrostatic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a253a9df8fc703d934789a380034b3124}
+
+
+Definition at line 309 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!inline\-\_\-q@{inline\-\_\-q}}
+\index{inline\-\_\-q@{inline\-\_\-q}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{inline\-\_\-q}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::inline\-\_\-q\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_afcc0691ad688ba6c0403a246913ce4b8}
+
+
+Definition at line 221 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!io\-\_\-layout@{io\-\_\-layout}}
+\index{io\-\_\-layout@{io\-\_\-layout}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{io\-\_\-layout}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:), pointer fv\-\_\-control\-\_\-mod\-::io\-\_\-layout\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a98f797f3a34e834e28ecad3a99ea2a06}
+
+
+Definition at line 337 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ioffset@{ioffset}}
+\index{ioffset@{ioffset}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ioffset}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::ioffset\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a931b77a75c5dcd01595b45112bae9638}
+
+
+Definition at line 334 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!joffset@{joffset}}
+\index{joffset@{joffset}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{joffset}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::joffset\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a9ff9b60e60c1a2f85df3abf9ade7d57d}
+
+
+Definition at line 334 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!k\-\_\-split@{k\-\_\-split}}
+\index{k\-\_\-split@{k\-\_\-split}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{k\-\_\-split}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::k\-\_\-split\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a79e7bc857b0773099d50877366fb9289}
+
+
+Definition at line 237 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ke\-\_\-bg@{ke\-\_\-bg}}
+\index{ke\-\_\-bg@{ke\-\_\-bg}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ke\-\_\-bg}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::ke\-\_\-bg\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa12a6f639924bcce16aea92d92725f17}
+
+
+Definition at line 266 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!kord\-\_\-mt@{kord\-\_\-mt}}
+\index{kord\-\_\-mt@{kord\-\_\-mt}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{kord\-\_\-mt}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::kord\-\_\-mt\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a72331132938fe4e15a1476ea5e86c590}
+
+
+Definition at line 177 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!kord\-\_\-tm@{kord\-\_\-tm}}
+\index{kord\-\_\-tm@{kord\-\_\-tm}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{kord\-\_\-tm}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::kord\-\_\-tm\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a36c2bfe007d2c6556cf6908901a9c781}
+
+
+Definition at line 182 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!kord\-\_\-tr@{kord\-\_\-tr}}
+\index{kord\-\_\-tr@{kord\-\_\-tr}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{kord\-\_\-tr}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::kord\-\_\-tr\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab086182327f3d6ab0b8c634608845252}
+
+
+Definition at line 184 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!kord\-\_\-wz@{kord\-\_\-wz}}
+\index{kord\-\_\-wz@{kord\-\_\-wz}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{kord\-\_\-wz}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::kord\-\_\-wz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a59c2ef1ff452aa8609a6f0adf8934196}
+
+
+Definition at line 178 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!layout@{layout}}
+\index{layout@{layout}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{layout}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:), pointer fv\-\_\-control\-\_\-mod\-::layout\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_afe243c14856ffd8377a4cfb0b5f14e84}
+
+
+Definition at line 337 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!lim\-\_\-fac@{lim\-\_\-fac}}
+\index{lim\-\_\-fac@{lim\-\_\-fac}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{lim\-\_\-fac}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::lim\-\_\-fac\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a47bfac3f007039bf56a2aea807ae6fc5}
+
+
+Definition at line 188 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!m\-\_\-split@{m\-\_\-split}}
+\index{m\-\_\-split@{m\-\_\-split}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{m\-\_\-split}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::m\-\_\-split\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a58306d27122b3238fc203cca6a6f73d4}
+
+
+Definition at line 236 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!make\-\_\-hybrid\-\_\-z@{make\-\_\-hybrid\-\_\-z}}
+\index{make\-\_\-hybrid\-\_\-z@{make\-\_\-hybrid\-\_\-z}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{make\-\_\-hybrid\-\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::make\-\_\-hybrid\-\_\-z\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a3e80dbc93b095de51dab7baeca7c28c8}
+
+
+Definition at line 316 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!make\-\_\-nh@{make\-\_\-nh}}
+\index{make\-\_\-nh@{make\-\_\-nh}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{make\-\_\-nh}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::make\-\_\-nh\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a86a0ab9a71b491d54a83213c3a9aeb9d}
+
+
+Definition at line 315 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!max\-\_\-refinement\-\_\-of\-\_\-global@{max\-\_\-refinement\-\_\-of\-\_\-global}}
+\index{max\-\_\-refinement\-\_\-of\-\_\-global@{max\-\_\-refinement\-\_\-of\-\_\-global}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{max\-\_\-refinement\-\_\-of\-\_\-global}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-control\-\_\-mod\-::max\-\_\-refinement\-\_\-of\-\_\-global = 1.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a52a5e694a3dff2419b9cab131ffbdcbb}
+
+
+Definition at line 350 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!moist\-\_\-phys@{moist\-\_\-phys}}
+\index{moist\-\_\-phys@{moist\-\_\-phys}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{moist\-\_\-phys}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::moist\-\_\-phys\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac0a394d19dca47dbadf863da0f8237c5}
+
+
+Definition at line 280 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!mountain@{mountain}}
+\index{mountain@{mountain}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{mountain}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::mountain\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a4491cd64caa35ee066a3a6a22331c33b}
+
+
+Definition at line 288 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!n\-\_\-split@{n\-\_\-split}}
+\index{n\-\_\-split@{n\-\_\-split}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{n\-\_\-split}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::n\-\_\-split\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a77f7e22e7cf16d6eb172e70cc2d00978}
+
+
+Definition at line 231 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!n\-\_\-sponge@{n\-\_\-sponge}}
+\index{n\-\_\-sponge@{n\-\_\-sponge}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{n\-\_\-sponge}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::n\-\_\-sponge\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa49e642e289810bd0ae3e8d564ca9daa}
+
+
+Definition at line 217 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!n\-\_\-zs\-\_\-filter@{n\-\_\-zs\-\_\-filter}}
+\index{n\-\_\-zs\-\_\-filter@{n\-\_\-zs\-\_\-filter}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{n\-\_\-zs\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::n\-\_\-zs\-\_\-filter\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a35724aa7d912fc934a1706bee488134b}
+
+
+Definition at line 203 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!na\-\_\-init@{na\-\_\-init}}
+\index{na\-\_\-init@{na\-\_\-init}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{na\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::na\-\_\-init\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a8fbe8612bdbe6d72e8790ff88dca41a6}
+
+
+Definition at line 256 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ncep\-\_\-ic@{ncep\-\_\-ic}}
+\index{ncep\-\_\-ic@{ncep\-\_\-ic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ncep\-\_\-ic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::ncep\-\_\-ic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aff372420df2393f8cf3582a9ed117a1c}
+
+
+Definition at line 296 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ncnst@{ncnst}}
+\index{ncnst@{ncnst}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ncnst}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::ncnst\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aab6800a7f9ff32d719265330dbc16f1d}
+
+
+Definition at line 249 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ndims@{ndims}}
+\index{ndims@{ndims}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ndims}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::ndims\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a4a79e8e5ca77c49a271741e59dfc9723}
+
+
+Definition at line 323 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nestbctype@{nestbctype}}
+\index{nestbctype@{nestbctype}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nestbctype}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nestbctype\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a8501bcfc790a38b595fe96fdbf094dcc}
+
+
+Definition at line 334 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nested@{nested}}
+\index{nested@{nested}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nested}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::nested\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a888c427a6af3ddf02bd3cfa499735161}
+
+
+Definition at line 331 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nestupdate@{nestupdate}}
+\index{nestupdate@{nestupdate}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nestupdate}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nestupdate\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa2a2e8daf4ef4127a85ff187f6bdb44a}
+
+
+Definition at line 334 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nf\-\_\-omega@{nf\-\_\-omega}}
+\index{nf\-\_\-omega@{nf\-\_\-omega}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nf\-\_\-omega}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nf\-\_\-omega\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_af5caed647905a5044033d699efb9d678}
+
+
+Definition at line 253 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nggps\-\_\-ic@{nggps\-\_\-ic}}
+\index{nggps\-\_\-ic@{nggps\-\_\-ic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nggps\-\_\-ic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::nggps\-\_\-ic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a6b8b8e887c41c9b275875bf1e24f17a4}
+
+
+Definition at line 297 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ngrids@{ngrids}}
+\index{ngrids@{ngrids}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ngrids}]{\setlength{\rightskip}{0pt plus 5cm}integer, public fv\-\_\-control\-\_\-mod\-::ngrids = 1}\label{classfv__control__mod_abaa40fc70569bf400e1385f95bae1f5f}
+
+
+Definition at line 348 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!no\-\_\-dycore@{no\-\_\-dycore}}
+\index{no\-\_\-dycore@{no\-\_\-dycore}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{no\-\_\-dycore}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::no\-\_\-dycore\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_af6f083211eda48e5d40ed207ccc75dac}
+
+
+Definition at line 211 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!non\-\_\-ortho@{non\-\_\-ortho}}
+\index{non\-\_\-ortho@{non\-\_\-ortho}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{non\-\_\-ortho}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::non\-\_\-ortho\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a43435c908837a24797feeda4b6299c85}
+
+
+Definition at line 278 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nord@{nord}}
+\index{nord@{nord}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nord}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nord\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab04c00bf38a9bb2111f7787ad1d92be0}
+
+
+Definition at line 190 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nord\-\_\-tr@{nord\-\_\-tr}}
+\index{nord\-\_\-tr@{nord\-\_\-tr}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nord\-\_\-tr}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nord\-\_\-tr\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a68ec2562c9db66671c7d7b4cbd3d88b8}
+
+
+Definition at line 191 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nord\-\_\-zs\-\_\-filter@{nord\-\_\-zs\-\_\-filter}}
+\index{nord\-\_\-zs\-\_\-filter@{nord\-\_\-zs\-\_\-filter}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nord\-\_\-zs\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nord\-\_\-zs\-\_\-filter\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a9b3efe0ee1171abdffb92d589012c488}
+
+
+Definition at line 204 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!npx@{npx}}
+\index{npx@{npx}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{npx}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::npx\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa5bfdcfa4bf39b144d7f077526170b15}
+
+
+Definition at line 244 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!npy@{npy}}
+\index{npy@{npy}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{npy}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::npy\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a26b947c94b06e66f76f3e5cc38aa3a16}
+
+
+Definition at line 245 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!npz@{npz}}
+\index{npz@{npz}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{npz}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::npz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ad0ff6f7684c200055fe2c239b67d1d54}
+
+
+Definition at line 246 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!npz\-\_\-rst@{npz\-\_\-rst}}
+\index{npz\-\_\-rst@{npz\-\_\-rst}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{npz\-\_\-rst}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::npz\-\_\-rst\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ad5083ad3c6d1a221b76b47973646c078}
+
+
+Definition at line 247 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nsponge@{nsponge}}
+\index{nsponge@{nsponge}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nsponge}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nsponge\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ad64bda37c9167de57eb5c08e1cd21588}
+
+
+Definition at line 334 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nt\-\_\-phys@{nt\-\_\-phys}}
+\index{nt\-\_\-phys@{nt\-\_\-phys}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nt\-\_\-phys}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nt\-\_\-phys\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a7cdc994b0e188655a7c21504db5e1731}
+
+
+Definition at line 261 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nt\-\_\-prog@{nt\-\_\-prog}}
+\index{nt\-\_\-prog@{nt\-\_\-prog}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nt\-\_\-prog}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nt\-\_\-prog\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a41418fcc74203cd7a8a201edb78c1956}
+
+
+Definition at line 260 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ntiles@{ntiles}}
+\index{ntiles@{ntiles}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ntiles}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::ntiles\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a03c69dd485bf4db4a1b65e9865ed9360}
+
+
+Definition at line 252 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!ntilesme@{ntilesme}}
+\index{ntilesme@{ntilesme}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{ntilesme}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-control\-\_\-mod\-::ntilesme\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a3d3dfa096dc269b05b2969281d35c453}
+
+
+Definition at line 339 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nudge@{nudge}}
+\index{nudge@{nudge}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nudge}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::nudge\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a07a467d55363147e21ffdb90196521c5}
+
+
+Definition at line 294 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nudge\-\_\-dz@{nudge\-\_\-dz}}
+\index{nudge\-\_\-dz@{nudge\-\_\-dz}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nudge\-\_\-dz}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::nudge\-\_\-dz\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a8ae39c9f86e291e2d1a3d547c013833a}
+
+
+Definition at line 257 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nudge\-\_\-ic@{nudge\-\_\-ic}}
+\index{nudge\-\_\-ic@{nudge\-\_\-ic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nudge\-\_\-ic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::nudge\-\_\-ic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_acf381938c799f3bf387b28c9a5d2e06c}
+
+
+Definition at line 295 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nudge\-\_\-qv@{nudge\-\_\-qv}}
+\index{nudge\-\_\-qv@{nudge\-\_\-qv}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nudge\-\_\-qv}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::nudge\-\_\-qv\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ad7e3b542651cf836a315dcf36149256d}
+
+
+Definition at line 317 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!nwat@{nwat}}
+\index{nwat@{nwat}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{nwat}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::nwat\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_acedcdd0be0664497b28861c69b006c40}
+
+
+Definition at line 219 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!old\-\_\-divg\-\_\-damp@{old\-\_\-divg\-\_\-damp}}
+\index{old\-\_\-divg\-\_\-damp@{old\-\_\-divg\-\_\-damp}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{old\-\_\-divg\-\_\-damp}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::old\-\_\-divg\-\_\-damp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a32a2ea4bdec1e069f6461fb5b1471d93}
+
+
+Definition at line 292 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!p\-\_\-fac@{p\-\_\-fac}}
+\index{p\-\_\-fac@{p\-\_\-fac}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{p\-\_\-fac}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::p\-\_\-fac\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ad983b216be38cb6ce1bb231af7257939}
+
+
+Definition at line 229 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!p\-\_\-ref@{p\-\_\-ref}}
+\index{p\-\_\-ref@{p\-\_\-ref}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{p\-\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::p\-\_\-ref\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_afde12ac7af6b571a903c1927932582ff}
+
+
+Definition at line 258 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!parent\-\_\-grid\-\_\-num@{parent\-\_\-grid\-\_\-num}}
+\index{parent\-\_\-grid\-\_\-num@{parent\-\_\-grid\-\_\-num}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{parent\-\_\-grid\-\_\-num}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-control\-\_\-mod\-::parent\-\_\-grid\-\_\-num = -\/1\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab921b928551b09feff4a8f27ab427293}
+
+
+Definition at line 354 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!parent\-\_\-tile@{parent\-\_\-tile}}
+\index{parent\-\_\-tile@{parent\-\_\-tile}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{parent\-\_\-tile}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::parent\-\_\-tile\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa8414caeda62e3b0d0323b5651dc6ceb}
+
+
+Definition at line 334 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!pelist\-\_\-all@{pelist\-\_\-all}}
+\index{pelist\-\_\-all@{pelist\-\_\-all}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{pelist\-\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}integer, dimension(\-:), allocatable, public fv\-\_\-control\-\_\-mod\-::pelist\-\_\-all}\label{classfv__control__mod_acb8e6baca36aa5140d2d15258e1cf1d6}
+
+
+Definition at line 349 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!phys\-\_\-hydrostatic@{phys\-\_\-hydrostatic}}
+\index{phys\-\_\-hydrostatic@{phys\-\_\-hydrostatic}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{phys\-\_\-hydrostatic}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::phys\-\_\-hydrostatic\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_acb8e0fa14bd650f1480f4e06e3ef8db5}
+
+
+Definition at line 310 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!pnats@{pnats}}
+\index{pnats@{pnats}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{pnats}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::pnats\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_acc1391e246a9a26aebf562ac3ab8232e}
+
+
+Definition at line 250 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!print\-\_\-freq@{print\-\_\-freq}}
+\index{print\-\_\-freq@{print\-\_\-freq}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{print\-\_\-freq}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::print\-\_\-freq\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac0fcc8e15fdfcefc0e0e93e830b44748}
+
+
+Definition at line 241 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!q\-\_\-split@{q\-\_\-split}}
+\index{q\-\_\-split@{q\-\_\-split}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{q\-\_\-split}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::q\-\_\-split\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a783be2fb9b692752e90b4ca57504be48}
+
+
+Definition at line 240 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!range\-\_\-warn@{range\-\_\-warn}}
+\index{range\-\_\-warn@{range\-\_\-warn}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{range\-\_\-warn}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::range\-\_\-warn\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1ebd288b513de31ca3790fd7b5ae49b3}
+
+
+Definition at line 273 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!read\-\_\-increment@{read\-\_\-increment}}
+\index{read\-\_\-increment@{read\-\_\-increment}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{read\-\_\-increment}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::read\-\_\-increment\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a3a2a138b7e1dcfd1f7bd0e2bda7a2ebf}
+
+
+Definition at line 306 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!reed\-\_\-cond\-\_\-only@{reed\-\_\-cond\-\_\-only}}
+\index{reed\-\_\-cond\-\_\-only@{reed\-\_\-cond\-\_\-only}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{reed\-\_\-cond\-\_\-only}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::reed\-\_\-cond\-\_\-only\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a2b3d0562dc8b3bf11a64ed364e054869}
+
+
+Definition at line 283 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!refinement@{refinement}}
+\index{refinement@{refinement}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{refinement}]{\setlength{\rightskip}{0pt plus 5cm}integer, pointer fv\-\_\-control\-\_\-mod\-::refinement\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1ea5ca193a308c6557a1d51c1cd78e5c}
+
+
+Definition at line 334 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!regional@{regional}}
+\index{regional@{regional}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{regional}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::regional\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a2c117981e3eaaa04ed8665dc676cae1a}
+
+
+Definition at line 332 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!remap\-\_\-t@{remap\-\_\-t}}
+\index{remap\-\_\-t@{remap\-\_\-t}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{remap\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::remap\-\_\-t\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a8bef0383195e3a490e60402a03274b8a}
+
+
+Definition at line 289 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!reproduce\-\_\-sum@{reproduce\-\_\-sum}}
+\index{reproduce\-\_\-sum@{reproduce\-\_\-sum}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{reproduce\-\_\-sum}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::reproduce\-\_\-sum\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a668baeb813fce15e439934c6a8fb6ea1}
+
+
+Definition at line 284 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!res\-\_\-latlon\-\_\-dynamics@{res\-\_\-latlon\-\_\-dynamics}}
+\index{res\-\_\-latlon\-\_\-dynamics@{res\-\_\-latlon\-\_\-dynamics}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{res\-\_\-latlon\-\_\-dynamics}]{\setlength{\rightskip}{0pt plus 5cm}character(len=128), pointer fv\-\_\-control\-\_\-mod\-::res\-\_\-latlon\-\_\-dynamics\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a39dbf978496637d0fc8949fa68cd3b17}
+
+
+Definition at line 307 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!res\-\_\-latlon\-\_\-tracers@{res\-\_\-latlon\-\_\-tracers}}
+\index{res\-\_\-latlon\-\_\-tracers@{res\-\_\-latlon\-\_\-tracers}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{res\-\_\-latlon\-\_\-tracers}]{\setlength{\rightskip}{0pt plus 5cm}character(len=128), pointer fv\-\_\-control\-\_\-mod\-::res\-\_\-latlon\-\_\-tracers\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_aa31278efd25dc639b4c0ca97f158a746}
+
+
+Definition at line 308 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!reset\-\_\-eta@{reset\-\_\-eta}}
+\index{reset\-\_\-eta@{reset\-\_\-eta}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{reset\-\_\-eta}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::reset\-\_\-eta\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a6e851229cba913fe5086128ab28022aa}
+
+
+Definition at line 228 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!rf\-\_\-cutoff@{rf\-\_\-cutoff}}
+\index{rf\-\_\-cutoff@{rf\-\_\-cutoff}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{rf\-\_\-cutoff}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::rf\-\_\-cutoff\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a2815e52e7b4af1a6e5fa34d99ad9d7cc}
+
+
+Definition at line 269 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!rf\-\_\-fast@{rf\-\_\-fast}}
+\index{rf\-\_\-fast@{rf\-\_\-fast}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{rf\-\_\-fast}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::rf\-\_\-fast\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac25e0b8133cbc74acdfffc12de4ef035}
+
+
+Definition at line 207 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!s\-\_\-weight@{s\-\_\-weight}}
+\index{s\-\_\-weight@{s\-\_\-weight}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{s\-\_\-weight}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::s\-\_\-weight\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a84710a8f70995d6c5c2436471f516d19}
+
+
+Definition at line 335 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!scale\-\_\-z@{scale\-\_\-z}}
+\index{scale\-\_\-z@{scale\-\_\-z}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{scale\-\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::scale\-\_\-z\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a33331d1b80f42ac121c7e433ce110e4f}
+
+
+Definition at line 185 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!shift\-\_\-fac@{shift\-\_\-fac}}
+\index{shift\-\_\-fac@{shift\-\_\-fac}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{shift\-\_\-fac}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::shift\-\_\-fac\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a9578e6526f4ae8e6707ba795b3ca8f1f}
+
+
+Definition at line 222 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!srf\-\_\-init@{srf\-\_\-init}}
+\index{srf\-\_\-init@{srf\-\_\-init}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{srf\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::srf\-\_\-init\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a32fd358d603e9d36b2d892f598819878}
+
+
+Definition at line 287 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!stretch\-\_\-fac@{stretch\-\_\-fac}}
+\index{stretch\-\_\-fac@{stretch\-\_\-fac}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{stretch\-\_\-fac}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::stretch\-\_\-fac\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a8bf7e998d37424a5acfd20a1d4345655}
+
+
+Definition at line 224 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!target\-\_\-lat@{target\-\_\-lat}}
+\index{target\-\_\-lat@{target\-\_\-lat}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{target\-\_\-lat}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::target\-\_\-lat\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ab6c815af85f5ad4e350b9a70e835863b}
+
+
+Definition at line 225 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!target\-\_\-lon@{target\-\_\-lon}}
+\index{target\-\_\-lon@{target\-\_\-lon}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{target\-\_\-lon}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), pointer fv\-\_\-control\-\_\-mod\-::target\-\_\-lon\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a4be1f3d3b7f0f82146aabd90d5b1aee9}
+
+
+Definition at line 226 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!tau@{tau}}
+\index{tau@{tau}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{tau}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::tau\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a9eb0433cb807fe22e9a244bfca40ff21}
+
+
+Definition at line 268 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!tau\-\_\-h2o@{tau\-\_\-h2o}}
+\index{tau\-\_\-h2o@{tau\-\_\-h2o}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{tau\-\_\-h2o}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::tau\-\_\-h2o\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a6429af2384662d32d0ac8e8b861f0a31}
+
+
+Definition at line 262 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!too\-\_\-big@{too\-\_\-big}}
+\index{too\-\_\-big@{too\-\_\-big}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{too\-\_\-big}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-control\-\_\-mod\-::too\-\_\-big = 1.E35\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a6b6be52e25375aff31a0cf50bfada435}
+
+
+Definition at line 344 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!trdm2@{trdm2}}
+\index{trdm2@{trdm2}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{trdm2}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::trdm2\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a1c559ada35adc60b532cc77e0a7963ec}
+
+
+Definition at line 196 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!twowaynest@{twowaynest}}
+\index{twowaynest@{twowaynest}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{twowaynest}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::twowaynest\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_ac3aa92c051cecb429cfe4459f0bc20ec}
+
+
+Definition at line 331 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!umax@{umax}}
+\index{umax@{umax}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{umax}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-control\-\_\-mod\-::umax = 350.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a6da7ed00f053d3675e9de3748bf8931e}
+
+
+max wave speed for grid\-\_\-type$>$3 
+
+
+
+Definition at line 353 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!update\-\_\-blend@{update\-\_\-blend}}
+\index{update\-\_\-blend@{update\-\_\-blend}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{update\-\_\-blend}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::update\-\_\-blend\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_adc0d08b31c495fc6b3e272b90b654a98}
+
+
+Definition at line 335 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!use\-\_\-hydro\-\_\-pressure@{use\-\_\-hydro\-\_\-pressure}}
+\index{use\-\_\-hydro\-\_\-pressure@{use\-\_\-hydro\-\_\-pressure}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{use\-\_\-hydro\-\_\-pressure}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::use\-\_\-hydro\-\_\-pressure\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a8adf373513e87e6f924b04c06a1f8e68}
+
+
+Definition at line 311 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!use\-\_\-logp@{use\-\_\-logp}}
+\index{use\-\_\-logp@{use\-\_\-logp}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{use\-\_\-logp}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::use\-\_\-logp\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a45d2ea868677009a92bac663e2a6fe55}
+
+
+Definition at line 238 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!use\-\_\-ncep\-\_\-phy@{use\-\_\-ncep\-\_\-phy}}
+\index{use\-\_\-ncep\-\_\-phy@{use\-\_\-ncep\-\_\-phy}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{use\-\_\-ncep\-\_\-phy}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::use\-\_\-ncep\-\_\-phy\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a79bd1445421e88a4b7a21af6745a7dd3}
+
+
+Definition at line 302 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!use\-\_\-new\-\_\-ncep@{use\-\_\-new\-\_\-ncep}}
+\index{use\-\_\-new\-\_\-ncep@{use\-\_\-new\-\_\-ncep}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{use\-\_\-new\-\_\-ncep}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::use\-\_\-new\-\_\-ncep\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a02a42143570e966aa1c87122b8d6e49a}
+
+
+Definition at line 301 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!use\-\_\-old\-\_\-omega@{use\-\_\-old\-\_\-omega}}
+\index{use\-\_\-old\-\_\-omega@{use\-\_\-old\-\_\-omega}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{use\-\_\-old\-\_\-omega}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::use\-\_\-old\-\_\-omega\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a47cc705f642ad3e11f7ae4bef4d35572}
+
+
+Definition at line 214 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!vtdm4@{vtdm4}}
+\index{vtdm4@{vtdm4}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{vtdm4}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::vtdm4\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a5ea33e8ef19009f42a071cbd5c861413}
+
+
+Definition at line 195 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!w\-\_\-max@{w\-\_\-max}}
+\index{w\-\_\-max@{w\-\_\-max}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{w\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::w\-\_\-max\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a913483ee0df1ec846e1a3ebd4f8b183e}
+
+
+Definition at line 186 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!warm\-\_\-start@{warm\-\_\-start}}
+\index{warm\-\_\-start@{warm\-\_\-start}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{warm\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::warm\-\_\-start\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a902561af942a30ae404d58555bcf849c}
+
+
+Definition at line 220 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!write\-\_\-3d\-\_\-diags@{write\-\_\-3d\-\_\-diags}}
+\index{write\-\_\-3d\-\_\-diags@{write\-\_\-3d\-\_\-diags}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{write\-\_\-3d\-\_\-diags}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::write\-\_\-3d\-\_\-diags\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_abdedb56658d66d52ddd0462ddf5438fd}
+
+
+Definition at line 242 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!z\-\_\-min@{z\-\_\-min}}
+\index{z\-\_\-min@{z\-\_\-min}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{z\-\_\-min}]{\setlength{\rightskip}{0pt plus 5cm}real, pointer fv\-\_\-control\-\_\-mod\-::z\-\_\-min\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_a65816317cf5d1265356c6373d64deecf}
+
+
+Definition at line 187 of file fv\-\_\-control.\-F90.
+
+\index{fv\-\_\-control\-\_\-mod@{fv\-\_\-control\-\_\-mod}!z\-\_\-tracer@{z\-\_\-tracer}}
+\index{z\-\_\-tracer@{z\-\_\-tracer}!fv_control_mod@{fv\-\_\-control\-\_\-mod}}
+\subsubsection[{z\-\_\-tracer}]{\setlength{\rightskip}{0pt plus 5cm}logical, pointer fv\-\_\-control\-\_\-mod\-::z\-\_\-tracer\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__control__mod_af47884ffb9df2d7a1ef46cad26ef3c14}
+
+
+Definition at line 290 of file fv\-\_\-control.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{fv__control_8F90}{fv\-\_\-control.\-F90}\end{DoxyCompactItemize}

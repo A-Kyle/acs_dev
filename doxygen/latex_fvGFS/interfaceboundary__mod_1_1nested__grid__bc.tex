@@ -1,0 +1,155 @@
+\section{boundary\-\_\-mod\-:\-:nested\-\_\-grid\-\_\-bc Interface Reference}
+\label{interfaceboundary__mod_1_1nested__grid__bc}\index{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}}
+
+
+interface 'nested\-\_\-grid\-\_\-\-B\-C' includes subroutines 'nested\-\_\-grid\-\_\-\-B\-C\-\_\-2d' and 'nested\-\_\-grid\-\_\-\-B\-C\-\_\-3d' that fetch coarse-\/grid data, interpolate it to nested-\/grid boundary cells, apply the interpolated data directly to the boundary halo cells without saving the datatype.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfaceboundary__mod_1_1nested__grid__bc_acf9cfc884661a3f65f0bfa1c48ad9144}{nested\-\_\-grid\-\_\-bc\-\_\-2d} (var\-\_\-nest, var\-\_\-coarse, ind, wt, istag, jstag, npx, npy, bd, isg, ieg, jsg, jeg, nstep\-\_\-in, nsplit\-\_\-in)
+\item 
+subroutine \hyperlink{interfaceboundary__mod_1_1nested__grid__bc_a262e065d324866cef3ffd228b75947a9}{nested\-\_\-grid\-\_\-bc\-\_\-mpp} (var\-\_\-nest, var\-\_\-coarse, nest\-\_\-domain, ind, wt, istag, jstag, npx, npy, npz, bd, isg, ieg, jsg, jeg, nstep\-\_\-in, nsplit\-\_\-in, proc\-\_\-in)
+\item 
+subroutine \hyperlink{interfaceboundary__mod_1_1nested__grid__bc_a7d181c2f8cc95d8079cb7798835f1b52}{nested\-\_\-grid\-\_\-bc\-\_\-mpp\-\_\-send} (var\-\_\-coarse, nest\-\_\-domain, istag, jstag)
+\item 
+subroutine \hyperlink{interfaceboundary__mod_1_1nested__grid__bc_a903bffb0452936b8fa0d806378b3dc39}{nested\-\_\-grid\-\_\-bc\-\_\-2d\-\_\-mpp} (var\-\_\-nest, var\-\_\-coarse, nest\-\_\-domain, ind, wt, istag, jstag, npx, npy, bd, isg, ieg, jsg, jeg, nstep\-\_\-in, nsplit\-\_\-in, proc\-\_\-in)
+\item 
+subroutine \hyperlink{interfaceboundary__mod_1_1nested__grid__bc_a2339c0ee748e617bb0fd756d1e4bedbe}{nested\-\_\-grid\-\_\-bc\-\_\-3d} (var\-\_\-nest, var\-\_\-coarse, ind, wt, istag, jstag, npx, npy, npz, bd, isg, ieg, jsg, jeg, nstep\-\_\-in, nsplit\-\_\-in)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+interface 'nested\-\_\-grid\-\_\-\-B\-C' includes subroutines 'nested\-\_\-grid\-\_\-\-B\-C\-\_\-2d' and 'nested\-\_\-grid\-\_\-\-B\-C\-\_\-3d' that fetch coarse-\/grid data, interpolate it to nested-\/grid boundary cells, apply the interpolated data directly to the boundary halo cells without saving the datatype. 
+
+Definition at line 88 of file boundary.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}!nested\-\_\-grid\-\_\-bc\-\_\-2d@{nested\-\_\-grid\-\_\-bc\-\_\-2d}}
+\index{nested\-\_\-grid\-\_\-bc\-\_\-2d@{nested\-\_\-grid\-\_\-bc\-\_\-2d}!boundary_mod::nested_grid_bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}}
+\subsubsection[{nested\-\_\-grid\-\_\-bc\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc\-::nested\-\_\-grid\-\_\-bc\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag), intent(inout)}]{var\-\_\-nest, }
+\item[{real, dimension(isg\-:ieg+istag,jsg\-:jeg+jstag), intent(in)}]{var\-\_\-coarse, }
+\item[{integer, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,2), intent(in)}]{ind, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,4), intent(in)}]{wt, }
+\item[{integer, intent(in)}]{istag, }
+\item[{integer, intent(in)}]{jstag, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{isg, }
+\item[{integer, intent(in)}]{ieg, }
+\item[{integer, intent(in)}]{jsg, }
+\item[{integer, intent(in)}]{jeg, }
+\item[{integer, intent(in), optional}]{nstep\-\_\-in, }
+\item[{integer, intent(in), optional}]{nsplit\-\_\-in}
+\end{DoxyParamCaption}
+)}\label{interfaceboundary__mod_1_1nested__grid__bc_acf9cfc884661a3f65f0bfa1c48ad9144}
+
+
+Definition at line 1030 of file boundary.\-F90.
+
+\index{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}!nested\-\_\-grid\-\_\-bc\-\_\-2d\-\_\-mpp@{nested\-\_\-grid\-\_\-bc\-\_\-2d\-\_\-mpp}}
+\index{nested\-\_\-grid\-\_\-bc\-\_\-2d\-\_\-mpp@{nested\-\_\-grid\-\_\-bc\-\_\-2d\-\_\-mpp}!boundary_mod::nested_grid_bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}}
+\subsubsection[{nested\-\_\-grid\-\_\-bc\-\_\-2d\-\_\-mpp}]{\setlength{\rightskip}{0pt plus 5cm}subroutine boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc\-::nested\-\_\-grid\-\_\-bc\-\_\-2d\-\_\-mpp (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag), intent(inout)}]{var\-\_\-nest, }
+\item[{real, dimension(isg\-:ieg+istag,jsg\-:jeg+jstag), intent(in)}]{var\-\_\-coarse, }
+\item[{type(nest\-\_\-domain\-\_\-type), intent(inout)}]{nest\-\_\-domain, }
+\item[{integer, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,2), intent(in)}]{ind, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,4), intent(in)}]{wt, }
+\item[{integer, intent(in)}]{istag, }
+\item[{integer, intent(in)}]{jstag, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{isg, }
+\item[{integer, intent(in)}]{ieg, }
+\item[{integer, intent(in)}]{jsg, }
+\item[{integer, intent(in)}]{jeg, }
+\item[{integer, intent(in), optional}]{nstep\-\_\-in, }
+\item[{integer, intent(in), optional}]{nsplit\-\_\-in, }
+\item[{logical, intent(in), optional}]{proc\-\_\-in}
+\end{DoxyParamCaption}
+)}\label{interfaceboundary__mod_1_1nested__grid__bc_a903bffb0452936b8fa0d806378b3dc39}
+
+
+Definition at line 831 of file boundary.\-F90.
+
+\index{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}!nested\-\_\-grid\-\_\-bc\-\_\-3d@{nested\-\_\-grid\-\_\-bc\-\_\-3d}}
+\index{nested\-\_\-grid\-\_\-bc\-\_\-3d@{nested\-\_\-grid\-\_\-bc\-\_\-3d}!boundary_mod::nested_grid_bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}}
+\subsubsection[{nested\-\_\-grid\-\_\-bc\-\_\-3d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc\-::nested\-\_\-grid\-\_\-bc\-\_\-3d (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,npz), intent(inout)}]{var\-\_\-nest, }
+\item[{real, dimension(isg\-:ieg+istag,jsg\-:jeg+jstag,npz), intent(in)}]{var\-\_\-coarse, }
+\item[{integer, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,2), intent(in)}]{ind, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,4), intent(in)}]{wt, }
+\item[{integer, intent(in)}]{istag, }
+\item[{integer, intent(in)}]{jstag, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{isg, }
+\item[{integer, intent(in)}]{ieg, }
+\item[{integer, intent(in)}]{jsg, }
+\item[{integer, intent(in)}]{jeg, }
+\item[{integer, intent(in), optional}]{nstep\-\_\-in, }
+\item[{integer, intent(in), optional}]{nsplit\-\_\-in}
+\end{DoxyParamCaption}
+)}\label{interfaceboundary__mod_1_1nested__grid__bc_a2339c0ee748e617bb0fd756d1e4bedbe}
+
+
+Definition at line 1165 of file boundary.\-F90.
+
+\index{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}!nested\-\_\-grid\-\_\-bc\-\_\-mpp@{nested\-\_\-grid\-\_\-bc\-\_\-mpp}}
+\index{nested\-\_\-grid\-\_\-bc\-\_\-mpp@{nested\-\_\-grid\-\_\-bc\-\_\-mpp}!boundary_mod::nested_grid_bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}}
+\subsubsection[{nested\-\_\-grid\-\_\-bc\-\_\-mpp}]{\setlength{\rightskip}{0pt plus 5cm}subroutine boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc\-::nested\-\_\-grid\-\_\-bc\-\_\-mpp (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,npz), intent(inout)}]{var\-\_\-nest, }
+\item[{real, dimension(isg\-:ieg+istag,jsg\-:jeg+jstag,npz), intent(in)}]{var\-\_\-coarse, }
+\item[{type(nest\-\_\-domain\-\_\-type), intent(inout)}]{nest\-\_\-domain, }
+\item[{integer, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,2), intent(in)}]{ind, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+istag,bd\%jsd\-:bd\%jed+jstag,4), intent(in)}]{wt, }
+\item[{integer, intent(in)}]{istag, }
+\item[{integer, intent(in)}]{jstag, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{isg, }
+\item[{integer, intent(in)}]{ieg, }
+\item[{integer, intent(in)}]{jsg, }
+\item[{integer, intent(in)}]{jeg, }
+\item[{integer, intent(in), optional}]{nstep\-\_\-in, }
+\item[{integer, intent(in), optional}]{nsplit\-\_\-in, }
+\item[{logical, intent(in), optional}]{proc\-\_\-in}
+\end{DoxyParamCaption}
+)}\label{interfaceboundary__mod_1_1nested__grid__bc_a262e065d324866cef3ffd228b75947a9}
+
+
+Definition at line 578 of file boundary.\-F90.
+
+\index{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}!nested\-\_\-grid\-\_\-bc\-\_\-mpp\-\_\-send@{nested\-\_\-grid\-\_\-bc\-\_\-mpp\-\_\-send}}
+\index{nested\-\_\-grid\-\_\-bc\-\_\-mpp\-\_\-send@{nested\-\_\-grid\-\_\-bc\-\_\-mpp\-\_\-send}!boundary_mod::nested_grid_bc@{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}}
+\subsubsection[{nested\-\_\-grid\-\_\-bc\-\_\-mpp\-\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}subroutine boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc\-::nested\-\_\-grid\-\_\-bc\-\_\-mpp\-\_\-send (
+\begin{DoxyParamCaption}
+\item[{real, dimension(\-:,\-:,\-:), intent(in)}]{var\-\_\-coarse, }
+\item[{type(nest\-\_\-domain\-\_\-type), intent(inout)}]{nest\-\_\-domain, }
+\item[{integer, intent(in)}]{istag, }
+\item[{integer, intent(in)}]{jstag}
+\end{DoxyParamCaption}
+)}\label{interfaceboundary__mod_1_1nested__grid__bc_a7d181c2f8cc95d8079cb7798835f1b52}
+
+
+Definition at line 786 of file boundary.\-F90.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{boundary_8F90}{boundary.\-F90}\end{DoxyCompactItemize}

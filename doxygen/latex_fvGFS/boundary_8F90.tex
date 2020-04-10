@@ -1,0 +1,13 @@
+\section{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.Ahern/acs\-\_\-master\-\_\-readonly/model/boundary.F90 File Reference}
+\label{boundary_8F90}\index{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/boundary.\-F90@{/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/boundary.\-F90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{classboundary__mod}{boundary\-\_\-mod}
+\begin{DoxyCompactList}\small\item\em The module 'boundary' contains utility routines for grid nesting and boundary conditions. \end{DoxyCompactList}\item 
+interface \hyperlink{interfaceboundary__mod_1_1nested__grid__bc}{boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc}
+\begin{DoxyCompactList}\small\item\em interface 'nested\-\_\-grid\-\_\-\-B\-C' includes subroutines 'nested\-\_\-grid\-\_\-\-B\-C\-\_\-2d' and 'nested\-\_\-grid\-\_\-\-B\-C\-\_\-3d' that fetch coarse-\/grid data, interpolate it to nested-\/grid boundary cells, apply the interpolated data directly to the boundary halo cells without saving the datatype. \end{DoxyCompactList}\item 
+interface \hyperlink{interfaceboundary__mod_1_1fill__nested__grid}{boundary\-\_\-mod\-::fill\-\_\-nested\-\_\-grid}
+\begin{DoxyCompactList}\small\item\em The interface '\hyperlink{interfaceboundary__mod_1_1fill__nested__grid}{fill\-\_\-nested\-\_\-grid}' includes subroutines 'fill\-\_\-nested\-\_\-grid\-\_\-2d' and 'fill\-\_\-nested\-\_\-grid\-\_\-3d' that fill nested-\/grid data with interpolated data from the coarse grid. \end{DoxyCompactList}\item 
+interface \hyperlink{interfaceboundary__mod_1_1update__coarse__grid}{boundary\-\_\-mod\-::update\-\_\-coarse\-\_\-grid}
+\begin{DoxyCompactList}\small\item\em The interface'update\-\_\-coarse\-\_\-grid\-\_\-mpp'contains subroutines that fetch data from the nested grid and interpolate it to the coarse grid using the method described by \cite{harris2013two}. \end{DoxyCompactList}\end{DoxyCompactItemize}

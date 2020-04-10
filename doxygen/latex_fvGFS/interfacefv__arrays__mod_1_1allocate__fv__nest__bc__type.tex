@@ -1,0 +1,78 @@
+\section{fv\-\_\-arrays\-\_\-mod\-:\-:allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type Interface Reference}
+\label{interfacefv__arrays__mod_1_1allocate__fv__nest__bc__type}\index{fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type}}
+
+
+'allocate\-\_\-fv\-\_\-nest\-\_\-\-B\-C\-\_\-type' is an interface to subroutines that allocate the 'fv\-\_\-nest\-\_\-\-B\-C\-\_\-type' structure that holds the nested-\/grid B\-Cs.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacefv__arrays__mod_1_1allocate__fv__nest__bc__type_a25db6ace0eb8ef1331da2fabf640855f}{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d} (B\-C, is, ie, js, je, isd, ied, jsd, jed, npx, npy, npz, ng, ns, istag, jstag, dummy)
+\item 
+subroutine \hyperlink{interfacefv__arrays__mod_1_1allocate__fv__nest__bc__type_a198c4b601e12e05fed5528dc3ce7aae1}{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d\-\_\-atm} (B\-C, Atm, ns, istag, jstag, dummy)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+'allocate\-\_\-fv\-\_\-nest\-\_\-\-B\-C\-\_\-type' is an interface to subroutines that allocate the 'fv\-\_\-nest\-\_\-\-B\-C\-\_\-type' structure that holds the nested-\/grid B\-Cs. 
+
+The subroutines can pass the array bounds explicitly or not. The bounds in Atmbd are used for the non-\/explicit case. 
+
+Definition at line 1126 of file fv\-\_\-arrays.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type}!allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d@{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}}
+\index{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d@{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}!fv_arrays_mod::allocate_fv_nest_bc_type@{fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type}}
+\subsubsection[{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d (
+\begin{DoxyParamCaption}
+\item[{type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}), intent(inout)}]{B\-C, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{integer, intent(in)}]{ng, }
+\item[{integer, intent(in)}]{ns, }
+\item[{integer, intent(in)}]{istag, }
+\item[{integer, intent(in)}]{jstag, }
+\item[{logical, intent(in)}]{dummy}
+\end{DoxyParamCaption}
+)}\label{interfacefv__arrays__mod_1_1allocate__fv__nest__bc__type_a25db6ace0eb8ef1331da2fabf640855f}
+
+
+Definition at line 2015 of file fv\-\_\-arrays.\-F90.
+
+
+
+Referenced by fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d\-\_\-atm().
+
+\index{fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type@{fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type}!allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d\-\_\-atm@{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d\-\_\-atm}}
+\index{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d\-\_\-atm@{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d\-\_\-atm}!fv_arrays_mod::allocate_fv_nest_bc_type@{fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type}}
+\subsubsection[{allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d\-\_\-atm}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-arrays\-\_\-mod\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-::allocate\-\_\-fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d\-\_\-atm (
+\begin{DoxyParamCaption}
+\item[{type({\bf fv\-\_\-nest\-\_\-bc\-\_\-type\-\_\-3d}), intent(inout)}]{B\-C, }
+\item[{type({\bf fv\-\_\-atmos\-\_\-type}), intent(in)}]{Atm, }
+\item[{integer, intent(in)}]{ns, }
+\item[{integer, intent(in)}]{istag, }
+\item[{integer, intent(in)}]{jstag, }
+\item[{logical, intent(in)}]{dummy}
+\end{DoxyParamCaption}
+)}\label{interfacefv__arrays__mod_1_1allocate__fv__nest__bc__type_a198c4b601e12e05fed5528dc3ce7aae1}
+
+
+Definition at line 1983 of file fv\-\_\-arrays.\-F90.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{fv__arrays_8F90}{fv\-\_\-arrays.\-F90}\end{DoxyCompactItemize}

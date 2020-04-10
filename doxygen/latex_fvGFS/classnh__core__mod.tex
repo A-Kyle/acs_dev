@@ -1,0 +1,95 @@
+\section{nh\-\_\-core\-\_\-mod Module Reference}
+\label{classnh__core__mod}\index{nh\-\_\-core\-\_\-mod@{nh\-\_\-core\-\_\-mod}}
+
+
+The module 'nh\-\_\-core' peforms non-\/hydrostatic computations.  
+
+
+
+
+Collaboration diagram for nh\-\_\-core\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{classnh__core__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classnh__core__mod_af39c4d38790cffa5207d7e937d320d7d}{riem\-\_\-solver3} (ms, dt,is,ie,js, je, km, ng,isd, ied, jsd, jed, akap, cappa, cp,
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real, parameter \hyperlink{classnh__core__mod_ae83e5bc4677454ff2be94ad7952e85bd}{r3} = 1./3.
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'nh\-\_\-core' peforms non-\/hydrostatic computations. 
+
+\begin{DoxyAuthor}{Author}
+S. J. Lin, N\-O\-A\-A/\-G\-F\-D\-L 
+\end{DoxyAuthor}
+
+
+Definition at line 26 of file nh\-\_\-core.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{nh\-\_\-core\-\_\-mod@{nh\-\_\-core\-\_\-mod}!riem\-\_\-solver3@{riem\-\_\-solver3}}
+\index{riem\-\_\-solver3@{riem\-\_\-solver3}!nh_core_mod@{nh\-\_\-core\-\_\-mod}}
+\subsubsection[{riem\-\_\-solver3}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public nh\-\_\-core\-\_\-mod\-::riem\-\_\-solver3 (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{ms, }
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{km, }
+\item[{integer, intent(in)}]{ng, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{real, intent(in)}]{akap, }
+\item[{real, dimension(isd\-:,jsd\-:,1\-:), intent(in)}]{cappa, }
+\item[{real, intent(in)}]{cp}
+\end{DoxyParamCaption}
+)}\label{classnh__core__mod_af39c4d38790cffa5207d7e937d320d7d}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dt} & the B\-I\-G horizontal Lagrangian time step \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file nh\-\_\-core.\-F90.
+
+
+
+References nh\-\_\-utils\-\_\-mod\-::rim\-\_\-2d(), nh\-\_\-utils\-\_\-mod\-::sim1\-\_\-solver(), nh\-\_\-utils\-\_\-mod\-::sim3\-\_\-solver(), nh\-\_\-utils\-\_\-mod\-::sim3p0\-\_\-solver(), and nh\-\_\-utils\-\_\-mod\-::sim\-\_\-solver().
+
+
+
+Referenced by dyn\-\_\-core\-\_\-mod\-::dyn\-\_\-core().
+
+
+
+\subsection{Member Data Documentation}
+\index{nh\-\_\-core\-\_\-mod@{nh\-\_\-core\-\_\-mod}!r3@{r3}}
+\index{r3@{r3}!nh_core_mod@{nh\-\_\-core\-\_\-mod}}
+\subsubsection[{r3}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter nh\-\_\-core\-\_\-mod\-::r3 = 1./3.\hspace{0.3cm}{\ttfamily [private]}}\label{classnh__core__mod_ae83e5bc4677454ff2be94ad7952e85bd}
+
+
+Definition at line 60 of file nh\-\_\-core.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{nh__core_8F90}{nh\-\_\-core.\-F90}\end{DoxyCompactItemize}

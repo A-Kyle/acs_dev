@@ -1,0 +1,399 @@
+\section{fv\-\_\-dynamics\-\_\-mod Module Reference}
+\label{classfv__dynamics__mod}\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}}
+
+
+The module 'fv\-\_\-dynamics' is the top-\/level routine for the dynamical core.  
+
+
+
+
+Collaboration diagram for fv\-\_\-dynamics\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classfv__dynamics__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__dynamics__mod_a57030300ce6aacf81a3588faf906f07f}{fv\-\_\-dynamics} (npx, npy, npz, nq\-\_\-tot, ng, bdt, consv\-\_\-te, fill, reproduce\-\_\-sum, kappa, cp\-\_\-air, zvir, ptop, ks, ncnst, n\-\_\-split, q\-\_\-split, u, v, w, delz, hydrostatic, pt, delp, q, ps, pe, pk, peln, pkz, phis, q\-\_\-con, omga, ua, va, uc, vc, ak, bk, mfx, mfy, cx, cy, ze0, hybrid\-\_\-z, gridstruct, flagstruct, neststruct, idiag, bd, parent\-\_\-grid, domain, diss\-\_\-est, time\-\_\-total)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+logical \hyperlink{classfv__dynamics__mod_a93c42e85cca69658841e13e403c3c89a}{rf\-\_\-initialized} = .false.
+\item 
+logical \hyperlink{classfv__dynamics__mod_a1c473782ffaa6249be5ba2c3d35a59dc}{pt\-\_\-initialized} = .false.
+\item 
+logical \hyperlink{classfv__dynamics__mod_a286a6106a75bb334c9531e0354298b11}{bad\-\_\-range} = .false.
+\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__dynamics__mod_a9e9aac45b5404781dcafeff189daf4de}{rf}
+\item 
+integer \hyperlink{classfv__dynamics__mod_a223d12ae03cc1c109ba5999ef065bb4a}{kmax} =1
+\item 
+integer \hyperlink{classfv__dynamics__mod_ac064d1ed1892a3588eb7c6f430954753}{k\-\_\-rf} = 0
+\item 
+real \hyperlink{classfv__dynamics__mod_a4503b9b3f35f05d3a6dc3535ec7017e9}{agrav}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classfv__dynamics__mod_abde34c9e5a63d32699e152028179657b}{rayleigh\-\_\-super} (dt, npx, npy, npz, ks, pm, phis, tau, u, v, w, pt, ua, va, delz, agrid, cp, rg, ptop, hydrostatic, conserve, rf\-\_\-cutoff, gridstruct, domain, bd)
+\item 
+subroutine \hyperlink{classfv__dynamics__mod_a143d1c8cb6f535a5567bd0f4ef1f4a4f}{rayleigh\-\_\-friction} (dt, npx, npy, npz, ks, pm, tau, u, v, w, pt, ua, va, delz, cp, rg, ptop, hydrostatic, conserve, rf\-\_\-cutoff, gridstruct, domain, bd)
+\item 
+subroutine \hyperlink{classfv__dynamics__mod_a2694a8332d9124e2f4332551ffd92795}{compute\-\_\-aam} (npz, is, ie, js, je, isd, ied, jsd, jed, gridstruct, bd, ptop, ua, va, u, v, delp, aam, ps, m\-\_\-fac)
+\begin{DoxyCompactList}\small\item\em The subroutine 'compute\-\_\-aam' computes vertically (mass) integrated Atmospheric Angular Momentum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'fv\-\_\-dynamics' is the top-\/level routine for the dynamical core. 
+
+It executes on the dt\-\_\-atmos (or p\-\_\-split) loop. 
+
+Definition at line 26 of file fv\-\_\-dynamics.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!compute\-\_\-aam@{compute\-\_\-aam}}
+\index{compute\-\_\-aam@{compute\-\_\-aam}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{compute\-\_\-aam}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-dynamics\-\_\-mod\-::compute\-\_\-aam (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{npz, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in)}]{gridstruct, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{real, intent(in)}]{ptop, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed, npz), intent(inout)}]{ua, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed, npz), intent(inout)}]{va, }
+\item[{real, dimension(isd\-:ied  ,jsd\-:jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(isd\-:ied+1,jsd\-:jed,npz), intent(inout)}]{v, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{delp, }
+\item[{real, dimension(is\-:ie,js\-:je), intent(out)}]{aam, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed), intent(out)}]{ps, }
+\item[{real, dimension(is\-:ie,js\-:je), intent(out)}]{m\-\_\-fac}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__dynamics__mod_a2694a8332d9124e2f4332551ffd92795}
+
+
+The subroutine 'compute\-\_\-aam' computes vertically (mass) integrated Atmospheric Angular Momentum. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em u} & D grid zonal wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em v} & D grid meridional wind (m/s) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1439 of file fv\-\_\-dynamics.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::c2l\-\_\-ord2().
+
+
+
+Referenced by fv\-\_\-dynamics().
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!fv\-\_\-dynamics@{fv\-\_\-dynamics}}
+\index{fv\-\_\-dynamics@{fv\-\_\-dynamics}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{fv\-\_\-dynamics}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{integer, intent(in)}]{nq\-\_\-tot, }
+\item[{integer, intent(in)}]{ng, }
+\item[{real, intent(in)}]{bdt, }
+\item[{real, intent(in)}]{consv\-\_\-te, }
+\item[{logical, intent(in)}]{fill, }
+\item[{logical, intent(in)}]{reproduce\-\_\-sum, }
+\item[{real, intent(in)}]{kappa, }
+\item[{real, intent(in)}]{cp\-\_\-air, }
+\item[{real, intent(in)}]{zvir, }
+\item[{real, intent(in)}]{ptop, }
+\item[{integer, intent(in)}]{ks, }
+\item[{integer, intent(in)}]{ncnst, }
+\item[{integer, intent(in)}]{n\-\_\-split, }
+\item[{integer, intent(in)}]{q\-\_\-split, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed  ,npz), intent(inout)}]{v, }
+\item[{real, dimension(   bd\%isd\-:  ,bd\%jsd\-:  ,1\-:), intent(inout)}]{w, }
+\item[{real, dimension(bd\%isd\-:,bd\%jsd\-:,1\-:), intent(inout)}]{delz, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{real, dimension(  bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed  ,npz), intent(inout)}]{pt, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed  ,npz), intent(inout)}]{delp, }
+\item[{real, dimension(   bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed  ,npz, ncnst), intent(inout)}]{q, }
+\item[{real, dimension  (bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed), intent(inout)}]{ps, }
+\item[{real, dimension  (bd\%is-\/1\-:bd\%ie+1, npz+1,bd\%js-\/1\-:bd\%je+1), intent(inout)}]{pe, }
+\item[{real, dimension  (bd\%is\-:bd\%ie,bd\%js\-:bd\%je, npz+1), intent(inout)}]{pk, }
+\item[{real, dimension(bd\%is\-:bd\%ie,npz+1,bd\%js\-:bd\%je), intent(inout)}]{peln, }
+\item[{real, dimension (bd\%is\-:bd\%ie,bd\%js\-:bd\%je,npz), intent(inout)}]{pkz, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed), intent(inout)}]{phis, }
+\item[{real, dimension(bd\%isd\-:, bd\%jsd\-:, 1\-:), intent(inout)}]{q\-\_\-con, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{omga, }
+\item[{real, dimension(bd\%isd\-:bd\%ied ,bd\%jsd\-:bd\%jed ,npz), intent(inout)}]{ua, }
+\item[{real, dimension(bd\%isd\-:bd\%ied ,bd\%jsd\-:bd\%jed ,npz), intent(inout)}]{va, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed  ,npz), intent(inout)}]{uc, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{vc, }
+\item[{real, dimension(npz+1), intent(in)}]{ak, }
+\item[{real, dimension(npz+1), intent(in)}]{bk, }
+\item[{real, dimension(bd\%is\-:bd\%ie+1, bd\%js\-:bd\%je,   npz), intent(inout)}]{mfx, }
+\item[{real, dimension(bd\%is\-:bd\%ie  , bd\%js\-:bd\%je+1, npz), intent(inout)}]{mfy, }
+\item[{real, dimension(bd\%is\-:bd\%ie+1, bd\%jsd\-:bd\%jed, npz), intent(inout)}]{cx, }
+\item[{real, dimension(bd\%isd\-:bd\%ied ,bd\%js\-:bd\%je+1, npz), intent(inout)}]{cy, }
+\item[{real, dimension(bd\%is\-:, bd\%js\-: ,1\-:), intent(inout)}]{ze0, }
+\item[{logical, intent(in)}]{hybrid\-\_\-z, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(inout), target}]{gridstruct, }
+\item[{type(fv\-\_\-flags\-\_\-type), intent(inout)}]{flagstruct, }
+\item[{type(fv\-\_\-nest\-\_\-type), intent(inout)}]{neststruct, }
+\item[{type(fv\-\_\-diag\-\_\-type), intent(in)}]{idiag, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{type(fv\-\_\-atmos\-\_\-type), intent(in), pointer}]{parent\-\_\-grid, }
+\item[{type(domain2d), intent(inout)}]{domain, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{diss\-\_\-est, }
+\item[{real, intent(in), optional}]{time\-\_\-total}
+\end{DoxyParamCaption}
+)}\label{classfv__dynamics__mod_a57030300ce6aacf81a3588faf906f07f}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em bdt} & Large time-\/step\\
+\hline
+\mbox{\tt in}  & {\em nq\-\_\-tot} & transported tracers\\
+\hline
+\mbox{\tt in}  & {\em n\-\_\-split} & small-\/step horizontal dynamics\\
+\hline
+\mbox{\tt in}  & {\em q\-\_\-split} & tracer\\
+\hline
+\mbox{\tt in}  & {\em hybrid\-\_\-z} & Using hybrid\-\_\-z for remapping\\
+\hline
+\mbox{\tt in,out}  & {\em u} & D grid zonal wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em v} & D grid meridional wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em w} & W (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em pt} & temperature (K)\\
+\hline
+\mbox{\tt in,out}  & {\em delp} & pressure thickness (pascal)\\
+\hline
+\mbox{\tt in,out}  & {\em q} & specific humidity and constituents\\
+\hline
+\mbox{\tt in,out}  & {\em delz} & delta-\/height (m); non-\/hydrostatic only\\
+\hline
+\mbox{\tt in,out}  & {\em ze0} & height at edges (m); non-\/hydrostatic\\
+\hline
+\mbox{\tt in,out}  & {\em ps} & Surface pressure (pascal)\\
+\hline
+\mbox{\tt in,out}  & {\em pe} & edge pressure (pascal)\\
+\hline
+\mbox{\tt in,out}  & {\em pk} & pe$\ast$$\ast$kappa\\
+\hline
+\mbox{\tt in,out}  & {\em peln} & ln(pe)\\
+\hline
+\mbox{\tt in,out}  & {\em pkz} & finite-\/volume mean pk\\
+\hline
+\mbox{\tt in,out}  & {\em phis} & Surface geopotential (g$\ast$\-Z\-\_\-surf)\\
+\hline
+\mbox{\tt in,out}  & {\em omga} & Vertical pressure velocity (pa/s)\\
+\hline
+\mbox{\tt in,out}  & {\em uc} & (uc,vc) mostly used as the C grid winds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file fv\-\_\-dynamics.\-F90.
+
+
+
+References compute\-\_\-aam(), fv\-\_\-mapz\-\_\-mod\-::compute\-\_\-total\-\_\-energy(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::cubed\-\_\-to\-\_\-latlon(), dyn\-\_\-core\-\_\-mod\-::del2\-\_\-cubed(), dyn\-\_\-core\-\_\-mod\-::dyn\-\_\-core(), fv\-\_\-fill\-\_\-mod\-::fill2d(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::g\-\_\-sum(), dyn\-\_\-core\-\_\-mod\-::init\-\_\-ijk\-\_\-mem(), fv\-\_\-mapz\-\_\-mod\-::lagrangian\-\_\-to\-\_\-eulerian(), fv\-\_\-mapz\-\_\-mod\-::moist\-\_\-cp(), fv\-\_\-mapz\-\_\-mod\-::moist\-\_\-cv(), fv\-\_\-sg\-\_\-mod\-::neg\-\_\-adj2(), fv\-\_\-sg\-\_\-mod\-::neg\-\_\-adj3(), boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc\-\_\-apply\-\_\-intt(), fv\-\_\-diagnostics\-\_\-mod\-::prt\-\_\-mxm(), fv\-\_\-diagnostics\-\_\-mod\-::range\-\_\-check(), rayleigh\-\_\-friction(), rayleigh\-\_\-super(), fv\-\_\-regional\-\_\-mod\-::regional\-\_\-boundary\-\_\-update(), fv\-\_\-regional\-\_\-mod\-::set\-\_\-regional\-\_\-bcs(), fv\-\_\-nesting\-\_\-mod\-::setup\-\_\-nested\-\_\-grid\-\_\-bcs(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on(), fv\-\_\-tracer2d\-\_\-mod\-::tracer\-\_\-2d(), fv\-\_\-tracer2d\-\_\-mod\-::tracer\-\_\-2d\-\_\-1l(), fv\-\_\-tracer2d\-\_\-mod\-::tracer\-\_\-2d\-\_\-nested(), multi\-\_\-gases\-\_\-mod\-::vicpqd(), multi\-\_\-gases\-\_\-mod\-::virq(), and multi\-\_\-gases\-\_\-mod\-::virqd().
+
+
+
+Referenced by atmosphere\-\_\-mod\-::adiabatic\-\_\-init(), and atmosphere\-\_\-mod\-::atmosphere\-\_\-dynamics().
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!rayleigh\-\_\-friction@{rayleigh\-\_\-friction}}
+\index{rayleigh\-\_\-friction@{rayleigh\-\_\-friction}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{rayleigh\-\_\-friction}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-dynamics\-\_\-mod\-::rayleigh\-\_\-friction (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{integer, intent(in)}]{ks, }
+\item[{real, dimension(npz), intent(in)}]{pm, }
+\item[{real, intent(in)}]{tau, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{v, }
+\item[{real, dimension(bd\%isd\-:      ,bd\%jsd\-:      ,1\-: ), intent(inout)}]{w, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{pt, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{ua, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{va, }
+\item[{real, dimension(bd\%isd\-:    ,bd\%jsd\-:      ,1\-: ), intent(inout)}]{delz, }
+\item[{real, intent(in)}]{cp, }
+\item[{real, intent(in)}]{rg, }
+\item[{real, intent(in)}]{ptop, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{logical, intent(in)}]{conserve, }
+\item[{real, intent(in)}]{rf\-\_\-cutoff, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in)}]{gridstruct, }
+\item[{type(domain2d), intent(inout)}]{domain, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__dynamics__mod_a143d1c8cb6f535a5567bd0f4ef1f4a4f}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tau} & time scale (days)\\
+\hline
+\mbox{\tt in,out}  & {\em u} & D grid zonal wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em v} & D grid meridional wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em w} & cell center vertical wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em pt} & temp\\
+\hline
+\mbox{\tt in,out}  & {\em delz} & delta-\/height (m); non-\/hydrostatic only \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1300 of file fv\-\_\-dynamics.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::c2l\-\_\-ord2(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), and fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on().
+
+
+
+Referenced by fv\-\_\-dynamics().
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!rayleigh\-\_\-super@{rayleigh\-\_\-super}}
+\index{rayleigh\-\_\-super@{rayleigh\-\_\-super}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{rayleigh\-\_\-super}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-dynamics\-\_\-mod\-::rayleigh\-\_\-super (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{integer, intent(in)}]{ks, }
+\item[{real, dimension(npz), intent(in)}]{pm, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed), intent(in)}]{phis, }
+\item[{real, intent(in)}]{tau, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{v, }
+\item[{real, dimension(bd\%isd\-:      ,bd\%jsd\-:      ,1\-: ), intent(inout)}]{w, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{pt, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{ua, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{va, }
+\item[{real, dimension(bd\%isd\-:    ,bd\%jsd\-:      ,1\-: ), intent(inout)}]{delz, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,  bd\%jsd\-:bd\%jed,2), intent(in)}]{agrid, }
+\item[{real, intent(in)}]{cp, }
+\item[{real, intent(in)}]{rg, }
+\item[{real, intent(in)}]{ptop, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{logical, intent(in)}]{conserve, }
+\item[{real, intent(in)}]{rf\-\_\-cutoff, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in)}]{gridstruct, }
+\item[{type(domain2d), intent(inout)}]{domain, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__dynamics__mod_abde34c9e5a63d32699e152028179657b}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tau} & time scale (days)\\
+\hline
+\mbox{\tt in,out}  & {\em u} & D grid zonal wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em v} & D grid meridional wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em w} & cell center vertical wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em pt} & temp\\
+\hline
+\mbox{\tt in,out}  & {\em delz} & delta-\/height (m); non-\/hydrostatic only\\
+\hline
+\mbox{\tt in}  & {\em phis} & Surface geopotential (g$\ast$\-Z\-\_\-surf) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1124 of file fv\-\_\-dynamics.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::c2l\-\_\-ord2(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), and fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on().
+
+
+
+Referenced by fv\-\_\-dynamics().
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!agrav@{agrav}}
+\index{agrav@{agrav}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{agrav}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-dynamics\-\_\-mod\-::agrav}\label{classfv__dynamics__mod_a4503b9b3f35f05d3a6dc3535ec7017e9}
+
+
+Definition at line 161 of file fv\-\_\-dynamics.\-F90.
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!bad\-\_\-range@{bad\-\_\-range}}
+\index{bad\-\_\-range@{bad\-\_\-range}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{bad\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-dynamics\-\_\-mod\-::bad\-\_\-range = .false.}\label{classfv__dynamics__mod_a286a6106a75bb334c9531e0354298b11}
+
+
+Definition at line 156 of file fv\-\_\-dynamics.\-F90.
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!k\-\_\-rf@{k\-\_\-rf}}
+\index{k\-\_\-rf@{k\-\_\-rf}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{k\-\_\-rf}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-dynamics\-\_\-mod\-::k\-\_\-rf = 0}\label{classfv__dynamics__mod_ac064d1ed1892a3588eb7c6f430954753}
+
+
+Definition at line 159 of file fv\-\_\-dynamics.\-F90.
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!kmax@{kmax}}
+\index{kmax@{kmax}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{kmax}]{\setlength{\rightskip}{0pt plus 5cm}integer fv\-\_\-dynamics\-\_\-mod\-::kmax =1}\label{classfv__dynamics__mod_a223d12ae03cc1c109ba5999ef065bb4a}
+
+
+Definition at line 158 of file fv\-\_\-dynamics.\-F90.
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!pt\-\_\-initialized@{pt\-\_\-initialized}}
+\index{pt\-\_\-initialized@{pt\-\_\-initialized}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{pt\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-dynamics\-\_\-mod\-::pt\-\_\-initialized = .false.}\label{classfv__dynamics__mod_a1c473782ffaa6249be5ba2c3d35a59dc}
+
+
+Definition at line 155 of file fv\-\_\-dynamics.\-F90.
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!rf@{rf}}
+\index{rf@{rf}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{rf}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable fv\-\_\-dynamics\-\_\-mod\-::rf}\label{classfv__dynamics__mod_a9e9aac45b5404781dcafeff189daf4de}
+
+
+Definition at line 157 of file fv\-\_\-dynamics.\-F90.
+
+\index{fv\-\_\-dynamics\-\_\-mod@{fv\-\_\-dynamics\-\_\-mod}!rf\-\_\-initialized@{rf\-\_\-initialized}}
+\index{rf\-\_\-initialized@{rf\-\_\-initialized}!fv_dynamics_mod@{fv\-\_\-dynamics\-\_\-mod}}
+\subsubsection[{rf\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}logical fv\-\_\-dynamics\-\_\-mod\-::rf\-\_\-initialized = .false.}\label{classfv__dynamics__mod_a93c42e85cca69658841e13e403c3c89a}
+
+
+Definition at line 154 of file fv\-\_\-dynamics.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{fv__dynamics_8F90}{fv\-\_\-dynamics.\-F90}\end{DoxyCompactItemize}

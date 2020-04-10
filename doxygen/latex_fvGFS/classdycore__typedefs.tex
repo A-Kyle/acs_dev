@@ -1,0 +1,129 @@
+\section{dycore\-\_\-typedefs Module Reference}
+\label{classdycore__typedefs}\index{dycore\-\_\-typedefs@{dycore\-\_\-typedefs}}
+
+
+Collaboration diagram for dycore\-\_\-typedefs\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classdycore__typedefs__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \hyperlink{structdycore__typedefs_1_1dycore__coupling__type}{dycore\-\_\-coupling\-\_\-type}
+\item 
+type \hyperlink{structdycore__typedefs_1_1dycore__data__type}{dycore\-\_\-data\-\_\-type}
+\item 
+type \hyperlink{structdycore__typedefs_1_1dycore__diag__type}{dycore\-\_\-diag\-\_\-type}
+\item 
+type \hyperlink{structdycore__typedefs_1_1var__subtype}{var\-\_\-subtype}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classdycore__typedefs_a38faf32efa46d5157193e3c6ff98533e}{coupling\-\_\-create} (Coupling, I\-M, Ntracers)
+\item 
+subroutine \hyperlink{classdycore__typedefs_a6a4ce247c95b0a8791caf9ce5c4f28b0}{diag\-\_\-create} (Diag, I\-M, Ntracers)
+\item 
+subroutine \hyperlink{classdycore__typedefs_a9b0e3a5b8a1e2e40e721055f51c3a437}{diag\-\_\-zero} (Diag)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=r8\-\_\-kind), parameter \hyperlink{classdycore__typedefs_ae3151b57d26d5e0876cec34bea3cc2a1}{zero} = 0.\-0\-\_\-r8\-\_\-kind
+\item 
+real(kind=r8\-\_\-kind), parameter \hyperlink{classdycore__typedefs_a6c66ffd3c70a9d6caafafb6e1d6419b9}{huge} = 9.\-9999\-D15
+\item 
+real(kind=r8\-\_\-kind), parameter \hyperlink{classdycore__typedefs_adfd79c198bdf05be48cf1bf5bc32f7ed}{clear\-\_\-val} = \hyperlink{classdycore__typedefs_ae3151b57d26d5e0876cec34bea3cc2a1}{zero}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file D\-Y\-C\-O\-R\-E\-\_\-typedefs.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{dycore\-\_\-typedefs@{dycore\-\_\-typedefs}!coupling\-\_\-create@{coupling\-\_\-create}}
+\index{coupling\-\_\-create@{coupling\-\_\-create}!dycore_typedefs@{dycore\-\_\-typedefs}}
+\subsubsection[{coupling\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dycore\-\_\-typedefs\-::coupling\-\_\-create (
+\begin{DoxyParamCaption}
+\item[{class({\bf dycore\-\_\-coupling\-\_\-type})}]{Coupling, }
+\item[{integer, intent(in)}]{I\-M, }
+\item[{integer, intent(in)}]{Ntracers}
+\end{DoxyParamCaption}
+)}\label{classdycore__typedefs_a38faf32efa46d5157193e3c6ff98533e}
+
+
+Definition at line 111 of file D\-Y\-C\-O\-R\-E\-\_\-typedefs.\-F90.
+
+
+
+Referenced by dycore\-\_\-typedefs\-::dycore\-\_\-coupling\-\_\-type\-::create().
+
+\index{dycore\-\_\-typedefs@{dycore\-\_\-typedefs}!diag\-\_\-create@{diag\-\_\-create}}
+\index{diag\-\_\-create@{diag\-\_\-create}!dycore_typedefs@{dycore\-\_\-typedefs}}
+\subsubsection[{diag\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dycore\-\_\-typedefs\-::diag\-\_\-create (
+\begin{DoxyParamCaption}
+\item[{class({\bf dycore\-\_\-diag\-\_\-type})}]{Diag, }
+\item[{integer, intent(in)}]{I\-M, }
+\item[{integer, intent(in)}]{Ntracers}
+\end{DoxyParamCaption}
+)}\label{classdycore__typedefs_a6a4ce247c95b0a8791caf9ce5c4f28b0}
+
+
+Definition at line 148 of file D\-Y\-C\-O\-R\-E\-\_\-typedefs.\-F90.
+
+
+
+Referenced by dycore\-\_\-typedefs\-::dycore\-\_\-diag\-\_\-type\-::create().
+
+\index{dycore\-\_\-typedefs@{dycore\-\_\-typedefs}!diag\-\_\-zero@{diag\-\_\-zero}}
+\index{diag\-\_\-zero@{diag\-\_\-zero}!dycore_typedefs@{dycore\-\_\-typedefs}}
+\subsubsection[{diag\-\_\-zero}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dycore\-\_\-typedefs\-::diag\-\_\-zero (
+\begin{DoxyParamCaption}
+\item[{class({\bf dycore\-\_\-diag\-\_\-type})}]{Diag}
+\end{DoxyParamCaption}
+)}\label{classdycore__typedefs_a9b0e3a5b8a1e2e40e721055f51c3a437}
+
+
+Definition at line 161 of file D\-Y\-C\-O\-R\-E\-\_\-typedefs.\-F90.
+
+
+
+Referenced by dycore\-\_\-typedefs\-::dycore\-\_\-diag\-\_\-type\-::zero().
+
+
+
+\subsection{Member Data Documentation}
+\index{dycore\-\_\-typedefs@{dycore\-\_\-typedefs}!clear\-\_\-val@{clear\-\_\-val}}
+\index{clear\-\_\-val@{clear\-\_\-val}!dycore_typedefs@{dycore\-\_\-typedefs}}
+\subsubsection[{clear\-\_\-val}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r8\-\_\-kind), parameter dycore\-\_\-typedefs\-::clear\-\_\-val = {\bf zero}}\label{classdycore__typedefs_adfd79c198bdf05be48cf1bf5bc32f7ed}
+
+
+Definition at line 30 of file D\-Y\-C\-O\-R\-E\-\_\-typedefs.\-F90.
+
+\index{dycore\-\_\-typedefs@{dycore\-\_\-typedefs}!huge@{huge}}
+\index{huge@{huge}!dycore_typedefs@{dycore\-\_\-typedefs}}
+\subsubsection[{huge}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r8\-\_\-kind), parameter dycore\-\_\-typedefs\-::huge = 9.\-9999\-D15}\label{classdycore__typedefs_a6c66ffd3c70a9d6caafafb6e1d6419b9}
+
+
+Definition at line 29 of file D\-Y\-C\-O\-R\-E\-\_\-typedefs.\-F90.
+
+\index{dycore\-\_\-typedefs@{dycore\-\_\-typedefs}!zero@{zero}}
+\index{zero@{zero}!dycore_typedefs@{dycore\-\_\-typedefs}}
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r8\-\_\-kind), parameter dycore\-\_\-typedefs\-::zero = 0.\-0\-\_\-r8\-\_\-kind}\label{classdycore__typedefs_ae3151b57d26d5e0876cec34bea3cc2a1}
+
+
+Definition at line 28 of file D\-Y\-C\-O\-R\-E\-\_\-typedefs.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/driver/fv\-G\-F\-S/\hyperlink{DYCORE__typedefs_8F90}{D\-Y\-C\-O\-R\-E\-\_\-typedefs.\-F90}\end{DoxyCompactItemize}

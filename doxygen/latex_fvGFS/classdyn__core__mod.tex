@@ -1,0 +1,782 @@
+\section{dyn\-\_\-core\-\_\-mod Module Reference}
+\label{classdyn__core__mod}\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}}
+
+
+The module 'dyn\-\_\-core' peforms the Lagrangian acoustic dynamics described by \cite{lin2004vertically}.  
+
+
+
+
+Collaboration diagram for dyn\-\_\-core\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classdyn__core__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classdyn__core__mod_a05793faec17e66169e5f57f4b1a82033}{dyn\-\_\-core} (npx, npy, npz, ng, sphum, nq, bdt, n\-\_\-split, zvir, cp, akap, cappa,
+\item 
+subroutine, public \hyperlink{classdyn__core__mod_ad3018f7acb1006fc424bd0bcaad8b320}{del2\-\_\-cubed} (q, cd, gridstruct, domain, npx, npy, km, nmax, bd)
+\begin{DoxyCompactList}\small\item\em The subroutine 'del2-\/cubed' filters the omega field for the physics. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classdyn__core__mod_a5311fb50c595143cbe4fc4d145532aa0}{init\-\_\-ijk\-\_\-mem} (i1, i2, j1, j2, km, array, var)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classdyn__core__mod_acb7593139a5dd1dd95e85ea109885036}{pk3\-\_\-halo} (is, ie, js, je, isd, ied, jsd, jed, npz, ptop, akap, \hyperlink{classdyn__core__mod_a6d4525d6fbfd6de35414635dd9f0caea}{pk3}, delp)
+\item 
+subroutine \hyperlink{classdyn__core__mod_a8eb71dd48e79318207c79f8c5c785619}{pln\-\_\-halo} (is, ie, js, je, isd, ied, jsd, jed, npz, ptop, \hyperlink{classdyn__core__mod_a6d4525d6fbfd6de35414635dd9f0caea}{pk3}, delp)
+\item 
+subroutine \hyperlink{classdyn__core__mod_a7a28a4d13bab7c8fdbb2704159ec57de}{pe\-\_\-halo} (is, ie, js, je, isd, ied, jsd, jed, npz, ptop, pe, delp)
+\item 
+subroutine \hyperlink{classdyn__core__mod_a69d9914e89faeebfc49e822b23cf252d}{adv\-\_\-pe} (ua, va, pem, om, gridstruct, bd, npx, npy, npz, ng)
+\item 
+subroutine \hyperlink{classdyn__core__mod_a93144665e79c95c709361c52734b4f1b}{p\-\_\-grad\-\_\-c} (dt2, npz, \hyperlink{classdyn__core__mod_aa4417385939b0cafbeadaa424ed3c914}{delpc}, \hyperlink{classdyn__core__mod_ab8b896d9a395406f68b58a26d444f9bf}{pkc}, \hyperlink{classdyn__core__mod_add08631b5675064954c9123f29da8d9c}{gz}, uc, vc, bd, rdxc, rdyc, hydrostatic)
+\item 
+subroutine \hyperlink{classdyn__core__mod_a42c75f9401e5bee9bbe18cef49b1e14e}{nh\-\_\-p\-\_\-grad} (u, v, pp, \hyperlink{classdyn__core__mod_add08631b5675064954c9123f29da8d9c}{gz}, delp, pk, dt, ng, gridstruct, bd, npx, npy, npz, use\-\_\-logp)
+\item 
+subroutine \hyperlink{classdyn__core__mod_adc04150e3da9d17590f1d3f3c6b6aace}{split\-\_\-p\-\_\-grad} (u, v, pp, \hyperlink{classdyn__core__mod_add08631b5675064954c9123f29da8d9c}{gz}, delp, pk, beta, dt, ng, gridstruct, bd, npx, npy, npz, use\-\_\-logp)
+\item 
+subroutine \hyperlink{classdyn__core__mod_aab4c66667e9910926b19e1c83c5e1fe2}{one\-\_\-grad\-\_\-p} (u, v, pk, \hyperlink{classdyn__core__mod_add08631b5675064954c9123f29da8d9c}{gz}, divg2, delp, dt, ng, gridstruct, bd, npx, npy, npz, ptop, hydrostatic, a2b\-\_\-ord, d\-\_\-ext)
+\item 
+subroutine \hyperlink{classdyn__core__mod_a1c91c8f82a1ab87b6ea176c93f24bf4a}{grad1\-\_\-p\-\_\-update} (divg2, u, v, pk, \hyperlink{classdyn__core__mod_add08631b5675064954c9123f29da8d9c}{gz}, dt, ng, gridstruct, bd, npx, npy, npz, ptop, beta, a2b\-\_\-ord)
+\item 
+subroutine \hyperlink{classdyn__core__mod_aeec216067740dcbbd70b4b0acc7a7c7e}{mix\-\_\-dp} (hydrostatic, w, delp, pt, km, ak, bk, C\-G, fv\-\_\-debug, bd)
+\item 
+subroutine \hyperlink{classdyn__core__mod_a3afb820ed44d6ca5137ba0c6205ea141}{geopk} (ptop, pe, peln, delp, pk, \hyperlink{classdyn__core__mod_add08631b5675064954c9123f29da8d9c}{gz}, hs, pt,
+\begin{DoxyCompactList}\small\item\em The subroutine 'geopk' calculates geopotential and pressure to the kappa. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classdyn__core__mod_a23759cc821cf3c1bdb08a0bce8863cc6}{ray\-\_\-fast} (dt, npx, npy, npz, pfull, tau, u, v, w, ks, dp, ptop, hydrostatic, rf\-\_\-cutoff, bd)
+\begin{DoxyCompactList}\small\item\em The subroutine 'Ray\-\_\-fast' computes a simple \char`\"{}inline\char`\"{} version of the Rayleigh friction (E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-A\-L -\/ N\-O\-T F\-O\-R G\-E\-N\-E\-R\-A\-L U\-S\-E). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real \hyperlink{classdyn__core__mod_a8743542bdd5648cf4f95698e51afc601}{ptk}
+\item 
+real \hyperlink{classdyn__core__mod_a4a524216d71d2a5973c30736ce76deb4}{peln1}
+\item 
+real \hyperlink{classdyn__core__mod_ae3293d99dac97da219d947fa14fe4b81}{rgrav}
+\item 
+real \hyperlink{classdyn__core__mod_ab65a8777b1bd81dcfc1b7cfed5a974c5}{d3\-\_\-damp}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_a759f692eeae8f494dd172747b34ef905}{ut}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_ae72eb5ce40fd8affec5a6642475e80ba}{vt}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_adc731c91709904f8c6939a47285ec0ce}{crx}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_ab16557a82a1a0be81d478b8c69606d8c}{cry}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_a0318e308d1a1f5accf19d8b901feebe5}{xfx}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_afd231d83bc8c9d07ddff91e7dfe0c0ec}{yfx}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_a7b77379648e83296d79064ebbc7928e6}{divgd}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_ac211efe06fd0edadef972c82951f4c4f}{zh}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_ac9c0730e7747e9cb1f3be62a5565672a}{du}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_a24c8aa084ba37e9006be8bfd96588330}{dv}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_ab8b896d9a395406f68b58a26d444f9bf}{pkc}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_aa4417385939b0cafbeadaa424ed3c914}{delpc}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_a6d4525d6fbfd6de35414635dd9f0caea}{pk3}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_ada1ed28afc7e672fc62460bb755c7d9c}{ptc}
+\item 
+real, dimension(\-:,\-:,\-:), allocatable \hyperlink{classdyn__core__mod_add08631b5675064954c9123f29da8d9c}{gz}
+\item 
+real(kind=r\-\_\-grid), parameter \hyperlink{classdyn__core__mod_af0b6436fcf85fefea9c1020f2f5f7244}{cnst\-\_\-0p20} =0.\-20d0
+\item 
+real, dimension(\-:), allocatable \hyperlink{classdyn__core__mod_a53c1636fa93f014aa45af25a60d37445}{rf}
+\item 
+integer \hyperlink{classdyn__core__mod_a3f6a838d346b6bea78aa22d2aaf07023}{k\-\_\-rf} = 0
+\item 
+logical \hyperlink{classdyn__core__mod_a3ce96984cba7c0b8e6a76a9f855921c8}{rff\-\_\-initialized} = .false.
+\item 
+logical \hyperlink{classdyn__core__mod_a1dcbe9cc4e2b768f9d5f009c515184b0}{first\-\_\-call} = .true.
+\item 
+integer \hyperlink{classdyn__core__mod_aabd06b880ef3e9eb74c6cde5107936e6}{kmax} =1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'dyn\-\_\-core' peforms the Lagrangian acoustic dynamics described by \cite{lin2004vertically}. 
+
+The forward timestep is handled by routines in '\hyperlink{sw__core_8F90}{sw\-\_\-core.\-F90}'. The backwards-\/in-\/time P\-G\-F is evaluated in one\-\_\-grad\-\_\-p or split\-\_\-p\-\_\-grad (hydrostatic) and nh\-\_\-p\-\_\-grad (nonhydrostatic) see \cite{lin1997explicit}. The nonhydrostatic components are handled by '\hyperlink{nh__core_8F90}{nh\-\_\-core.\-F90}'. 
+
+Definition at line 28 of file dyn\-\_\-core.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!adv\-\_\-pe@{adv\-\_\-pe}}
+\index{adv\-\_\-pe@{adv\-\_\-pe}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{adv\-\_\-pe}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::adv\-\_\-pe (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(in)}]{ua, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(in)}]{va, }
+\item[{real, dimension(bd\%is-\/1\-:bd\%ie+1,1\-:npz+1,bd\%js-\/1\-:bd\%je+1), intent(in)}]{pem, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{om, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(inout), target}]{gridstruct, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{integer, intent(in)}]{ng}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a69d9914e89faeebfc49e822b23cf252d}
+
+
+Definition at line 1553 of file dyn\-\_\-core.\-F90.
+
+
+
+References a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord2().
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!del2\-\_\-cubed@{del2\-\_\-cubed}}
+\index{del2\-\_\-cubed@{del2\-\_\-cubed}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{del2\-\_\-cubed}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public dyn\-\_\-core\-\_\-mod\-::del2\-\_\-cubed (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,km), intent(inout)}]{q, }
+\item[{real(kind=r\-\_\-grid), intent(in)}]{cd, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in), target}]{gridstruct, }
+\item[{type(domain2d), intent(inout)}]{domain, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{km, }
+\item[{integer, intent(in)}]{nmax, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd}
+\end{DoxyParamCaption}
+)}\label{classdyn__core__mod_ad3018f7acb1006fc424bd0bcaad8b320}
+
+
+The subroutine 'del2-\/cubed' filters the omega field for the physics. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cd} & cd = K $\ast$ da\-\_\-min; 0 $<$ K $<$ 0.\-25 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2420 of file dyn\-\_\-core.\-F90.
+
+
+
+References tp\-\_\-core\-\_\-mod\-::copy\-\_\-corners(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), and fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on().
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-diss\-\_\-est(), dyn\-\_\-core(), fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics(), and fv\-\_\-eta\-\_\-mod\-::set\-\_\-hybrid\-\_\-z().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!dyn\-\_\-core@{dyn\-\_\-core}}
+\index{dyn\-\_\-core@{dyn\-\_\-core}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{dyn\-\_\-core}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public dyn\-\_\-core\-\_\-mod\-::dyn\-\_\-core (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{integer, intent(in)}]{ng, }
+\item[{integer, intent(in)}]{sphum, }
+\item[{integer, intent(in)}]{nq, }
+\item[{real, intent(in)}]{bdt, }
+\item[{integer, intent(in)}]{n\-\_\-split, }
+\item[{real, intent(in)}]{zvir, }
+\item[{real, intent(in)}]{cp, }
+\item[{real, intent(in)}]{akap, }
+\item[{real, dimension(bd\%isd\-:,bd\%jsd\-:,1\-:), intent(inout)}]{cappa}
+\end{DoxyParamCaption}
+)}\label{classdyn__core__mod_a05793faec17e66169e5f57f4b1a82033}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em cappa} & moist kappa \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 171 of file dyn\-\_\-core.\-F90.
+
+
+
+References a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord2(), adv\-\_\-pe(), fv\-\_\-nwp\-\_\-nudge\-\_\-mod\-::breed\-\_\-slp\-\_\-inline(), sw\-\_\-core\-\_\-mod\-::c\-\_\-sw(), test\-\_\-cases\-\_\-mod\-::case9\-\_\-forcing1(), test\-\_\-cases\-\_\-mod\-::case9\-\_\-forcing2(), sw\-\_\-core\-\_\-mod\-::d\-\_\-sw(), del2\-\_\-cubed(), fv\-\_\-regional\-\_\-mod\-::exch\-\_\-uv(), geopk(), grad1\-\_\-p\-\_\-update(), init\-\_\-ijk\-\_\-mem(), mix\-\_\-dp(), nh\-\_\-utils\-\_\-mod\-::nest\-\_\-halo\-\_\-nh(), boundary\-\_\-mod\-::nested\-\_\-grid\-\_\-bc\-\_\-apply\-\_\-intt(), nh\-\_\-p\-\_\-grad(), one\-\_\-grad\-\_\-p(), p\-\_\-grad\-\_\-c(), pe\-\_\-halo(), pk3\-\_\-halo(), pln\-\_\-halo(), fv\-\_\-diagnostics\-\_\-mod\-::prt\-\_\-mxm(), ray\-\_\-fast(), fv\-\_\-regional\-\_\-mod\-::regional\-\_\-boundary\-\_\-update(), nh\-\_\-core\-\_\-mod\-::riem\-\_\-solver3(), nh\-\_\-utils\-\_\-mod\-::riem\-\_\-solver\-\_\-c(), split\-\_\-p\-\_\-grad(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on(), fv\-\_\-update\-\_\-phys\-\_\-mod\-::update\-\_\-dwinds\-\_\-phys(), nh\-\_\-utils\-\_\-mod\-::update\-\_\-dz\-\_\-c(), nh\-\_\-utils\-\_\-mod\-::update\-\_\-dz\-\_\-d(), multi\-\_\-gases\-\_\-mod\-::vicvqd(), and multi\-\_\-gases\-\_\-mod\-::virqd().
+
+
+
+Referenced by fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!geopk@{geopk}}
+\index{geopk@{geopk}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{geopk}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::geopk (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{ptop, }
+\item[{real, dimension(bd\%is-\/1\-:bd\%ie+1,km+1,bd\%js-\/1\-:bd\%je+1), intent(out)}]{pe, }
+\item[{real, dimension(bd\%is\-:bd\%ie,km+1,bd\%js\-:bd\%je), intent(out)}]{peln, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,km), intent(in)}]{delp, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,km+1), intent(out)}]{pk, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,km+1), intent(out)}]{gz, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed), intent(in)}]{hs, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,km), intent(in)}]{pt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a3afb820ed44d6ca5137ba0c6205ea141}
+
+
+The subroutine 'geopk' calculates geopotential and pressure to the kappa. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em peln} & ln(pe) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2242 of file dyn\-\_\-core.\-F90.
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!grad1\-\_\-p\-\_\-update@{grad1\-\_\-p\-\_\-update}}
+\index{grad1\-\_\-p\-\_\-update@{grad1\-\_\-p\-\_\-update}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{grad1\-\_\-p\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::grad1\-\_\-p\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%is\-:bd\%ie+1,bd\%js\-:bd\%je+1), intent(in)}]{divg2, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed  ,npz), intent(inout)}]{v, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,  bd\%jsd\-:bd\%jed  ,npz+1), intent(inout)}]{pk, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,  bd\%jsd\-:bd\%jed  ,npz+1), intent(inout)}]{gz, }
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{ng, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(inout), target}]{gridstruct, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{real, intent(in)}]{ptop, }
+\item[{real, intent(in)}]{beta, }
+\item[{integer, intent(in)}]{a2b\-\_\-ord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a1c91c8f82a1ab87b6ea176c93f24bf4a}
+
+
+Definition at line 2069 of file dyn\-\_\-core.\-F90.
+
+
+
+References a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord2(), and a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord4().
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!init\-\_\-ijk\-\_\-mem@{init\-\_\-ijk\-\_\-mem}}
+\index{init\-\_\-ijk\-\_\-mem@{init\-\_\-ijk\-\_\-mem}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{init\-\_\-ijk\-\_\-mem}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public dyn\-\_\-core\-\_\-mod\-::init\-\_\-ijk\-\_\-mem (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{i1, }
+\item[{integer, intent(in)}]{i2, }
+\item[{integer, intent(in)}]{j1, }
+\item[{integer, intent(in)}]{j2, }
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(i1\-:i2,j1\-:j2,km), intent(inout)}]{array, }
+\item[{real, intent(in)}]{var}
+\end{DoxyParamCaption}
+)}\label{classdyn__core__mod_a5311fb50c595143cbe4fc4d145532aa0}
+
+
+Definition at line 2531 of file dyn\-\_\-core.\-F90.
+
+
+
+Referenced by dyn\-\_\-core(), and fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!mix\-\_\-dp@{mix\-\_\-dp}}
+\index{mix\-\_\-dp@{mix\-\_\-dp}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{mix\-\_\-dp}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::mix\-\_\-dp (
+\begin{DoxyParamCaption}
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{real, dimension(bd\%isd\-:,bd\%jsd\-:,1\-:), intent(inout)}]{w, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,km), intent(inout)}]{delp, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,bd\%jsd\-:bd\%jed,km), intent(inout)}]{pt, }
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(km+1), intent(in)}]{ak, }
+\item[{real, dimension(km+1), intent(in)}]{bk, }
+\item[{logical, intent(in)}]{C\-G, }
+\item[{logical, intent(in)}]{fv\-\_\-debug, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_aeec216067740dcbbd70b4b0acc7a7c7e}
+
+
+Definition at line 2163 of file dyn\-\_\-core.\-F90.
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!nh\-\_\-p\-\_\-grad@{nh\-\_\-p\-\_\-grad}}
+\index{nh\-\_\-p\-\_\-grad@{nh\-\_\-p\-\_\-grad}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{nh\-\_\-p\-\_\-grad}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::nh\-\_\-p\-\_\-grad (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied,  bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed,  npz), intent(inout)}]{v, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed, npz+1), intent(inout)}]{pp, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed, npz+1), intent(inout)}]{gz, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed, npz), intent(inout)}]{delp, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed, npz+1), intent(inout)}]{pk, }
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{ng, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(inout), target}]{gridstruct, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{logical, intent(in)}]{use\-\_\-logp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a42c75f9401e5bee9bbe18cef49b1e14e}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em pp} & perturbation pressure\\
+\hline
+\mbox{\tt in,out}  & {\em pk} & p$\ast$$\ast$kappa\\
+\hline
+\mbox{\tt in,out}  & {\em gz} & g $\ast$ h \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1721 of file dyn\-\_\-core.\-F90.
+
+
+
+References a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord4().
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!one\-\_\-grad\-\_\-p@{one\-\_\-grad\-\_\-p}}
+\index{one\-\_\-grad\-\_\-p@{one\-\_\-grad\-\_\-p}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{one\-\_\-grad\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::one\-\_\-grad\-\_\-p (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed  ,npz), intent(inout)}]{v, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,  bd\%jsd\-:bd\%jed  ,npz+1), intent(inout)}]{pk, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,  bd\%jsd\-:bd\%jed  ,npz+1), intent(inout)}]{gz, }
+\item[{real, dimension(bd\%is\-:bd\%ie+1,bd\%js\-:bd\%je+1), intent(in)}]{divg2, }
+\item[{real, dimension(bd\%isd\-:bd\%ied,  bd\%jsd\-:bd\%jed  ,npz), intent(inout)}]{delp, }
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{ng, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(inout), target}]{gridstruct, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{real, intent(in)}]{ptop, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{integer, intent(in)}]{a2b\-\_\-ord, }
+\item[{real, intent(in)}]{d\-\_\-ext}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_aab4c66667e9910926b19e1c83c5e1fe2}
+
+
+Definition at line 1933 of file dyn\-\_\-core.\-F90.
+
+
+
+References a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord2(), and a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord4().
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!p\-\_\-grad\-\_\-c@{p\-\_\-grad\-\_\-c}}
+\index{p\-\_\-grad\-\_\-c@{p\-\_\-grad\-\_\-c}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{p\-\_\-grad\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::p\-\_\-grad\-\_\-c (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{dt2, }
+\item[{integer, intent(in)}]{npz, }
+\item[{real, dimension(bd\%isd\-:, bd\%jsd\-: ,\-:  ), intent(in)}]{delpc, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed ,npz+1), intent(in)}]{pkc, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed ,npz+1), intent(in)}]{gz, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed  ,npz), intent(inout)}]{uc, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{vc, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed+1), intent(in)}]{rdxc, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed), intent(in)}]{rdyc, }
+\item[{logical, intent(in)}]{hydrostatic}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a93144665e79c95c709361c52734b4f1b}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pkc} & pkc is pe$\ast$$\ast$cappa if hydrostatic pkc is full pressure if non-\/hydrostatic\\
+\hline
+\mbox{\tt in}  & {\em gz} & pkc is pe$\ast$$\ast$cappa if hydrostatic pkc is full pressure if non-\/hydrostatic \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1659 of file dyn\-\_\-core.\-F90.
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!pe\-\_\-halo@{pe\-\_\-halo}}
+\index{pe\-\_\-halo@{pe\-\_\-halo}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{pe\-\_\-halo}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::pe\-\_\-halo (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{integer, intent(in)}]{npz, }
+\item[{real, intent(in)}]{ptop, }
+\item[{real, dimension(is-\/1\-:ie+1,npz+1,js-\/1\-:je+1), intent(inout)}]{pe, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(in)}]{delp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a7a28a4d13bab7c8fdbb2704159ec57de}
+
+
+Definition at line 1522 of file dyn\-\_\-core.\-F90.
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!pk3\-\_\-halo@{pk3\-\_\-halo}}
+\index{pk3\-\_\-halo@{pk3\-\_\-halo}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{pk3\-\_\-halo}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::pk3\-\_\-halo (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{integer, intent(in)}]{npz, }
+\item[{real, intent(in)}]{ptop, }
+\item[{real, intent(in)}]{akap, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz+1), intent(inout)}]{pk3, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(in)}]{delp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_acb7593139a5dd1dd95e85ea109885036}
+
+
+Definition at line 1419 of file dyn\-\_\-core.\-F90.
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!pln\-\_\-halo@{pln\-\_\-halo}}
+\index{pln\-\_\-halo@{pln\-\_\-halo}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{pln\-\_\-halo}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::pln\-\_\-halo (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{integer, intent(in)}]{npz, }
+\item[{real, intent(in)}]{ptop, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz+1), intent(inout)}]{pk3, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(in)}]{delp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a8eb71dd48e79318207c79f8c5c785619}
+
+
+Definition at line 1473 of file dyn\-\_\-core.\-F90.
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!ray\-\_\-fast@{ray\-\_\-fast}}
+\index{ray\-\_\-fast@{ray\-\_\-fast}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{ray\-\_\-fast}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::ray\-\_\-fast (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{real, dimension(npz), intent(in)}]{pfull, }
+\item[{real, intent(in)}]{tau, }
+\item[{real, dimension(bd\%isd\-:bd\%ied  ,bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed,npz), intent(inout)}]{v, }
+\item[{real, dimension(bd\%isd\-:      ,bd\%jsd\-:      ,1\-: ), intent(inout)}]{w, }
+\item[{integer, intent(in)}]{ks, }
+\item[{real, dimension(npz), intent(in)}]{dp, }
+\item[{real, intent(in)}]{ptop, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{real, intent(in)}]{rf\-\_\-cutoff, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a23759cc821cf3c1bdb08a0bce8863cc6}
+
+
+The subroutine 'Ray\-\_\-fast' computes a simple \char`\"{}inline\char`\"{} version of the Rayleigh friction (E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-A\-L -\/ N\-O\-T F\-O\-R G\-E\-N\-E\-R\-A\-L U\-S\-E). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tau} & time scale (days)\\
+\hline
+\mbox{\tt in,out}  & {\em u} & D grid zonal wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em v} & D grid meridional wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em w} & cell center vertical wind (m/s) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2549 of file dyn\-\_\-core.\-F90.
+
+
+
+Referenced by dyn\-\_\-core().
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!split\-\_\-p\-\_\-grad@{split\-\_\-p\-\_\-grad}}
+\index{split\-\_\-p\-\_\-grad@{split\-\_\-p\-\_\-grad}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{split\-\_\-p\-\_\-grad}]{\setlength{\rightskip}{0pt plus 5cm}subroutine dyn\-\_\-core\-\_\-mod\-::split\-\_\-p\-\_\-grad (
+\begin{DoxyParamCaption}
+\item[{real, dimension(bd\%isd\-:bd\%ied,  bd\%jsd\-:bd\%jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(bd\%isd\-:bd\%ied+1,bd\%jsd\-:bd\%jed,  npz), intent(inout)}]{v, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed, npz+1), intent(inout)}]{pp, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed, npz+1), intent(inout)}]{gz, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed, npz), intent(inout)}]{delp, }
+\item[{real, dimension(bd\%isd\-:bd\%ied, bd\%jsd\-:bd\%jed, npz+1), intent(inout)}]{pk, }
+\item[{real, intent(in)}]{beta, }
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{ng, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(inout), target}]{gridstruct, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{logical, intent(in)}]{use\-\_\-logp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_adc04150e3da9d17590f1d3f3c6b6aace}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em pp} & perturbation pressure\\
+\hline
+\mbox{\tt in,out}  & {\em pk} & p$\ast$$\ast$kappa\\
+\hline
+\mbox{\tt in,out}  & {\em gz} & g $\ast$ h \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1819 of file dyn\-\_\-core.\-F90.
+
+
+
+References a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord4().
+
+
+
+Referenced by dyn\-\_\-core().
+
+
+
+\subsection{Member Data Documentation}
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!cnst\-\_\-0p20@{cnst\-\_\-0p20}}
+\index{cnst\-\_\-0p20@{cnst\-\_\-0p20}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{cnst\-\_\-0p20}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=r\-\_\-grid), parameter dyn\-\_\-core\-\_\-mod\-::cnst\-\_\-0p20 =0.\-20d0\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_af0b6436fcf85fefea9c1020f2f5f7244}
+
+
+Definition at line 157 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!crx@{crx}}
+\index{crx@{crx}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{crx}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::crx\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_adc731c91709904f8c6939a47285ec0ce}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!cry@{cry}}
+\index{cry@{cry}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{cry}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::cry\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_ab16557a82a1a0be81d478b8c69606d8c}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!d3\-\_\-damp@{d3\-\_\-damp}}
+\index{d3\-\_\-damp@{d3\-\_\-damp}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{d3\-\_\-damp}]{\setlength{\rightskip}{0pt plus 5cm}real dyn\-\_\-core\-\_\-mod\-::d3\-\_\-damp\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_ab65a8777b1bd81dcfc1b7cfed5a974c5}
+
+
+Definition at line 152 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!delpc@{delpc}}
+\index{delpc@{delpc}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{delpc}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::delpc\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_aa4417385939b0cafbeadaa424ed3c914}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!divgd@{divgd}}
+\index{divgd@{divgd}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{divgd}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::divgd\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a7b77379648e83296d79064ebbc7928e6}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!du@{du}}
+\index{du@{du}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{du}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::du\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_ac9c0730e7747e9cb1f3be62a5565672a}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!dv@{dv}}
+\index{dv@{dv}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{dv}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::dv\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a24c8aa084ba37e9006be8bfd96588330}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!first\-\_\-call@{first\-\_\-call}}
+\index{first\-\_\-call@{first\-\_\-call}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{first\-\_\-call}]{\setlength{\rightskip}{0pt plus 5cm}logical dyn\-\_\-core\-\_\-mod\-::first\-\_\-call = .true.\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a1dcbe9cc4e2b768f9d5f009c515184b0}
+
+
+Definition at line 162 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!gz@{gz}}
+\index{gz@{gz}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{gz}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::gz\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_add08631b5675064954c9123f29da8d9c}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!k\-\_\-rf@{k\-\_\-rf}}
+\index{k\-\_\-rf@{k\-\_\-rf}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{k\-\_\-rf}]{\setlength{\rightskip}{0pt plus 5cm}integer dyn\-\_\-core\-\_\-mod\-::k\-\_\-rf = 0\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a3f6a838d346b6bea78aa22d2aaf07023}
+
+
+Definition at line 160 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!kmax@{kmax}}
+\index{kmax@{kmax}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{kmax}]{\setlength{\rightskip}{0pt plus 5cm}integer dyn\-\_\-core\-\_\-mod\-::kmax =1\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_aabd06b880ef3e9eb74c6cde5107936e6}
+
+
+Definition at line 163 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!peln1@{peln1}}
+\index{peln1@{peln1}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{peln1}]{\setlength{\rightskip}{0pt plus 5cm}real dyn\-\_\-core\-\_\-mod\-::peln1\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a4a524216d71d2a5973c30736ce76deb4}
+
+
+Definition at line 151 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!pk3@{pk3}}
+\index{pk3@{pk3}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{pk3}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::pk3\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a6d4525d6fbfd6de35414635dd9f0caea}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!pkc@{pkc}}
+\index{pkc@{pkc}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{pkc}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::pkc\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_ab8b896d9a395406f68b58a26d444f9bf}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!ptc@{ptc}}
+\index{ptc@{ptc}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{ptc}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::ptc\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_ada1ed28afc7e672fc62460bb755c7d9c}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!ptk@{ptk}}
+\index{ptk@{ptk}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{ptk}]{\setlength{\rightskip}{0pt plus 5cm}real dyn\-\_\-core\-\_\-mod\-::ptk\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a8743542bdd5648cf4f95698e51afc601}
+
+
+Definition at line 151 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!rf@{rf}}
+\index{rf@{rf}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{rf}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable dyn\-\_\-core\-\_\-mod\-::rf\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a53c1636fa93f014aa45af25a60d37445}
+
+
+Definition at line 159 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!rff\-\_\-initialized@{rff\-\_\-initialized}}
+\index{rff\-\_\-initialized@{rff\-\_\-initialized}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{rff\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}logical dyn\-\_\-core\-\_\-mod\-::rff\-\_\-initialized = .false.\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a3ce96984cba7c0b8e6a76a9f855921c8}
+
+
+Definition at line 161 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!rgrav@{rgrav}}
+\index{rgrav@{rgrav}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{rgrav}]{\setlength{\rightskip}{0pt plus 5cm}real dyn\-\_\-core\-\_\-mod\-::rgrav\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_ae3293d99dac97da219d947fa14fe4b81}
+
+
+Definition at line 151 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!ut@{ut}}
+\index{ut@{ut}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{ut}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::ut\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a759f692eeae8f494dd172747b34ef905}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!vt@{vt}}
+\index{vt@{vt}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{vt}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::vt\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_ae72eb5ce40fd8affec5a6642475e80ba}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!xfx@{xfx}}
+\index{xfx@{xfx}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{xfx}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::xfx\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_a0318e308d1a1f5accf19d8b901feebe5}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!yfx@{yfx}}
+\index{yfx@{yfx}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{yfx}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::yfx\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_afd231d83bc8c9d07ddff91e7dfe0c0ec}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+\index{dyn\-\_\-core\-\_\-mod@{dyn\-\_\-core\-\_\-mod}!zh@{zh}}
+\index{zh@{zh}!dyn_core_mod@{dyn\-\_\-core\-\_\-mod}}
+\subsubsection[{zh}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:,\-:,\-:), allocatable dyn\-\_\-core\-\_\-mod\-::zh\hspace{0.3cm}{\ttfamily [private]}}\label{classdyn__core__mod_ac211efe06fd0edadef972c82951f4c4f}
+
+
+Definition at line 153 of file dyn\-\_\-core.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{dyn__core_8F90}{dyn\-\_\-core.\-F90}\end{DoxyCompactItemize}

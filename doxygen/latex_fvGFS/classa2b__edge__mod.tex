@@ -1,0 +1,198 @@
+\section{a2b\-\_\-edge\-\_\-mod Module Reference}
+\label{classa2b__edge__mod}\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}}
+
+
+The module 'a2b\-\_\-edge' performs F\-V-\/consistent interpolation of pressure to corners.  
+
+
+
+
+Collaboration diagram for a2b\-\_\-edge\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=134pt]{classa2b__edge__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classa2b__edge__mod_a1aa7bae49fd010f65a8018e76a46d1cd}{a2b\-\_\-ord4} (qin, qout, gridstruct, npx, npy, is, ie, js, je, ng, replace)
+\item 
+subroutine, public \hyperlink{classa2b__edge__mod_a43e19bd75d30458df0e1dd77845620eb}{a2b\-\_\-ord2} (qin, qout, gridstruct, npx, npy, is, ie, js, je, ng, replace)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real, parameter \hyperlink{classa2b__edge__mod_a719947b05e0bc96f78d35ea3cb071308}{r3} = 1./3.
+\item 
+real, parameter \hyperlink{classa2b__edge__mod_a45444d62264334d291e88df0b4c23811}{a1} = 0.\-5625
+\begin{DoxyCompactList}\small\item\em 9/16 \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classa2b__edge__mod_a8155aee9a19fd9f7563377875f58fb0d}{a2} = -\/0.\-0625
+\begin{DoxyCompactList}\small\item\em -\/1/16 \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classa2b__edge__mod_ab63bc73394b22152a35f0785c28d6d6f}{b1} = 7./12.
+\begin{DoxyCompactList}\small\item\em 0.\-58333333 \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classa2b__edge__mod_aa319761122e25e2030a5652753d6a9ba}{b2} = -\/1./12.
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+real function \hyperlink{classa2b__edge__mod_ab5a8b8511c3ad957c5fab548ab663e30}{extrap\-\_\-corner} (p0, p1, p2, q1, q2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'a2b\-\_\-edge' performs F\-V-\/consistent interpolation of pressure to corners. 
+
+Definition at line 24 of file a2b\-\_\-edge.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}!a2b\-\_\-ord2@{a2b\-\_\-ord2}}
+\index{a2b\-\_\-ord2@{a2b\-\_\-ord2}!a2b_edge_mod@{a2b\-\_\-edge\-\_\-mod}}
+\subsubsection[{a2b\-\_\-ord2}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord2 (
+\begin{DoxyParamCaption}
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng), intent(inout)}]{qin, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng), intent(out)}]{qout, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in), target}]{gridstruct, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{ng, }
+\item[{logical, intent(in), optional}]{replace}
+\end{DoxyParamCaption}
+)}\label{classa2b__edge__mod_a43e19bd75d30458df0e1dd77845620eb}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em qin} & A-\/grid field\\
+\hline
+\mbox{\tt out}  & {\em qout} & Output B-\/grid field \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 697 of file a2b\-\_\-edge.\-F90.
+
+
+
+Referenced by dyn\-\_\-core\-\_\-mod\-::adv\-\_\-pe(), dyn\-\_\-core\-\_\-mod\-::dyn\-\_\-core(), dyn\-\_\-core\-\_\-mod\-::grad1\-\_\-p\-\_\-update(), and dyn\-\_\-core\-\_\-mod\-::one\-\_\-grad\-\_\-p().
+
+\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}!a2b\-\_\-ord4@{a2b\-\_\-ord4}}
+\index{a2b\-\_\-ord4@{a2b\-\_\-ord4}!a2b_edge_mod@{a2b\-\_\-edge\-\_\-mod}}
+\subsubsection[{a2b\-\_\-ord4}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public a2b\-\_\-edge\-\_\-mod\-::a2b\-\_\-ord4 (
+\begin{DoxyParamCaption}
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng), intent(inout)}]{qin, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng), intent(inout)}]{qout, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in), target}]{gridstruct, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{ng, }
+\item[{logical, intent(in), optional}]{replace}
+\end{DoxyParamCaption}
+)}\label{classa2b__edge__mod_a1aa7bae49fd010f65a8018e76a46d1cd}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em qin} & A-\/grid field\\
+\hline
+\mbox{\tt in,out}  & {\em qout} & Output B-\/grid field \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file a2b\-\_\-edge.\-F90.
+
+
+
+References extrap\-\_\-corner().
+
+
+
+Referenced by sw\-\_\-core\-\_\-mod\-::d\-\_\-sw(), dyn\-\_\-core\-\_\-mod\-::grad1\-\_\-p\-\_\-update(), fv\-\_\-diagnostics\-\_\-mod\-::init\-\_\-mq(), dyn\-\_\-core\-\_\-mod\-::nh\-\_\-p\-\_\-grad(), dyn\-\_\-core\-\_\-mod\-::one\-\_\-grad\-\_\-p(), fv\-\_\-grid\-\_\-utils\-\_\-mod\-::project\-\_\-sphere\-\_\-v(), sw\-\_\-core\-\_\-mod\-::smag\-\_\-corner(), and dyn\-\_\-core\-\_\-mod\-::split\-\_\-p\-\_\-grad().
+
+\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}!extrap\-\_\-corner@{extrap\-\_\-corner}}
+\index{extrap\-\_\-corner@{extrap\-\_\-corner}!a2b_edge_mod@{a2b\-\_\-edge\-\_\-mod}}
+\subsubsection[{extrap\-\_\-corner}]{\setlength{\rightskip}{0pt plus 5cm}real function a2b\-\_\-edge\-\_\-mod\-::extrap\-\_\-corner (
+\begin{DoxyParamCaption}
+\item[{real, dimension(2), intent(in)}]{p0, }
+\item[{real, dimension(2), intent(in)}]{p1, }
+\item[{real, dimension(2), intent(in)}]{p2, }
+\item[{real, intent(in)}]{q1, }
+\item[{real, intent(in)}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classa2b__edge__mod_ab5a8b8511c3ad957c5fab548ab663e30}
+
+
+Definition at line 820 of file a2b\-\_\-edge.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::great\-\_\-circle\-\_\-dist().
+
+
+
+Referenced by a2b\-\_\-ord4().
+
+
+
+\subsection{Member Data Documentation}
+\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}!a1@{a1}}
+\index{a1@{a1}!a2b_edge_mod@{a2b\-\_\-edge\-\_\-mod}}
+\subsubsection[{a1}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter a2b\-\_\-edge\-\_\-mod\-::a1 = 0.\-5625}\label{classa2b__edge__mod_a45444d62264334d291e88df0b4c23811}
+
+
+9/16 
+
+
+
+Definition at line 55 of file a2b\-\_\-edge.\-F90.
+
+\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}!a2@{a2}}
+\index{a2@{a2}!a2b_edge_mod@{a2b\-\_\-edge\-\_\-mod}}
+\subsubsection[{a2}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter a2b\-\_\-edge\-\_\-mod\-::a2 = -\/0.\-0625}\label{classa2b__edge__mod_a8155aee9a19fd9f7563377875f58fb0d}
+
+
+-\/1/16 
+
+
+
+Definition at line 56 of file a2b\-\_\-edge.\-F90.
+
+\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}!b1@{b1}}
+\index{b1@{b1}!a2b_edge_mod@{a2b\-\_\-edge\-\_\-mod}}
+\subsubsection[{b1}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter a2b\-\_\-edge\-\_\-mod\-::b1 = 7./12.}\label{classa2b__edge__mod_ab63bc73394b22152a35f0785c28d6d6f}
+
+
+0.\-58333333 
+
+
+
+Definition at line 60 of file a2b\-\_\-edge.\-F90.
+
+\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}!b2@{b2}}
+\index{b2@{b2}!a2b_edge_mod@{a2b\-\_\-edge\-\_\-mod}}
+\subsubsection[{b2}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter a2b\-\_\-edge\-\_\-mod\-::b2 = -\/1./12.}\label{classa2b__edge__mod_aa319761122e25e2030a5652753d6a9ba}
+
+
+Definition at line 61 of file a2b\-\_\-edge.\-F90.
+
+\index{a2b\-\_\-edge\-\_\-mod@{a2b\-\_\-edge\-\_\-mod}!r3@{r3}}
+\index{r3@{r3}!a2b_edge_mod@{a2b\-\_\-edge\-\_\-mod}}
+\subsubsection[{r3}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter a2b\-\_\-edge\-\_\-mod\-::r3 = 1./3.}\label{classa2b__edge__mod_a719947b05e0bc96f78d35ea3cb071308}
+
+
+Definition at line 51 of file a2b\-\_\-edge.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{a2b__edge_8F90}{a2b\-\_\-edge.\-F90}\end{DoxyCompactItemize}

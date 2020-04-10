@@ -1,0 +1,266 @@
+\section{fv\-\_\-update\-\_\-phys\-\_\-mod Module Reference}
+\label{classfv__update__phys__mod}\index{fv\-\_\-update\-\_\-phys\-\_\-mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}}
+
+
+The module 'fv\-\_\-update\-\_\-phys' applies physics tendencies consistent with the F\-V3 discretization and definition of the prognostic variables.  
+
+
+
+
+Collaboration diagram for fv\-\_\-update\-\_\-phys\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classfv__update__phys__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__update__phys__mod_a07d63d9929b6cb44156f6ceb8bc27728}{fv\-\_\-update\-\_\-phys} (dt, is, ie, js, je, isd, ied, jsd, jed, ng, nq, u, v, w, delp, pt, q, qdiag, ua, va, ps, pe, peln, pk, pkz, ak, bk, phis, u\-\_\-srf, v\-\_\-srf, ts, delz, hydrostatic, u\-\_\-dt, v\-\_\-dt, t\-\_\-dt, moist\-\_\-phys, Time, nudge, gridstruct, lona, lata, npx, npy, npz, flagstruct, neststruct, bd, domain, ptop, q\-\_\-dt)
+\item 
+subroutine, public \hyperlink{classfv__update__phys__mod_ac22298c1b84f158dcac8e2a11f3f5a4e}{del2\-\_\-phys} (qdt, delp, gridstruct, cd, npx, npy, km, is, ie, js, je, isd, ied, jsd, jed, ngc, domain)
+\begin{DoxyCompactList}\small\item\em The subroutine 'del2\-\_\-phys' is for filtering the physics tendency. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classfv__update__phys__mod_a1b24aecbbffae6719af60e3eaf528c00}{update\-\_\-dwinds\-\_\-phys} (is, ie, js, je, isd, ied, jsd, jed, dt, u\-\_\-dt, v\-\_\-dt, u, v, gridstruct, npx, npy, npz, domain)
+\begin{DoxyCompactList}\small\item\em The subroutine 'update\-\_\-dwinds\-\_\-phys' transforms the wind tendencies from the A grid to the D grid for the final update. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classfv__update__phys__mod_a7a3e9cb39f851c63333426b1fca48130}{update2d\-\_\-dwinds\-\_\-phys} (is, ie, js, je, isd, ied, jsd, jed, dt, u\-\_\-dt, v\-\_\-dt, u, v, gridstruct, npx, npy, npz, domain)
+\begin{DoxyCompactList}\small\item\em The subroutine 'update2d\-\_\-dwinds\-\_\-phys' transforms the wind tendencies from the A grid to the D grid for the final update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real, parameter \hyperlink{classfv__update__phys__mod_ab0a01adc2965f340c0a3706adeb96bde}{con\-\_\-cp} = cp\-\_\-air
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'fv\-\_\-update\-\_\-phys' applies physics tendencies consistent with the F\-V3 discretization and definition of the prognostic variables. 
+
+Definition at line 26 of file fv\-\_\-update\-\_\-phys.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-update\-\_\-phys\-\_\-mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}!del2\-\_\-phys@{del2\-\_\-phys}}
+\index{del2\-\_\-phys@{del2\-\_\-phys}!fv_update_phys_mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}}
+\subsubsection[{del2\-\_\-phys}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-update\-\_\-phys\-\_\-mod\-::del2\-\_\-phys (
+\begin{DoxyParamCaption}
+\item[{real, dimension(is-\/ngc\-:ie+ngc,js-\/ngc\-:je+ngc,km), intent(inout)}]{qdt, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,km), intent(in)}]{delp, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in), target}]{gridstruct, }
+\item[{real, intent(in)}]{cd, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{km, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{integer, intent(in)}]{ngc, }
+\item[{type(domain2d), intent(inout)}]{domain}
+\end{DoxyParamCaption}
+)}\label{classfv__update__phys__mod_ac22298c1b84f158dcac8e2a11f3f5a4e}
+
+
+The subroutine 'del2\-\_\-phys' is for filtering the physics tendency. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cd} & cd = K $\ast$ da\-\_\-min; 0 $<$ K $<$ 0.\-25 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 710 of file fv\-\_\-update\-\_\-phys.\-F90.
+
+
+
+References fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), and fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on().
+
+\index{fv\-\_\-update\-\_\-phys\-\_\-mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}!fv\-\_\-update\-\_\-phys@{fv\-\_\-update\-\_\-phys}}
+\index{fv\-\_\-update\-\_\-phys@{fv\-\_\-update\-\_\-phys}!fv_update_phys_mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}}
+\subsubsection[{fv\-\_\-update\-\_\-phys}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-update\-\_\-phys\-\_\-mod\-::fv\-\_\-update\-\_\-phys (
+\begin{DoxyParamCaption}
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{integer, intent(in)}]{ng, }
+\item[{integer, intent(in)}]{nq, }
+\item[{real, dimension(isd\-:ied  ,jsd\-:jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(isd\-:ied+1,jsd\-:jed  ,npz), intent(inout)}]{v, }
+\item[{real, dimension(isd\-:   ,jsd\-:   ,1\-: ), intent(inout)}]{w, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{delp, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{pt, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz,nq), intent(inout)}]{q, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz,nq+1\-:flagstruct\%ncnst), intent(inout)}]{qdiag, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{ua, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{va, }
+\item[{real, dimension  (isd\-:ied  ,jsd\-:jed), intent(inout)}]{ps, }
+\item[{real, dimension  (is-\/1\-:ie+1, npz+1,js-\/1\-:je+1), intent(inout)}]{pe, }
+\item[{real, dimension(is\-:ie,npz+1,js\-:je), intent(inout)}]{peln, }
+\item[{real, dimension  (is\-:ie,js\-:je  , npz+1), intent(inout)}]{pk, }
+\item[{real, dimension (is\-:ie,js\-:je,npz), intent(inout)}]{pkz, }
+\item[{real, dimension(npz+1), intent(in)}]{ak, }
+\item[{real, dimension(npz+1), intent(in)}]{bk, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed), intent(in)}]{phis, }
+\item[{real, dimension(is\-:ie,js\-:je), intent(out)}]{u\-\_\-srf, }
+\item[{real, dimension(is\-:ie,js\-:je), intent(out)}]{v\-\_\-srf, }
+\item[{real, dimension(is\-:ie,js\-:je), intent(out)}]{ts, }
+\item[{real, dimension(isd\-:,jsd\-:,1\-:), intent(inout)}]{delz, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{u\-\_\-dt, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{v\-\_\-dt, }
+\item[{real, dimension(is\-:ie,js\-:je,npz), intent(inout)}]{t\-\_\-dt, }
+\item[{logical, intent(in)}]{moist\-\_\-phys, }
+\item[{type (time\-\_\-type), intent(in)}]{Time, }
+\item[{logical, intent(in)}]{nudge, }
+\item[{type(fv\-\_\-grid\-\_\-type)}]{gridstruct, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed), intent(in), optional}]{lona, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed), intent(in), optional}]{lata, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{type(fv\-\_\-flags\-\_\-type)}]{flagstruct, }
+\item[{type(fv\-\_\-nest\-\_\-type)}]{neststruct, }
+\item[{type(fv\-\_\-grid\-\_\-bounds\-\_\-type), intent(in)}]{bd, }
+\item[{type(domain2d), intent(inout)}]{domain, }
+\item[{real, intent(in)}]{ptop, }
+\item[{real, dimension(is\-:ie,js\-:je,npz,nq), intent(inout), optional}]{q\-\_\-dt}
+\end{DoxyParamCaption}
+)}\label{classfv__update__phys__mod_a07d63d9929b6cb44156f6ceb8bc27728}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lata} & A-\/grid (physics) lon and lat\\
+\hline
+\mbox{\tt in,out}  & {\em u} & D grid zonal wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em v} & D grid meridional wind (m/s)\\
+\hline
+\mbox{\tt in,out}  & {\em q} & specific humidity and constituents\\
+\hline
+\mbox{\tt in,out}  & {\em qdiag} & diagnostic tracers\\
+\hline
+\mbox{\tt in,out}  & {\em ps} & Surface pressure (pascal)\\
+\hline
+\mbox{\tt in,out}  & {\em pe} & edge pressure (pascal)\\
+\hline
+\mbox{\tt in,out}  & {\em pk} & pe$\ast$$\ast$cappa\\
+\hline
+\mbox{\tt in,out}  & {\em peln} & ln(pe)\\
+\hline
+\mbox{\tt in,out}  & {\em pkz} & finite-\/volume mean pk \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file fv\-\_\-update\-\_\-phys.\-F90.
+
+
+
+References fv\-\_\-grid\-\_\-utils\-\_\-mod\-::cubed\-\_\-to\-\_\-latlon(), fv\-\_\-nwp\-\_\-nudge\-\_\-mod\-::fv\-\_\-nwp\-\_\-nudge(), fv\-\_\-eta\-\_\-mod\-::get\-\_\-eta\-\_\-level(), fv\-\_\-mapz\-\_\-mod\-::moist\-\_\-cp(), fv\-\_\-mapz\-\_\-mod\-::moist\-\_\-cv(), fv\-\_\-diagnostics\-\_\-mod\-::prt\-\_\-maxmin(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on(), update2d\-\_\-dwinds\-\_\-phys(), update\-\_\-dwinds\-\_\-phys(), multi\-\_\-gases\-\_\-mod\-::vicpqd(), and multi\-\_\-gases\-\_\-mod\-::virqd().
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-state\-\_\-update().
+
+\index{fv\-\_\-update\-\_\-phys\-\_\-mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}!update2d\-\_\-dwinds\-\_\-phys@{update2d\-\_\-dwinds\-\_\-phys}}
+\index{update2d\-\_\-dwinds\-\_\-phys@{update2d\-\_\-dwinds\-\_\-phys}!fv_update_phys_mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}}
+\subsubsection[{update2d\-\_\-dwinds\-\_\-phys}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-update\-\_\-phys\-\_\-mod\-::update2d\-\_\-dwinds\-\_\-phys (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{real, intent(in)}]{dt, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{u\-\_\-dt, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{v\-\_\-dt, }
+\item[{real, dimension(isd\-:ied,  jsd\-:jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(isd\-:ied+1,jsd\-:jed  ,npz), intent(inout)}]{v, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in), target}]{gridstruct, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{type(domain2d), intent(inout)}]{domain}
+\end{DoxyParamCaption}
+)}\label{classfv__update__phys__mod_a7a3e9cb39f851c63333426b1fca48130}
+
+
+The subroutine 'update2d\-\_\-dwinds\-\_\-phys' transforms the wind tendencies from the A grid to the D grid for the final update. 
+
+
+
+Definition at line 1002 of file fv\-\_\-update\-\_\-phys.\-F90.
+
+
+
+References fv\-\_\-timing\-\_\-mod\-::timing\-\_\-off(), and fv\-\_\-timing\-\_\-mod\-::timing\-\_\-on().
+
+
+
+Referenced by fv\-\_\-update\-\_\-phys().
+
+\index{fv\-\_\-update\-\_\-phys\-\_\-mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}!update\-\_\-dwinds\-\_\-phys@{update\-\_\-dwinds\-\_\-phys}}
+\index{update\-\_\-dwinds\-\_\-phys@{update\-\_\-dwinds\-\_\-phys}!fv_update_phys_mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}}
+\subsubsection[{update\-\_\-dwinds\-\_\-phys}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-update\-\_\-phys\-\_\-mod\-::update\-\_\-dwinds\-\_\-phys (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{real, intent(in)}]{dt, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{u\-\_\-dt, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,npz), intent(inout)}]{v\-\_\-dt, }
+\item[{real, dimension(isd\-:ied,  jsd\-:jed+1,npz), intent(inout)}]{u, }
+\item[{real, dimension(isd\-:ied+1,jsd\-:jed  ,npz), intent(inout)}]{v, }
+\item[{type(fv\-\_\-grid\-\_\-type), intent(in), target}]{gridstruct, }
+\item[{integer, intent(in)}]{npx, }
+\item[{integer, intent(in)}]{npy, }
+\item[{integer, intent(in)}]{npz, }
+\item[{type(domain2d), intent(inout)}]{domain}
+\end{DoxyParamCaption}
+)}\label{classfv__update__phys__mod_a1b24aecbbffae6719af60e3eaf528c00}
+
+
+The subroutine 'update\-\_\-dwinds\-\_\-phys' transforms the wind tendencies from the A grid to the D grid for the final update. 
+
+
+
+Definition at line 814 of file fv\-\_\-update\-\_\-phys.\-F90.
+
+
+
+Referenced by dyn\-\_\-core\-\_\-mod\-::dyn\-\_\-core(), and fv\-\_\-update\-\_\-phys().
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-update\-\_\-phys\-\_\-mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}!con\-\_\-cp@{con\-\_\-cp}}
+\index{con\-\_\-cp@{con\-\_\-cp}!fv_update_phys_mod@{fv\-\_\-update\-\_\-phys\-\_\-mod}}
+\subsubsection[{con\-\_\-cp}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-update\-\_\-phys\-\_\-mod\-::con\-\_\-cp = cp\-\_\-air}\label{classfv__update__phys__mod_ab0a01adc2965f340c0a3706adeb96bde}
+
+
+Definition at line 131 of file fv\-\_\-update\-\_\-phys.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{fv__update__phys_8F90}{fv\-\_\-update\-\_\-phys.\-F90}\end{DoxyCompactItemize}

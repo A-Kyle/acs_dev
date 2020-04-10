@@ -1,0 +1,557 @@
+\section{fv\-\_\-sg\-\_\-mod Module Reference}
+\label{classfv__sg__mod}\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}}
+
+
+The module 'fv\-\_\-sg' performs F\-V sub-\/grid mixing.  
+
+
+
+
+Collaboration diagram for fv\-\_\-sg\-\_\-mod\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=115pt]{classfv__sg__mod__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classfv__sg__mod_a12f8e293e862927c307b386cdd8217cb}{fv\-\_\-subgrid\-\_\-z} (isd, ied, jsd, jed, is, ie, js, je, km, nq, dt, tau, nwat, delp, pe, peln, pkz, ta, qa, ua, va, hydrostatic, w, delz, u\-\_\-dt, v\-\_\-dt, t\-\_\-dt, q\-\_\-dt, k\-\_\-bot)
+\item 
+subroutine, public \hyperlink{classfv__sg__mod_a091058b73522dcd58a8f2787aa4c9973}{qsmith} (im, km, k1, t, p, q, qs, dqdt)
+\item 
+subroutine, public \hyperlink{classfv__sg__mod_a8d257ccad66089458515a550f71a4855}{neg\-\_\-adj3} (is, ie, js, je, ng, kbot, hydrostatic, peln, delz, pt, dp,
+\item 
+subroutine, public \hyperlink{classfv__sg__mod_aca56b99deacecc35854d54c6978dc131}{neg\-\_\-adj2} (is, ie, js, je, ng, kbot, hydrostatic, peln, delz, pt, dp, qv, ql, qr, qi, qs, qa, check\-\_\-negative)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classfv__sg__mod_aa63d7969bebc93461163d35d3f8c610c}{qsmith\-\_\-init}
+\item 
+subroutine \hyperlink{classfv__sg__mod_a4ba25958c1903ecd2f5f04bcf596a2aa}{qs\-\_\-table} (n, \hyperlink{classfv__sg__mod_a209ce37aa7b7e0fd8d042d2cd4cdacca}{table})
+\item 
+subroutine \hyperlink{classfv__sg__mod_a86dda2330b414a3e21cceed0e114f03f}{qs\-\_\-table\-\_\-m} (n, \hyperlink{classfv__sg__mod_a209ce37aa7b7e0fd8d042d2cd4cdacca}{table})
+\item 
+subroutine \hyperlink{classfv__sg__mod_a5308d44cc53f56bfd55451f11445eff0}{fillq} (im, km, q, dp)
+\item 
+subroutine \hyperlink{classfv__sg__mod_a14c9331c9654c3cfc6a7aca840bdbd30}{prt\-\_\-negative} (qname, q, is, ie, js, je, n\-\_\-g, km, threshold)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real, parameter \hyperlink{classfv__sg__mod_af4058b7b266d23d4f30e73514cd0d403}{esl} = 0.\-621971831
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a87874cc5d80d9ea6ee4f67ae591ef080}{tice} = 273.\-16
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a84f3c846b418dad59c6ab9ab7987ead7}{c\-\_\-ice} = 1972.
+\begin{DoxyCompactList}\small\item\em -\/15 C \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__sg__mod_a410bbdf1e319c65ea3a200ce8aceda8a}{c\-\_\-liq} = 4.\-1855e+3
+\begin{DoxyCompactList}\small\item\em G\-F\-S. \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__sg__mod_ab4b7454109972c7d688beea157f279a1}{cv\-\_\-vap} = cp\-\_\-vapor -\/ rvgas
+\begin{DoxyCompactList}\small\item\em 1384.\-5 \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__sg__mod_a244f143b09b1f0b2dfef9acb1b4e64a7}{c\-\_\-con} = \hyperlink{classfv__sg__mod_a84f3c846b418dad59c6ab9ab7987ead7}{c\-\_\-ice}
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a801d775ff0bd22525d3bdbfdbaa25a93}{dc\-\_\-vap} = \hyperlink{classfv__sg__mod_ab4b7454109972c7d688beea157f279a1}{cv\-\_\-vap} -\/ \hyperlink{classfv__sg__mod_a410bbdf1e319c65ea3a200ce8aceda8a}{c\-\_\-liq}
+\begin{DoxyCompactList}\small\item\em = -\/2368. \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__sg__mod_a78cb86127e174c40e9c96f9ad386cd51}{dc\-\_\-ice} = \hyperlink{classfv__sg__mod_a410bbdf1e319c65ea3a200ce8aceda8a}{c\-\_\-liq} -\/ \hyperlink{classfv__sg__mod_a84f3c846b418dad59c6ab9ab7987ead7}{c\-\_\-ice}
+\begin{DoxyCompactList}\small\item\em = 2112. \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__sg__mod_a3b888bbbc28cceecf2d4157bc40f7e97}{hlv0} = 2.\-5e6
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a0ef6edb91d65d124d913ef57e02e588c}{hlf0} = 3.\-3358e5
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a46dc612b8ea952b410d9388e7734b1dc}{t\-\_\-ice} = 273.\-16
+\item 
+real, parameter \hyperlink{classfv__sg__mod_af3111561e3086d6011cf81c50467d561}{ri\-\_\-max} = 1.
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a5a016eeeb112ccb46087279e37698ecb}{ri\-\_\-min} = 0.\-25
+\item 
+real, parameter \hyperlink{classfv__sg__mod_afe8eeeb134260859c1ff38fe74557123}{t1\-\_\-min} = 160.
+\item 
+real, parameter \hyperlink{classfv__sg__mod_ad9aa2baea22c517457629ab6821992fa}{t2\-\_\-min} = 165.
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a17bd270ea0dba7816112efe5d704896c}{t2\-\_\-max} = 315.
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a3d2e9d81e47d9e0be757a3b2978f00f3}{t3\-\_\-max} = 325.
+\item 
+real, parameter \hyperlink{classfv__sg__mod_a81ad127cb875ed67c0b2b72faddbd28b}{lv0} = \hyperlink{classfv__sg__mod_a3b888bbbc28cceecf2d4157bc40f7e97}{hlv0} -\/ \hyperlink{classfv__sg__mod_a801d775ff0bd22525d3bdbfdbaa25a93}{dc\-\_\-vap}$\ast$\hyperlink{classfv__sg__mod_a46dc612b8ea952b410d9388e7734b1dc}{t\-\_\-ice}
+\begin{DoxyCompactList}\small\item\em = 3.\-147782e6 \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__sg__mod_a5c833712f86de131c6bdc48cac46909e}{li0} = \hyperlink{classfv__sg__mod_a0ef6edb91d65d124d913ef57e02e588c}{hlf0} -\/ \hyperlink{classfv__sg__mod_a78cb86127e174c40e9c96f9ad386cd51}{dc\-\_\-ice}$\ast$\hyperlink{classfv__sg__mod_a46dc612b8ea952b410d9388e7734b1dc}{t\-\_\-ice}
+\begin{DoxyCompactList}\small\item\em = -\/2.\-431928e5 \end{DoxyCompactList}\item 
+real, parameter \hyperlink{classfv__sg__mod_a4d8e998e436b110102a6723af127d4df}{zvir} = rvgas/rdgas -\/ 1.
+\begin{DoxyCompactList}\small\item\em = 0.\-607789855 \end{DoxyCompactList}\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__sg__mod_a209ce37aa7b7e0fd8d042d2cd4cdacca}{table}
+\item 
+real, dimension(\-:), allocatable \hyperlink{classfv__sg__mod_a3d64c11d4c5914570d3d22b46f4c9d96}{des}
+\item 
+real \hyperlink{classfv__sg__mod_a853263bfe986528320e887a8a48f1978}{lv00}
+\item 
+real \hyperlink{classfv__sg__mod_a0de1f9bda133c77954d9607a5833698a}{d0\-\_\-vap}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The module 'fv\-\_\-sg' performs F\-V sub-\/grid mixing. 
+
+Definition at line 54 of file fv\-\_\-sg.\-F90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!fillq@{fillq}}
+\index{fillq@{fillq}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{fillq}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-sg\-\_\-mod\-::fillq (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{im, }
+\item[{integer, intent(in)}]{km, }
+\item[{real, dimension(im,km), intent(inout)}]{q, }
+\item[{real, dimension(im,km), intent(inout)}]{dp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a5308d44cc53f56bfd55451f11445eff0}
+
+
+Definition at line 2257 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!fv\-\_\-subgrid\-\_\-z@{fv\-\_\-subgrid\-\_\-z}}
+\index{fv\-\_\-subgrid\-\_\-z@{fv\-\_\-subgrid\-\_\-z}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{fv\-\_\-subgrid\-\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-sg\-\_\-mod\-::fv\-\_\-subgrid\-\_\-z (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{isd, }
+\item[{integer, intent(in)}]{ied, }
+\item[{integer, intent(in)}]{jsd, }
+\item[{integer, intent(in)}]{jed, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{km, }
+\item[{integer, intent(in)}]{nq, }
+\item[{real, intent(in)}]{dt, }
+\item[{integer, intent(in)}]{tau, }
+\item[{integer, intent(in)}]{nwat, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,km), intent(in)}]{delp, }
+\item[{real, dimension(is-\/1\-:ie+1,km+1,js-\/1\-:je+1), intent(in)}]{pe, }
+\item[{real, dimension(is  \-:ie,  km+1,js  \-:je), intent(in)}]{peln, }
+\item[{real, dimension(is\-:ie,js\-:je,km), intent(in)}]{pkz, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,km), intent(inout)}]{ta, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,km,nq), intent(inout)}]{qa, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,km), intent(inout)}]{ua, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,km), intent(inout)}]{va, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{real, dimension(isd\-:,jsd\-:,1\-:), intent(inout)}]{w, }
+\item[{real, dimension(isd\-:,jsd\-:,1\-:), intent(in)}]{delz, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,km), intent(inout)}]{u\-\_\-dt, }
+\item[{real, dimension(isd\-:ied,jsd\-:jed,km), intent(inout)}]{v\-\_\-dt, }
+\item[{real, dimension(is\-:ie,js\-:je,km), intent(inout)}]{t\-\_\-dt, }
+\item[{real, dimension(is\-:ie,js\-:je,km,nq), intent(inout)}]{q\-\_\-dt, }
+\item[{integer, intent(in), optional}]{k\-\_\-bot}
+\end{DoxyParamCaption}
+)}\label{classfv__sg__mod_a12f8e293e862927c307b386cdd8217cb}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tau} & Relaxation time scale\\
+\hline
+\mbox{\tt in}  & {\em dt} & model time step\\
+\hline
+\mbox{\tt in}  & {\em delp} & Delta p at each model level\\
+\hline
+\mbox{\tt in}  & {\em delz} & Delta z at each model level\\
+\hline
+\mbox{\tt in,out}  & {\em ta} & Temperature\\
+\hline
+\mbox{\tt in,out}  & {\em qa} & Specific humidity \& tracers \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 715 of file fv\-\_\-sg.\-F90.
+
+
+
+References qsmith(), multi\-\_\-gases\-\_\-mod\-::vicpqd(), multi\-\_\-gases\-\_\-mod\-::vicvqd(), multi\-\_\-gases\-\_\-mod\-::virq(), multi\-\_\-gases\-\_\-mod\-::virq\-\_\-qpz(), multi\-\_\-gases\-\_\-mod\-::virqd(), and fv\-\_\-cmp\-\_\-mod\-::wqs2().
+
+
+
+Referenced by atmosphere\-\_\-mod\-::atmosphere\-\_\-dynamics().
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!neg\-\_\-adj2@{neg\-\_\-adj2}}
+\index{neg\-\_\-adj2@{neg\-\_\-adj2}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{neg\-\_\-adj2}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-sg\-\_\-mod\-::neg\-\_\-adj2 (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{ng, }
+\item[{integer, intent(in)}]{kbot, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{real, dimension(is\-:ie,kbot+1,js\-:je), intent(in)}]{peln, }
+\item[{real, dimension(is-\/ng\-:,js-\/ng\-:,1\-:), intent(in)}]{delz, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(inout)}]{pt, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(in)}]{dp, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(inout)}]{qv, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(inout)}]{ql, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(inout)}]{qr, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(inout)}]{qi, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(inout)}]{qs, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(inout), optional}]{qa, }
+\item[{logical, intent(in), optional}]{check\-\_\-negative}
+\end{DoxyParamCaption}
+)}\label{classfv__sg__mod_aca56b99deacecc35854d54c6978dc131}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dp} & total delp-\/p\\
+\hline
+\mbox{\tt in}  & {\em peln} & ln(pe) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1937 of file fv\-\_\-sg.\-F90.
+
+
+
+References fv\-\_\-regional\-\_\-mod\-::fillq(), and prt\-\_\-negative().
+
+
+
+Referenced by fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics().
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!neg\-\_\-adj3@{neg\-\_\-adj3}}
+\index{neg\-\_\-adj3@{neg\-\_\-adj3}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{neg\-\_\-adj3}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-sg\-\_\-mod\-::neg\-\_\-adj3 (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{ng, }
+\item[{integer, intent(in)}]{kbot, }
+\item[{logical, intent(in)}]{hydrostatic, }
+\item[{real, dimension(is\-:ie,kbot+1,js\-:je), intent(in)}]{peln, }
+\item[{real, dimension(is-\/ng\-:,js-\/ng\-:,1\-:), intent(in)}]{delz, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(inout)}]{pt, }
+\item[{real, dimension(is-\/ng\-:ie+ng,js-\/ng\-:je+ng,kbot), intent(in)}]{dp}
+\end{DoxyParamCaption}
+)}\label{classfv__sg__mod_a8d257ccad66089458515a550f71a4855}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dp} & total delp-\/p\\
+\hline
+\mbox{\tt in}  & {\em peln} & ln(pe) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1542 of file fv\-\_\-sg.\-F90.
+
+
+
+References fv\-\_\-regional\-\_\-mod\-::fillq(), prt\-\_\-negative(), multi\-\_\-gases\-\_\-mod\-::vicpqd\-\_\-qpz(), multi\-\_\-gases\-\_\-mod\-::vicvqd\-\_\-qpz(), and multi\-\_\-gases\-\_\-mod\-::virq().
+
+
+
+Referenced by fv\-\_\-dynamics\-\_\-mod\-::fv\-\_\-dynamics().
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!prt\-\_\-negative@{prt\-\_\-negative}}
+\index{prt\-\_\-negative@{prt\-\_\-negative}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{prt\-\_\-negative}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-sg\-\_\-mod\-::prt\-\_\-negative (
+\begin{DoxyParamCaption}
+\item[{character(len=$\ast$), intent(in)}]{qname, }
+\item[{real, dimension(is-\/n\-\_\-g\-:ie+n\-\_\-g, js-\/n\-\_\-g\-:je+n\-\_\-g, km), intent(in)}]{q, }
+\item[{integer, intent(in)}]{is, }
+\item[{integer, intent(in)}]{ie, }
+\item[{integer, intent(in)}]{js, }
+\item[{integer, intent(in)}]{je, }
+\item[{integer, intent(in)}]{n\-\_\-g, }
+\item[{integer, intent(in)}]{km, }
+\item[{real, intent(in)}]{threshold}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a14c9331c9654c3cfc6a7aca840bdbd30}
+
+
+Definition at line 2292 of file fv\-\_\-sg.\-F90.
+
+
+
+Referenced by neg\-\_\-adj2(), and neg\-\_\-adj3().
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!qs\-\_\-table@{qs\-\_\-table}}
+\index{qs\-\_\-table@{qs\-\_\-table}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{qs\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-sg\-\_\-mod\-::qs\-\_\-table (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{n, }
+\item[{real, dimension (n)}]{table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a4ba25958c1903ecd2f5f04bcf596a2aa}
+
+
+Definition at line 1457 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!qs\-\_\-table\-\_\-m@{qs\-\_\-table\-\_\-m}}
+\index{qs\-\_\-table\-\_\-m@{qs\-\_\-table\-\_\-m}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{qs\-\_\-table\-\_\-m}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-sg\-\_\-mod\-::qs\-\_\-table\-\_\-m (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{n, }
+\item[{real, dimension (n)}]{table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a86dda2330b414a3e21cceed0e114f03f}
+
+
+Definition at line 1483 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!qsmith@{qsmith}}
+\index{qsmith@{qsmith}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{qsmith}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public fv\-\_\-sg\-\_\-mod\-::qsmith (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{im, }
+\item[{integer, intent(in)}]{km, }
+\item[{integer, intent(in)}]{k1, }
+\item[{real, dimension(im,km), intent(in)}]{t, }
+\item[{real, dimension(im,km), intent(in)}]{p, }
+\item[{real, dimension(im,km), intent(in)}]{q, }
+\item[{real, dimension(im,km), intent(out)}]{qs, }
+\item[{real, dimension(im,km), intent(out), optional}]{dqdt}
+\end{DoxyParamCaption}
+)}\label{classfv__sg__mod_a091058b73522dcd58a8f2787aa4c9973}
+
+
+Definition at line 1391 of file fv\-\_\-sg.\-F90.
+
+
+
+References qsmith\-\_\-init(), and multi\-\_\-gases\-\_\-mod\-::virq().
+
+
+
+Referenced by fv\-\_\-diagnostics\-\_\-mod\-::fv\-\_\-diag(), fv\-\_\-subgrid\-\_\-z(), and test\-\_\-cases\-\_\-mod\-::init\-\_\-double\-\_\-periodic().
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!qsmith\-\_\-init@{qsmith\-\_\-init}}
+\index{qsmith\-\_\-init@{qsmith\-\_\-init}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{qsmith\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine fv\-\_\-sg\-\_\-mod\-::qsmith\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_aa63d7969bebc93461163d35d3f8c610c}
+
+
+Definition at line 1367 of file fv\-\_\-sg.\-F90.
+
+
+
+References fv\-\_\-cmp\-\_\-mod\-::qs\-\_\-table().
+
+
+
+Referenced by fv\-\_\-diagnostics\-\_\-mod\-::fv\-\_\-diag\-\_\-init(), and qsmith().
+
+
+
+\subsection{Member Data Documentation}
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!c\-\_\-con@{c\-\_\-con}}
+\index{c\-\_\-con@{c\-\_\-con}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{c\-\_\-con}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::c\-\_\-con = {\bf c\-\_\-ice}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a244f143b09b1f0b2dfef9acb1b4e64a7}
+
+
+Definition at line 81 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!c\-\_\-ice@{c\-\_\-ice}}
+\index{c\-\_\-ice@{c\-\_\-ice}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{c\-\_\-ice}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::c\-\_\-ice = 1972.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a84f3c846b418dad59c6ab9ab7987ead7}
+
+
+-\/15 C 
+
+
+
+Definition at line 77 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!c\-\_\-liq@{c\-\_\-liq}}
+\index{c\-\_\-liq@{c\-\_\-liq}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{c\-\_\-liq}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::c\-\_\-liq = 4.\-1855e+3\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a410bbdf1e319c65ea3a200ce8aceda8a}
+
+
+G\-F\-S. 
+
+
+
+Definition at line 78 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!cv\-\_\-vap@{cv\-\_\-vap}}
+\index{cv\-\_\-vap@{cv\-\_\-vap}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{cv\-\_\-vap}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::cv\-\_\-vap = cp\-\_\-vapor -\/ rvgas\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_ab4b7454109972c7d688beea157f279a1}
+
+
+1384.\-5 
+
+
+
+Definition at line 80 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!d0\-\_\-vap@{d0\-\_\-vap}}
+\index{d0\-\_\-vap@{d0\-\_\-vap}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{d0\-\_\-vap}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-sg\-\_\-mod\-::d0\-\_\-vap\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a0de1f9bda133c77954d9607a5833698a}
+
+
+Definition at line 103 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!dc\-\_\-ice@{dc\-\_\-ice}}
+\index{dc\-\_\-ice@{dc\-\_\-ice}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{dc\-\_\-ice}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::dc\-\_\-ice = {\bf c\-\_\-liq} -\/ {\bf c\-\_\-ice}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a78cb86127e174c40e9c96f9ad386cd51}
+
+
+= 2112. 
+
+
+
+Definition at line 85 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!dc\-\_\-vap@{dc\-\_\-vap}}
+\index{dc\-\_\-vap@{dc\-\_\-vap}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{dc\-\_\-vap}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::dc\-\_\-vap = {\bf cv\-\_\-vap} -\/ {\bf c\-\_\-liq}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a801d775ff0bd22525d3bdbfdbaa25a93}
+
+
+= -\/2368. 
+
+
+
+Definition at line 84 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!des@{des}}
+\index{des@{des}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{des}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable fv\-\_\-sg\-\_\-mod\-::des\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a3d64c11d4c5914570d3d22b46f4c9d96}
+
+
+Definition at line 102 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!esl@{esl}}
+\index{esl@{esl}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{esl}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::esl = 0.\-621971831\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_af4058b7b266d23d4f30e73514cd0d403}
+
+
+Definition at line 74 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!hlf0@{hlf0}}
+\index{hlf0@{hlf0}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{hlf0}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::hlf0 = 3.\-3358e5\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a0ef6edb91d65d124d913ef57e02e588c}
+
+
+Definition at line 88 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!hlv0@{hlv0}}
+\index{hlv0@{hlv0}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{hlv0}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::hlv0 = 2.\-5e6\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a3b888bbbc28cceecf2d4157bc40f7e97}
+
+
+Definition at line 87 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!li0@{li0}}
+\index{li0@{li0}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{li0}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::li0 = {\bf hlf0} -\/ {\bf dc\-\_\-ice}$\ast${\bf t\-\_\-ice}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a5c833712f86de131c6bdc48cac46909e}
+
+
+= -\/2.\-431928e5 
+
+
+
+Definition at line 99 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!lv0@{lv0}}
+\index{lv0@{lv0}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{lv0}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::lv0 = {\bf hlv0} -\/ {\bf dc\-\_\-vap}$\ast${\bf t\-\_\-ice}\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a81ad127cb875ed67c0b2b72faddbd28b}
+
+
+= 3.\-147782e6 
+
+
+
+Definition at line 98 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!lv00@{lv00}}
+\index{lv00@{lv00}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{lv00}]{\setlength{\rightskip}{0pt plus 5cm}real fv\-\_\-sg\-\_\-mod\-::lv00\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a853263bfe986528320e887a8a48f1978}
+
+
+Definition at line 103 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!ri\-\_\-max@{ri\-\_\-max}}
+\index{ri\-\_\-max@{ri\-\_\-max}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{ri\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::ri\-\_\-max = 1.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_af3111561e3086d6011cf81c50467d561}
+
+
+Definition at line 92 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!ri\-\_\-min@{ri\-\_\-min}}
+\index{ri\-\_\-min@{ri\-\_\-min}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{ri\-\_\-min}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::ri\-\_\-min = 0.\-25\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a5a016eeeb112ccb46087279e37698ecb}
+
+
+Definition at line 93 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!t1\-\_\-min@{t1\-\_\-min}}
+\index{t1\-\_\-min@{t1\-\_\-min}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{t1\-\_\-min}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::t1\-\_\-min = 160.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_afe8eeeb134260859c1ff38fe74557123}
+
+
+Definition at line 94 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!t2\-\_\-max@{t2\-\_\-max}}
+\index{t2\-\_\-max@{t2\-\_\-max}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{t2\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::t2\-\_\-max = 315.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a17bd270ea0dba7816112efe5d704896c}
+
+
+Definition at line 96 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!t2\-\_\-min@{t2\-\_\-min}}
+\index{t2\-\_\-min@{t2\-\_\-min}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{t2\-\_\-min}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::t2\-\_\-min = 165.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_ad9aa2baea22c517457629ab6821992fa}
+
+
+Definition at line 95 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!t3\-\_\-max@{t3\-\_\-max}}
+\index{t3\-\_\-max@{t3\-\_\-max}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{t3\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::t3\-\_\-max = 325.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a3d2e9d81e47d9e0be757a3b2978f00f3}
+
+
+Definition at line 97 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!t\-\_\-ice@{t\-\_\-ice}}
+\index{t\-\_\-ice@{t\-\_\-ice}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{t\-\_\-ice}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::t\-\_\-ice = 273.\-16\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a46dc612b8ea952b410d9388e7734b1dc}
+
+
+Definition at line 91 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!table@{table}}
+\index{table@{table}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{table}]{\setlength{\rightskip}{0pt plus 5cm}real, dimension(\-:), allocatable fv\-\_\-sg\-\_\-mod\-::table\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a209ce37aa7b7e0fd8d042d2cd4cdacca}
+
+
+Definition at line 102 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!tice@{tice}}
+\index{tice@{tice}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{tice}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::tice = 273.\-16\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a87874cc5d80d9ea6ee4f67ae591ef080}
+
+
+Definition at line 75 of file fv\-\_\-sg.\-F90.
+
+\index{fv\-\_\-sg\-\_\-mod@{fv\-\_\-sg\-\_\-mod}!zvir@{zvir}}
+\index{zvir@{zvir}!fv_sg_mod@{fv\-\_\-sg\-\_\-mod}}
+\subsubsection[{zvir}]{\setlength{\rightskip}{0pt plus 5cm}real, parameter fv\-\_\-sg\-\_\-mod\-::zvir = rvgas/rdgas -\/ 1.\hspace{0.3cm}{\ttfamily [private]}}\label{classfv__sg__mod_a4d8e998e436b110102a6723af127d4df}
+
+
+= 0.\-607789855 
+
+
+
+Definition at line 101 of file fv\-\_\-sg.\-F90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/scratch2/\-N\-A\-G\-A\-P\-E/aoml-\/hafs1/\-Kyle.\-Ahern/acs\-\_\-master\-\_\-readonly/model/\hyperlink{fv__sg_8F90}{fv\-\_\-sg.\-F90}\end{DoxyCompactItemize}
