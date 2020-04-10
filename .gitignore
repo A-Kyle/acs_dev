@@ -1,1 +1,4 @@
 doxygen/
+update.sh
+gitpull.log
+docs/doxygen.log
