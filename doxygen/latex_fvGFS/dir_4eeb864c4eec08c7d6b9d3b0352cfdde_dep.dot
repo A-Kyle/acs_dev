@@ -1,6 +1,0 @@
-digraph "/scratch2/NAGAPE/aoml-hafs1/Kyle.Ahern/acs_master_readonly/tools" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  dir_4eeb864c4eec08c7d6b9d3b0352cfdde [shape=box, label="tools", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_4eeb864c4eec08c7d6b9d3b0352cfdde.html"];
-}

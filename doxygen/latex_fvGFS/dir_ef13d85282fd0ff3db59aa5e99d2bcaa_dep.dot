@@ -1,9 +1,0 @@
-digraph "/scratch2/NAGAPE/aoml-hafs1/Kyle.Ahern/acs_master_readonly/driver/fvGFS" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_1284b95147afa48b330f502c8bbc0529 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="driver" fontname="Helvetica", fontsize="10", URL="dir_1284b95147afa48b330f502c8bbc0529.html"]
-  dir_ef13d85282fd0ff3db59aa5e99d2bcaa [shape=box, label="fvGFS", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_ef13d85282fd0ff3db59aa5e99d2bcaa.html"];
-  }
-}

@@ -1,9 +1,0 @@
-<map id="fv_arrays_mod::fv_atmos_type" name="fv_arrays_mod::fv_atmos_type">
-<area shape="rect" id="node8" href="$structfv__arrays__mod_1_1fv__flags__type.html" title="fv_arrays_mod::fv_flags_type" alt="" coords="342,2721,557,2748"/>
-<area shape="rect" id="node14" href="$structfv__arrays__mod_1_1fv__nest__type.html" title="fv_arrays_mod::fv_nest_type" alt="" coords="805,1387,1016,1413"/>
-<area shape="rect" id="node16" href="$structfv__arrays__mod_1_1fv__nest__bc__type__3d.html" title="fv_arrays_mod::fv_nest\l_bc_type_3d" alt="" coords="362,1174,537,1215"/>
-<area shape="rect" id="node18" href="$structfv__arrays__mod_1_1fv__diag__type.html" title="fv_arrays_mod::fv_diag_type" alt="" coords="344,1016,555,1043"/>
-<area shape="rect" id="node19" href="$structfv__arrays__mod_1_1fv__grid__type.html" title="The type &#39;fv_grid_type&#39; is made up of grid&#45;dependent information from fv_grid_tools and fv_grid_utils..." alt="" coords="345,1883,553,1909"/>
-<area shape="rect" id="node3" href="$structfv__arrays__mod_1_1fv__regional__bc__bounds__type.html" title="fv_arrays_mod::fv_regional\l_bc_bounds_type" alt="" coords="581,379,781,421"/>
-<area shape="rect" id="node6" href="$structfv__arrays__mod_1_1fv__grid__bounds__type.html" title="fv_arrays_mod::fv_grid\l_bounds_type" alt="" coords="595,579,767,621"/>
-</map>
