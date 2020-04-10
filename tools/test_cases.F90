@@ -101,6 +101,8 @@
 !   </tr>
 ! </table>
 
+!> declarations begin here
+
       use constants_mod,     only: cnst_radius=>radius, pi=>pi_8, omega, grav, kappa, rdgas, cp_air, rvgas
       use init_hydro_mod,    only: p_var, hydro_eq
       use fv_mp_mod,         only: ng, is_master,        &
