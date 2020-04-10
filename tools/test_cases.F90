@@ -22,6 +22,7 @@
 !> my dog typed this comment: mjkkicdsddsds,
 !> my cat typed this comment: cdjkkjfdjkjf
 !> my dog also typed this comment: kmasdlckmc
+!> my cat meowed
 
  module test_cases_mod
 
