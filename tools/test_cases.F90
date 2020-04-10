@@ -20,6 +20,7 @@
 !***********************************************************************
 
 !> my dog typed this comment: mjkkicdsddsds,
+!> my dog also typed this comment: kmasdlckmc
 
  module test_cases_mod
 
